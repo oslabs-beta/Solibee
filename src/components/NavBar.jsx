@@ -1,13 +1,10 @@
-import logo from "../../assets/Solibee-logo.png";
-import name from "../../assets/Solibee-name.png";
-import gitLogo from "../../assets/github-mark.png";
-import Search from "./Search";
+import name from '../../assets/Solibee-name.png';
+import gitLogo from '../../assets/github-mark.png';
+import Search from './Search';
 
 export default function NavBar() {
   return (
     <div class="flex gap-1 space-x-20 space-y-1">
-      {/* //logo //name //docs //components //search //login //github */}
-      
       <span>
         <img
           src={name}
@@ -17,11 +14,13 @@ export default function NavBar() {
       </span>
       <span>Docs</span>
       <span>Components</span>
-      <span >
+      <span>
         <input type="search" name="search" id="search" />
       </span>
       <span>
-        <img src={gitLogo} alt="" width="30" href="https://github.com/oslabs-beta/solibee/"/>
+        <a target="_blank" href="https://github.com/oslabs-beta/solibee/">
+          <img src={gitLogo} alt="" width="30" />
+        </a>
       </span>
       <span>
         <Search />
