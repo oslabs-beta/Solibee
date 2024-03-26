@@ -28,30 +28,21 @@ function MenuItem(props) {
   //   );
   return (
     <div>
-      <ul>
-        <For each={items()}>
-          {(item) => {
-            console.log(item);
-            return (
-              <div>
-                <h3>{props.title}</h3>
-                <li>{item}</li>
-              </div>
-            );
-          }}
-        </For>
+      <h3 class="font-bold">{props.title}</h3>
+      <ul class="mx-2.5">
+        <For each={items()}>{(item) => <li>{item}</li>}</For>
       </ul>
     </div>
   );
 }
 
 export default function Menu() {
-  const intro =  ['Documentation', 'Installation'] ;
-  const  components = ['Drawer ', 'Kanban Card', 'Input Form'] ;
+  const intro = ['Documentation', 'Installation'];
+  const components = ['Drawer ', 'Kanban Card', 'Input Form'];
   return (
     <div>
-      <MenuItem title='Introduction' items = {intro} />
-      <MenuItem title="Components" items = {components}  />
+      <MenuItem title="Getting Started" items={intro} />
+      <MenuItem title="Components" items={components} />
     </div>
   );
 }
