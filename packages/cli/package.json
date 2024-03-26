@@ -2,6 +2,7 @@
   "name": "solibee",
   "version": "1.0.0",
   "description": "A customizable collection of UI components written for Solid.js",
+  "main": "index.js",
   "author": "solibee",
   "license": "MIT",
   "repository": {
