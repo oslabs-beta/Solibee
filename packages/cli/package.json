@@ -1,0 +1,19 @@
+{
+  "name": "solibee",
+  "version": "1.0.0",
+  "description": "A customizable collection of UI components written for Solid.js",
+  "author": "solibee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oslabs-beta/solibee.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "solid-js",
+    "tailwind",
+    "solibee"
+  ]
+}
