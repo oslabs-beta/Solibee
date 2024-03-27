@@ -26,7 +26,7 @@ export default function Search() {
     //   </div>
     // </form>
     <div>
-      <button class="flex items-center hover:bg-gray-300 border py-2 px-4 w-full rounded-md text-sm ">
+      <button class="flex items-center hover:bg-gray-300 border border-orange-200 py-2 px-4 w-full rounded-md text-sm ">
         <img class="h-6 mr-2" src={search} alt="search icon" />
         Search ...
       </button>
