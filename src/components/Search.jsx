@@ -1,4 +1,4 @@
-import search from "../../assets/search-5-svgrepo-com.svg";
+import search from '../../assets/search-5-svgrepo-com.svg';
 
 export default function Search() {
   return (
