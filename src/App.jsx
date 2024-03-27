@@ -1,7 +1,7 @@
+import DragAndDrop from '../component_library/kanban';
+
 function App() {
-    return (
-        <></>
-    );
+  return <DragAndDrop />;
 }
 
 export default App;
