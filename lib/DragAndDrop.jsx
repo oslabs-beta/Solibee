@@ -59,7 +59,7 @@ const DragAndDrop = () => {
       >
         Add New Container
       </button>
-      <div class='flex'>
+      <div class='grid grid-cols-3'>
         <For each={store.contents}>
           {(container, i) => (
             <DragAndDropContainer id={i()} store={store} setStore={setStore} />
