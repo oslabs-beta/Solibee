@@ -2,11 +2,12 @@ import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
   const addItem = (id) => {
-    props.setStore('contents', id, 'contents', (contents) => [
-      ...contents,
+    props.setStore('containers', id, 'items', (items) => [
+      ...items,
       'new item',
     ]);
-    props.setStore('contents', id, 'index', (index) => index + 1);
+    props.setStore('containers', id, 'index', (index) => index + 1);
+  };
   };
 
   return (
@@ -18,7 +19,7 @@ const DragAndDropContainer = (props) => {
       >
         Add New Item
       </button>
-      <For each={props.store.contents[props.id].contents}>
+      <For each={props.store.containers[props.id].items}>
         {(item, i) => <DragAndDropItem id={i()} name={item} />}
       </For>
     </div>
@@ -38,17 +39,17 @@ const DragAndDropItem = (props) => {
 const DragAndDrop = () => {
   const [store, setStore] = createStore({
     index: 2,
-    contents: [
-      { index: 0, contents: ['first item', 'second item'] },
-      { index: 0, contents: ['a third item', 'another item', 'last item'] },
+    containers: [
+      { index: 0, items: ['first item', 'second item'] },
+      { index: 0, items: ['a third item', 'another item', 'last item'] },
     ],
   });
 
   const addContainer = () =>
     setStore((store) => {
       const index = store.index + 1;
-      const contents = [...store.contents, { index: 0, contents: [] }];
-      return { index, contents };
+      const containers = [...store.containers, { index: 0, items: [] }];
+      return { index, containers };
     });
 
   return (
@@ -60,7 +61,7 @@ const DragAndDrop = () => {
         Add New Container
       </button>
       <div class='grid grid-cols-3'>
-        <For each={store.contents}>
+        <For each={store.containers}>
           {(container, i) => (
             <DragAndDropContainer id={i()} store={store} setStore={setStore} />
           )}
