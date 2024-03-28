@@ -1,11 +1,21 @@
-import { createSignal } from 'solid-js';
-import { createStore, unwrap } from 'solid-js/store';
+import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
+  const addItem = (id) => {
+    props.setStore('contents', id, 'contents', (contents) => [
+      ...contents,
+      'new item',
+    ]);
+    props.setStore('contents', id, 'index', (index) => index + 1);
+  };
+
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
       <p class='font-bold m-2 p-2 text-white'>{props.id}</p>
-      <button class='border font-bold m-2 p-2 bg-slate-700 text-white'>
+      <button
+        class='border font-bold m-2 p-2 bg-slate-700 text-white'
+        onClick={() => addItem(props.id)}
+      >
         Add New Item
       </button>
       <For each={props.store.contents[props.id].contents}>
@@ -40,15 +50,6 @@ const DragAndDrop = () => {
       const contents = [...store.contents, { index: 0, contents: [] }];
       return { index, contents };
     });
-
-  const addItem = (id) => {
-    // console.log(id);
-    setStore('contents', id, 'contents', (contents) => [
-      ...contents,
-      'new item',
-    ]);
-    setStore('contents', id, 'index', (index) => index + 1);
-  };
 
   return (
     <div>
