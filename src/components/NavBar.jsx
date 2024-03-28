@@ -8,7 +8,7 @@ import Search from "./Search";
 export default function NavBar() {
   return (
     <div class="sticky">
-      <div class="text-sm  top-0 w-full flex justify-between items-center px-5 py-2">
+      <div class="text-sm font-medium text-slate-700  top-0 w-full flex justify-between items-center px-5 py-2">
         <div class="flex items-center">
           <img
             class="h-8 mr-6"
@@ -33,7 +33,7 @@ export default function NavBar() {
           <img class="h-6 ml-6 " src={sunIcon} alt="Sun icon" />
         </div>
       </div>
-      <hr class="bg-yellow" />
-    </div>
+      <hr class="border-1 border-amber-300" />
+    </>
   );
 }
