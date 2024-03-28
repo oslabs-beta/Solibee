@@ -1,14 +1,14 @@
-import name from '../../assets/Solibee-name.png';
-import gitLogo from '../../assets/github-mark.png';
-import gitLogoWhite from '../../assets/github-mark-white.png';
-import sunIcon from '../../assets/sun-svgrepo-com.svg';
-import nightIcon from '../../assets/night-svgrepo-com.svg';
-import Search from './Search';
+import name from "../../assets/Solibee-name.png";
+import gitLogo from "../../assets/github-mark.png";
+import gitLogoWhite from "../../assets/github-mark-white.png";
+import sunIcon from "../../assets/sun-svgrepo-com.svg";
+import nightIcon from "../../assets/night-svgrepo-com.svg";
+import Search from "./Search";
 
 export default function NavBar() {
   return (
-    <>
-      <div class="text-sm sticky top-0 w-full flex justify-between items-center px-5 py-2">
+    <div class="sticky">
+      <div class="text-sm  top-0 w-full flex justify-between items-center px-5 py-2">
         <div class="flex items-center">
           <img
             class="h-8 mr-6"
@@ -34,6 +34,6 @@ export default function NavBar() {
         </div>
       </div>
       <hr class="bg-yellow" />
-    </>
+    </div>
   );
 }
