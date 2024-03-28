@@ -9,9 +9,9 @@ export default function Docs() {
       <header>
         <h1 class="font-bold text-4xl mb-4">Introduction</h1>
         <p class="text-lg">
-          An open-source collection of accessible, customizable Solid.js
-          components. See a component you like? Copy and paste the code into
-          your project!
+          Solibee is an open-source collection of accessible, customizable
+          SolidJS components. See a component you like? Copy and paste the code
+          into your project!
         </p>
       </header>
 
@@ -66,4 +66,3 @@ export default function Docs() {
     </div>
   );
 }
-
