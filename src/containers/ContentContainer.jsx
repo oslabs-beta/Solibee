@@ -37,9 +37,9 @@ export default function ContentContainer() {
           Installation Guide
         </p>
         <hr></hr>
-        <div class="">
+        <div class="steps mb-12 ml-4 border-l pl-8 [counter-reset:step]">
           <p class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
-            ::before Run the following command
+            Run the following command
           </p>
           <p class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
             step2
