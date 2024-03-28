@@ -8,7 +8,6 @@ const DragAndDropContainer = (props) => {
     ]);
     props.setStore('containers', id, 'index', (index) => index + 1);
   };
-  };
 
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
@@ -20,18 +19,44 @@ const DragAndDropContainer = (props) => {
         Add New Item
       </button>
       <For each={props.store.containers[props.id].items}>
-        {(item, i) => <DragAndDropItem id={i()} name={item} />}
+        {(item, i) => (
+          <DragAndDropItem
+            id={i()}
+            containerID={props.id}
+            name={item}
+            store={props.store}
+            setStore={props.setStore}
+          />
+        )}
       </For>
     </div>
   );
 };
 
 const DragAndDropItem = (props) => {
+  const removeItem = (containerID, itemID) => {
+    console.log('containerID', containerID);
+    console.log('itemID', itemID);
+    props.setStore('containers', containerID, 'items', (items) =>
+      items.filter((item, i) => i !== itemID)
+    );
+    props.setStore('containers', containerID, 'index', (index) => index - 1);
+  };
+
   return (
-    <div class='border border-black m-2 p-2' draggable={true}>
+    <div
+      class='flex justify-between border border-black m-2 p-2'
+      draggable={true}
+    >
       <p class='text-3xl font-bold'>
-        {props.id} {props.name}
+        {props.containerID} {props.id} {props.name}
       </p>
+      <button
+        class='border p-2'
+        onClick={() => removeItem(props.containerID, props.id)}
+      >
+        X
+      </button>
     </div>
   );
 };
