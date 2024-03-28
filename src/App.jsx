@@ -1,4 +1,4 @@
-import DragAndDrop from '../component_library/kanban';
+import DragAndDrop from '../lib/DragAndDrop.jsx';
 
 function App() {
   return <DragAndDrop />;
