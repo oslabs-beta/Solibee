@@ -37,18 +37,20 @@ export default function ContentContainer() {
           Installation Guide
         </p>
         <hr></hr>
-        <div class="steps mb-12 ml-4 border-l pl-8 [counter-reset:step]">
-          <p class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
+        <div class="steps mb-12 ml-4 border-l [counter-reset:step] z-0">
+          <p
+            class="step-counter font-heading mt-8 text-xl font-semibold tracking-tight
+          relative pl-10 before:z-10 before:content-[counter(step)] before:absolute before:left-0 before:flex before:items-center before:justify-center before:w-[calc(1.375rem+1px)] before:h-[calc(1.375rem+1px)] before:text-[0.9rem]
+before:font-bold before:text-slate-700 before:rounded-md before:shadow-md before:ring-2 before:ring-slate-900/5 before:z-20"
+          >
             Run the following command
           </p>
-          <p class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
-            step2
-          </p>
-          <p class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
-            step3
-          </p>
+
+<!
+
         </div>
       </div>
+
       <div class="my-5 flex flex-col mt-12">
         <p class="text-slate-500 text-2xl tracking-tight" id="Usage">
           Usage
