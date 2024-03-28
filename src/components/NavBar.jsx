@@ -4,7 +4,7 @@ import Search from './Search';
 
 export default function NavBar() {
   return (
-    <div class="flex gap-1 space-x-20 space-y-1">
+    <div class="fixed top-0 left-0 right-0 flex gap-1 space-x-20 space-y-1">
       <span>
         <img
           src={name}
