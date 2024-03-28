@@ -50,7 +50,7 @@
     font-weight: 500;
     margin-left: -50px;
     margin-top: -4px;
-    content: counter(step)
+    content: counter(step)c
 }
 
 */
