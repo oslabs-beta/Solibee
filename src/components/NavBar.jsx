@@ -8,7 +8,7 @@ import Search from "./Search";
 export default function NavBar() {
   return (
     <>
-      <div class="text-sm sticky top-0 w-full flex justify-between items-center px-5 py-2">
+      <div class="text-sm font-medium text-slate-700 sticky top-0 w-full flex justify-between items-center px-5 py-2">
         <div class="flex items-center">
           <img
             class="h-8 mr-6"
