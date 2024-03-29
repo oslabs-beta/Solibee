@@ -2,11 +2,12 @@ import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
   const addItem = (id) => {
-    props.setStore('containers', id, 'items', (items) => [
-      ...items,
-      'new item',
-    ]);
-    props.setStore('containers', id, 'index', (index) => index + 1);
+    props.setStore('containers', id, 'items', (items) => {
+      return [...items, 'new item'];
+    });
+    props.setStore('containers', id, 'index', (index) => {
+      return index + 1;
+    });
   };
 
   return (
@@ -19,15 +20,17 @@ const DragAndDropContainer = (props) => {
         Add New Item
       </button>
       <For each={props.store.containers[props.id].items}>
-        {(item, i) => (
-          <DragAndDropItem
-            id={i()}
-            containerID={props.id}
-            name={item}
-            store={props.store}
-            setStore={props.setStore}
-          />
-        )}
+        {(item, i) => {
+          return (
+            <DragAndDropItem
+              id={i()}
+              containerID={props.id}
+              text={item.text}
+              store={props.store}
+              setStore={props.setStore}
+            />
+          );
+        }}
       </For>
     </div>
   );
@@ -35,12 +38,12 @@ const DragAndDropContainer = (props) => {
 
 const DragAndDropItem = (props) => {
   const removeItem = (containerID, itemID) => {
-    console.log('containerID', containerID);
-    console.log('itemID', itemID);
-    props.setStore('containers', containerID, 'items', (items) =>
-      items.filter((item, i) => i !== itemID)
-    );
-    props.setStore('containers', containerID, 'index', (index) => index - 1);
+    props.setStore('containers', containerID, 'items', (items) => {
+      return items.filter((item, i) => i !== itemID);
+    });
+    props.setStore('containers', containerID, 'index', (index) => {
+      return index - 1;
+    });
   };
 
   return (
@@ -49,7 +52,7 @@ const DragAndDropItem = (props) => {
       draggable={true}
     >
       <p class='text-3xl font-bold'>
-        {props.containerID} {props.id} {props.name}
+        {props.containerID} {props.id} {props.text}
       </p>
       <button
         class='border p-2'
@@ -65,8 +68,15 @@ const DragAndDrop = () => {
   const [store, setStore] = createStore({
     index: 2,
     containers: [
-      { index: 0, items: ['first item', 'second item'] },
-      { index: 0, items: ['a third item', 'another item', 'last item'] },
+      { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
+      {
+        index: 0,
+        items: [
+          { text: 'a third item' },
+          { text: 'another item' },
+          { text: 'last item' },
+        ],
+      },
     ],
   });
 
@@ -87,9 +97,15 @@ const DragAndDrop = () => {
       </button>
       <div class='grid grid-cols-3'>
         <For each={store.containers}>
-          {(container, i) => (
-            <DragAndDropContainer id={i()} store={store} setStore={setStore} />
-          )}
+          {(container, i) => {
+            return (
+              <DragAndDropContainer
+                id={i()}
+                store={store}
+                setStore={setStore}
+              />
+            );
+          }}
         </For>
       </div>
     </div>
