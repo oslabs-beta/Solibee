@@ -2,11 +2,8 @@ import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
   function addItem(containerID) {
-    props.setStore('containers', containerID, 'items', (items) => {
-      return [...items, 'new item'];
-    });
-    props.setStore('containers', containerID, 'index', (index) => {
-      return index + 1;
+    props.setContainers(containerID, 'items', (items) => {
+      return [...items, { text: Math.ceil(Math.random() * 100) }];
     });
   }
 
@@ -19,15 +16,15 @@ const DragAndDropContainer = (props) => {
       >
         Add New Item
       </button>
-      <For each={props.store.containers[props.containerID].items}>
+      <For each={props.containers[props.containerID].items}>
         {(item, i) => {
           return (
             <DragAndDropItem
               itemID={i()}
               containerID={props.containerID}
               text={item.text}
-              store={props.store}
-              setStore={props.setStore}
+              containers={props.containers}
+              setContainers={props.setContainers}
             />
           );
         }}
@@ -38,11 +35,8 @@ const DragAndDropContainer = (props) => {
 
 const DragAndDropItem = (props) => {
   function removeItem(containerID, itemID) {
-    props.setStore('containers', containerID, 'items', (items) => {
+    props.setContainers(containerID, 'items', (items) => {
       return items.filter((item, i) => i !== itemID);
-    });
-    props.setStore('containers', containerID, 'index', (index) => {
-      return index - 1;
     });
   }
 
@@ -65,28 +59,10 @@ const DragAndDropItem = (props) => {
 };
 
 const DragAndDrop = () => {
-  // const [store, setStore] = createStore({
-  //   index: 2,
-  //   containers: [
-  //     { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
-  //     {
-  //       index: 0,
-  //       items: [
-  //         { text: 'a third item' },
-  //         { text: 'another item' },
-  //         { text: 'last item' },
-  //       ],
-  //     },
-  //   ],
-  // });
-  const [store, setStore] = createStore({ index: 0, containers: [] });
+  const [containers, setContainers] = createStore([]);
 
   function addContainer() {
-    setStore((store) => {
-      const index = store.index + 1;
-      const containers = [...store.containers, { index: 0, items: [] }];
-      return { index, containers };
-    });
+    setContainers([...containers, { items: [] }]);
   }
 
   return (
@@ -98,13 +74,13 @@ const DragAndDrop = () => {
         Add New Container
       </button>
       <div class='grid grid-cols-3'>
-        <For each={store.containers}>
+        <For each={containers}>
           {(container, i) => {
             return (
               <DragAndDropContainer
                 containerID={i()}
-                store={store}
-                setStore={setStore}
+                containers={containers}
+                setContainers={setContainers}
               />
             );
           }}
