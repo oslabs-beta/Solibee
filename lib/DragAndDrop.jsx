@@ -1,14 +1,14 @@
 import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
-  const addItem = (id) => {
+  function addItem(id) {
     props.setStore('containers', id, 'items', (items) => {
       return [...items, 'new item'];
     });
     props.setStore('containers', id, 'index', (index) => {
       return index + 1;
     });
-  };
+  }
 
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
@@ -37,14 +37,14 @@ const DragAndDropContainer = (props) => {
 };
 
 const DragAndDropItem = (props) => {
-  const removeItem = (containerID, itemID) => {
+  function removeItem(containerID, itemID) {
     props.setStore('containers', containerID, 'items', (items) => {
       return items.filter((item, i) => i !== itemID);
     });
     props.setStore('containers', containerID, 'index', (index) => {
       return index - 1;
     });
-  };
+  }
 
   return (
     <div
@@ -80,12 +80,13 @@ const DragAndDrop = () => {
     ],
   });
 
-  const addContainer = () =>
+  function addContainer() {
     setStore((store) => {
       const index = store.index + 1;
       const containers = [...store.containers, { index: 0, items: [] }];
       return { index, containers };
     });
+  }
 
   return (
     <div>
