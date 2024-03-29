@@ -1,30 +1,30 @@
 import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
-  function addItem(id) {
-    props.setStore('containers', id, 'items', (items) => {
+  function addItem(containerID) {
+    props.setStore('containers', containerID, 'items', (items) => {
       return [...items, 'new item'];
     });
-    props.setStore('containers', id, 'index', (index) => {
+    props.setStore('containers', containerID, 'index', (index) => {
       return index + 1;
     });
   }
 
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
-      <p class='font-bold m-2 p-2 text-white'>{props.id}</p>
+      <p class='font-bold m-2 p-2 text-white'>{props.containerID}</p>
       <button
         class='border font-bold m-2 p-2 bg-slate-700 text-white'
-        onClick={() => addItem(props.id)}
+        onClick={() => addItem(props.containerID)}
       >
         Add New Item
       </button>
-      <For each={props.store.containers[props.id].items}>
+      <For each={props.store.containers[props.containerID].items}>
         {(item, i) => {
           return (
             <DragAndDropItem
-              id={i()}
-              containerID={props.id}
+              itemID={i()}
+              containerID={props.containerID}
               text={item.text}
               store={props.store}
               setStore={props.setStore}
@@ -52,11 +52,11 @@ const DragAndDropItem = (props) => {
       draggable={true}
     >
       <p class='text-3xl font-bold'>
-        {props.containerID} {props.id} {props.text}
+        {props.containerID} {props.itemID} {props.text}
       </p>
       <button
         class='border p-2'
-        onClick={() => removeItem(props.containerID, props.id)}
+        onClick={() => removeItem(props.containerID, props.itemID)}
       >
         X
       </button>
@@ -68,15 +68,15 @@ const DragAndDrop = () => {
   const [store, setStore] = createStore({
     index: 2,
     containers: [
-      { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
-      {
-        index: 0,
-        items: [
-          { text: 'a third item' },
-          { text: 'another item' },
-          { text: 'last item' },
-        ],
-      },
+      // { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
+      // {
+      //   index: 0,
+      //   items: [
+      //     { text: 'a third item' },
+      //     { text: 'another item' },
+      //     { text: 'last item' },
+      //   ],
+      // },
     ],
   });
 
@@ -101,7 +101,7 @@ const DragAndDrop = () => {
           {(container, i) => {
             return (
               <DragAndDropContainer
-                id={i()}
+                containerID={i()}
                 store={store}
                 setStore={setStore}
               />
