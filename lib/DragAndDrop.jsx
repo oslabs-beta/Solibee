@@ -3,7 +3,7 @@ import { createStore } from 'solid-js/store';
 const DragAndDropContainer = (props) => {
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
-      <p class='font-bold m-2 p-2 text-white'>{props.containerID}</p>
+      {/* <p class='font-bold m-2 p-2 text-white'>{props.containerID}</p> */}
       <button
         class='border font-bold m-2 p-2 bg-slate-700 text-white'
         onClick={() => props.addItem(props.containerID)}
@@ -34,7 +34,8 @@ const DragAndDropItem = (props) => {
       draggable={true}
     >
       <p class='text-3xl font-bold'>
-        {props.containerID} {props.itemID} {props.text}
+        {/* {props.containerID} {props.itemID}  */}
+        {props.text}
       </p>
       <button
         class='border p-2'
