@@ -1,18 +1,12 @@
 import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
-  function addItem(containerID) {
-    props.setContainers(containerID, 'items', (items) => {
-      return [...items, { text: Math.ceil(Math.random() * 100) }];
-    });
-  }
-
   return (
     <div class='bg-slate-400 border-black border m-5 p-5 grow'>
       <p class='font-bold m-2 p-2 text-white'>{props.containerID}</p>
       <button
         class='border font-bold m-2 p-2 bg-slate-700 text-white'
-        onClick={() => addItem(props.containerID)}
+        onClick={() => props.addItem(props.containerID)}
       >
         Add New Item
       </button>
@@ -25,6 +19,7 @@ const DragAndDropContainer = (props) => {
               text={item.text}
               containers={props.containers}
               setContainers={props.setContainers}
+              removeItem={props.removeItem}
             />
           );
         }}
@@ -34,12 +29,6 @@ const DragAndDropContainer = (props) => {
 };
 
 const DragAndDropItem = (props) => {
-  function removeItem(containerID, itemID) {
-    props.setContainers(containerID, 'items', (items) => {
-      return items.filter((item, i) => i !== itemID);
-    });
-  }
-
   return (
     <div
       class='flex justify-between border border-black m-2 p-2'
@@ -50,7 +39,7 @@ const DragAndDropItem = (props) => {
       </p>
       <button
         class='border p-2'
-        onClick={() => removeItem(props.containerID, props.itemID)}
+        onClick={() => props.removeItem(props.containerID, props.itemID)}
       >
         X
       </button>
@@ -63,6 +52,18 @@ const DragAndDrop = () => {
 
   function addContainer() {
     setContainers([...containers, { items: [] }]);
+  }
+
+  function addItem(containerID) {
+    setContainers(containerID, 'items', (items) => {
+      return [...items, { text: Math.ceil(Math.random() * 100) }];
+    });
+  }
+
+  function removeItem(containerID, itemID) {
+    setContainers(containerID, 'items', (items) => {
+      return items.filter((item, i) => i !== itemID);
+    });
   }
 
   return (
@@ -81,6 +82,8 @@ const DragAndDrop = () => {
                 containerID={i()}
                 containers={containers}
                 setContainers={setContainers}
+                addItem={addItem}
+                removeItem={removeItem}
               />
             );
           }}
