@@ -65,20 +65,21 @@ const DragAndDropItem = (props) => {
 };
 
 const DragAndDrop = () => {
-  const [store, setStore] = createStore({
-    index: 2,
-    containers: [
-      // { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
-      // {
-      //   index: 0,
-      //   items: [
-      //     { text: 'a third item' },
-      //     { text: 'another item' },
-      //     { text: 'last item' },
-      //   ],
-      // },
-    ],
-  });
+  // const [store, setStore] = createStore({
+  //   index: 2,
+  //   containers: [
+  //     { index: 0, items: [{ text: 'first item' }, { text: 'second item' }] },
+  //     {
+  //       index: 0,
+  //       items: [
+  //         { text: 'a third item' },
+  //         { text: 'another item' },
+  //         { text: 'last item' },
+  //       ],
+  //     },
+  //   ],
+  // });
+  const [store, setStore] = createStore({ index: 0, containers: [] });
 
   function addContainer() {
     setStore((store) => {
