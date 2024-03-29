@@ -18,7 +18,6 @@ const DragAndDropContainer = (props) => {
               containerID={props.containerID}
               text={item.text}
               containers={props.containers}
-              setContainers={props.setContainers}
               removeItem={props.removeItem}
             />
           );
@@ -81,7 +80,6 @@ const DragAndDrop = () => {
               <DragAndDropContainer
                 containerID={i()}
                 containers={containers}
-                setContainers={setContainers}
                 addItem={addItem}
                 removeItem={removeItem}
               />
