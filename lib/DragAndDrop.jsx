@@ -1,14 +1,17 @@
 import { createStore } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
+  function handleDragOver(containerID, bool) {
+    props.setContainers(containerID, 'dragOver', bool);
+  }
+
   return (
     <div
       class='bg-slate-400 border-black border m-5 p-5 grow'
-      classList={{
-        'bg-slate-200': props.containers[props.containerID].dragOver == true,
-      }}
+      onDragEnter={() => handleDragOver(props.containerID, true)}
+      onDragExit={() => handleDragOver(props.containerID, false)}
+      classList={{ 'border-8': props.containers[props.containerID].dragOver }}
     >
-      {/* <p class='font-bold m-2 p-2 text-white'>{props.containerID}</p> */}
       <button
         class='border font-bold m-2 p-2 bg-slate-700 text-white'
         onClick={() => props.addItem(props.containerID)}
@@ -16,39 +19,38 @@ const DragAndDropContainer = (props) => {
         Add New Item
       </button>
       <For each={props.containers[props.containerID].items}>
-        {(item, i) => {
-          return (
-            <DragAndDropItem
-              itemID={i()}
-              containerID={props.containerID}
-              text={item.text}
-              containers={props.containers}
-              removeItem={props.removeItem}
-              toggleSelected={props.toggleSelected}
-            />
-          );
-        }}
+        {(item, i) => (
+          <DragAndDropItem
+            containerID={props.containerID}
+            itemID={i()}
+            containers={props.containers}
+            setContainers={props.setContainers}
+            removeItem={props.removeItem}
+          />
+        )}
       </For>
     </div>
   );
 };
 
 const DragAndDropItem = (props) => {
+  function handleDrag(containerID, itemID, bool) {
+    props.setContainers(containerID, 'items', itemID, 'selected', bool);
+  }
+
   return (
     <div
       class='flex justify-between border border-black m-2 p-2'
       draggable={true}
-      onDragStart={() => props.toggleSelected(props.containerID, props.itemID)}
-      onDragEnd={() => props.toggleSelected(props.containerID, props.itemID)}
+      onDragStart={() => handleDrag(props.containerID, props.itemID, true)}
+      onDragEnd={() => handleDrag(props.containerID, props.itemID, false)}
       classList={{
-        'bg-slate-600':
-          props.containers[props.containerID].items[props.itemID].selected ==
-          true,
+        'bg-slate-700':
+          props.containers[props.containerID].items[props.itemID].selected,
       }}
     >
       <p class='text-3xl font-bold'>
-        {/* {props.containerID} {props.itemID}  */}
-        {props.text}
+        {props.containers[props.containerID].items[props.itemID].text}
       </p>
       <button
         class='border p-2'
@@ -61,33 +63,39 @@ const DragAndDropItem = (props) => {
 };
 
 const DragAndDrop = () => {
-  const [containers, setContainers] = createStore([]);
+  const [containers, setContainers] = createStore([
+    { items: [{ text: 'mars', selected: false }], dragOver: false },
+    {
+      items: [
+        { text: 'vie', selected: false },
+        { text: 'hi', selected: false },
+      ],
+      dragOver: false,
+    },
+    { items: [], dragOver: false },
+  ]);
 
+  // adds a new container object to the containers store
   function addContainer() {
     setContainers([...containers, { items: [], dragOver: false }]);
   }
 
-  function addItem(containerID) {
+  // if item is passed in, adds item to the specified container in the containers store; otherwise, adds a new item object
+  function addItem(containerID, item) {
     setContainers(containerID, 'items', (items) => {
-      return [
-        ...items,
-        { text: Math.ceil(Math.random() * 100), selected: false },
-      ];
+      return item
+        ? [...items, item]
+        : [...items, { text: Math.ceil(Math.random() * 100), selected: false }];
     });
   }
 
+  // removes and returns the specified item from the containers store
   function removeItem(containerID, itemID) {
+    const item = containers[containerID].items[itemID];
     setContainers(containerID, 'items', (items) => {
       return items.filter((item, i) => i !== itemID);
     });
-  }
-
-  function toggleSelected(containerID, itemID) {
-    setContainers(containerID, 'items', itemID, 'selected', (s) => !s);
-  }
-
-  function toggleDragOver(containerID) {
-    setContainers(containerID, 'dragOver', (d) => !d);
+    return item;
   }
 
   return (
@@ -100,18 +108,15 @@ const DragAndDrop = () => {
       </button>
       <div class='grid grid-cols-3'>
         <For each={containers}>
-          {(container, i) => {
-            return (
-              <DragAndDropContainer
-                containerID={i()}
-                containers={containers}
-                addItem={addItem}
-                removeItem={removeItem}
-                toggleSelected={toggleSelected}
-                toggleDragOver={toggleDragOver}
-              />
-            );
-          }}
+          {(container, i) => (
+            <DragAndDropContainer
+              containerID={i()}
+              containers={containers}
+              setContainers={setContainers}
+              addItem={addItem}
+              removeItem={removeItem}
+            />
+          )}
         </For>
       </div>
     </div>
