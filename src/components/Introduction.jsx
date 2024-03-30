@@ -1,11 +1,11 @@
-export default function Docs() {
+export default function Introduction() {
   //   //Introduction
   //   //Features
   //   //Questions/Community
   //   //Thanks/inspired by
   //   //Designed by
   return (
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12">
       <header>
         <h1 class="font-bold text-4xl mb-4">Introduction</h1>
         <p class="text-lg">
