@@ -7,9 +7,7 @@ import Search from './Search';
 
 export default function NavBar() {
   return (
-    <>
-      <div class="backdrop-blur-sm bg-white-200/30 text-sm font-medium text-slate-700 sticky top-0 w-full flex justify-between items-center px-5 py-2">
-    <div class="sticky backdrop-blur-sm top-0 z-50 bg-white-100">
+    <div class="sticky backdrop-blur-sm top-0 z-50 bg-white-200">
       <div class="text-sm font-medium text-slate-700  top-0 w-full flex justify-between items-center px-5 py-2">
         <div class="flex items-center">
           <img
@@ -18,10 +16,10 @@ export default function NavBar() {
             alt="The word SOLIBEE with a bee on top of the letter I"
           />
           <span class="mr-6">
-            <a href='/introduction'>Docs</a>
+            <a href="/introduction">Docs</a>
           </span>
           <span>
-            <a href='/component/drawer'>Components</a>
+            <a href="/component/drawer">Components</a>
           </span>
         </div>
         <div class="flex items-center">
