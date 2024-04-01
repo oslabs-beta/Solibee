@@ -4,6 +4,8 @@ import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import ContentComponent from '../components/ContentComponent';
 
+import Steps from './Steps';
+
 export default function ContentContainer() {
   return (
     <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12 overflow-auto">

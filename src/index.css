@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* *,
-:after,
-:before {
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
-}
-
+/*
 .step:before {
 	position: absolute;
 	display: inline-flex;
@@ -30,27 +24,24 @@
 	margin-top: -4px;
 	content: counter(step)
 }
+*/
 
-.\[\&\>h3\]\:step>h3:before {
-    position: absolute;
-    display: inline-flex;
-    height: 2.25rem;
-    width: 2.25rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    border-width: 4px;
-    border-color: hsl(var(--background));
-    background-color: hsl(var(--muted));
-    text-align: center;
-    text-indent: -1px;
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 500;
-    margin-left: -50px;
-    margin-top: -4px;
-    content: counter(step)c
+/* styling of the button location; inside styling exists as tailwind */
+.steps p:before {
+  /* content: counter(step); /* Generate the numbering */
+  /* counter-increment: step;  */
+  position: absolute; /* Position the numbering absolutely */
+  left: -0.75rem; /* Adjust the left positioning as needed */
+  top: 50%; /* Position it vertically centered */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  z-index: 10; /* Set the z-index to ensure it's above other content */
+  background-color: white;
 }
 
-*/
+.steps {
+	counter-reset: step 0;
+}
+
+.steps p {
+	counter-increment: step 1;
+}
