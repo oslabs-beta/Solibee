@@ -4,7 +4,6 @@ import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import ContentComponent from '../components/ContentComponent';
 
-import Steps from './Steps';
 
 export default function ContentContainer() {
   return (
