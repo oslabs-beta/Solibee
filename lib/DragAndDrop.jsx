@@ -1,4 +1,5 @@
-import { createStore } from 'solid-js/store';
+import { onMount, createSignal, createEffect } from 'solid-js';
+import { createStore, unwrap } from 'solid-js/store';
 
 const DragAndDropContainer = (props) => {
   function handleDragOver(containerID, bool) {
@@ -26,6 +27,8 @@ const DragAndDropContainer = (props) => {
             containers={props.containers}
             setContainers={props.setContainers}
             removeItem={props.removeItem}
+            selectedItem={props.selectedItem}
+            setSelectedItem={props.setSelectedItem}
           />
         )}
       </For>
@@ -36,6 +39,9 @@ const DragAndDropContainer = (props) => {
 const DragAndDropItem = (props) => {
   function handleDrag(containerID, itemID, bool) {
     props.setContainers(containerID, 'items', itemID, 'selected', bool);
+    bool
+      ? props.setSelectedItem(props.containers[containerID].items[itemID])
+      : props.setSelectedItem(null);
   }
 
   return (
@@ -74,6 +80,8 @@ const DragAndDrop = () => {
     },
     { items: [], dragOver: false },
   ]);
+
+  const [selectedItem, setSelectedItem] = createSignal(null);
 
   // adds a new container object to the containers store
   function addContainer() {
@@ -115,6 +123,8 @@ const DragAndDrop = () => {
               setContainers={setContainers}
               addItem={addItem}
               removeItem={removeItem}
+              selectedItem={selectedItem}
+              setSelectedItem={setSelectedItem}
             />
           )}
         </For>
