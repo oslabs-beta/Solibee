@@ -3,7 +3,7 @@
 export default function Code(props) {
   return (
     <div
-      class="min-h-[350px] w-full h-full flex-wrap justify-center items-center bg-slate-100"
+      class="contents [&>pre]:overflow-auto [&>pre]:rounded-md [&>pre]:py-2 [&>pre]:pl-2 [&>pre]:pr-12 [&>pre]:md:pr-2"
       innerHTML={props.html}
     />
   );

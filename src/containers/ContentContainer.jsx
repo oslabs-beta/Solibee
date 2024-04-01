@@ -6,7 +6,7 @@ import ContentComponent from '../components/ContentComponent';
 
 export default function ContentContainer() {
   return (
-    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12">
+    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12 overflow-auto">
       <Router>
         <Route path="/installation" component={Installation} />
         <Route path="/introduction" component={Introduction} />

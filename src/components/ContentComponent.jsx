@@ -2,7 +2,7 @@ import { codeToHtml } from "shiki";
 import { createSignal, createResource } from "solid-js";
 import Code from "./Code";
 
-const code = `export default function Search() {
+const code = `function Search() {
   return (
     <div class="w-40">
       <button>
@@ -21,7 +21,7 @@ export default function ContentComponent() {
     //try token code 
     let codeHtml = await codeToHtml(code, {
       lang: "jsx",
-      theme: "vesper",
+      theme: 'rose-pine',
     });
     console.log("I am codeHtml", codeHtml);
     console.log("I am type", typeof codeHtml);
@@ -36,7 +36,7 @@ export default function ContentComponent() {
   // setCodeHtml(htmlCode);
 
   return (
-    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12">
+    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12 overflow-auto">
       {/* Component name and description */}
       <header class="">
         <h1 class="inline-block text-4xl font-bold tracking-tight">
@@ -50,20 +50,23 @@ export default function ContentComponent() {
       </header>
 
       {/* Code and preview */}
-      <div class="my-5 flex space-x-4">
+      <div class="my-5 flex flex-col space-y-4">
         {/* class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border" */}
-        <div class="w-1/2 my-5">
+        <div class="w-full">
           <p class="text-slate-500">Code</p>
           <hr />
-          <div class="flex min-h-[350px] w-full justify-center items-center bg-slate-100">
+          <div class="w-full">
+            <button title="Copy code" class="left-3"></button>
             <Code html = {formattedCode()}/>
           </div>
         </div>
 
-        <div class="w-1/2 my-5">
+        <div class="w-full">
           <p class="text-slate-500">Preview</p>
           <hr />
-          <div class="flex min-h-[350px] w-full justify-center items-center bg-slate-100">
+          {/* <div class="flex min-h-[350px] w-full justify-center items-center bg-slate-100"> */}
+          <div class="my-6 flex min-h-[350px] w-full justify-center items-center bg-slate-100 rounded-md">
+          <button title="Copy code" class="code"></button>
             Content
           </div>
         </div>
