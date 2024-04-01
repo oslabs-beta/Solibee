@@ -20,17 +20,7 @@ const DragAndDropContainer = (props) => {
         Add New Item
       </button>
       <For each={props.containers[props.containerID].items}>
-        {(item, i) => (
-          <DragAndDropItem
-            containerID={props.containerID}
-            itemID={i()}
-            containers={props.containers}
-            setContainers={props.setContainers}
-            removeItem={props.removeItem}
-            selectedItem={props.selectedItem}
-            setSelectedItem={props.setSelectedItem}
-          />
-        )}
+        {(item, i) => <DragAndDropItem itemID={i()} {...props} />}
       </For>
     </div>
   );
