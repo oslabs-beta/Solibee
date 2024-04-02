@@ -22,7 +22,11 @@ export default (props) => {
         break;
       case 'update':
         console.log('updating item');
-        setItems(itemID, { ...payload });
+        setItems(
+          items.map((item) =>
+            item.itemID == itemID ? { ...item, ...payload } : item
+          )
+        );
         break;
       case 'delete':
         console.log('removing item');
@@ -71,8 +75,8 @@ export default (props) => {
       </button>
       <div class='border border-black m-3 p-3 flex'>
         <For each={columns}>
-          {(col, i) => (
-            <Column colID={i()} items={items} updateItems={updateItems} />
+          {(col) => (
+            <Column colID={col.colID} items={items} updateItems={updateItems} />
           )}
         </For>
       </div>
