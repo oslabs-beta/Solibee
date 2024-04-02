@@ -1,43 +1,60 @@
+import { createSignal } from 'solid-js';
 import Item from './Item.jsx';
 
 export default (props) => {
+  const [closestItem, setClosestItem] = createSignal(null);
+
+  let ref;
+  let dragCounter = 0;
+  const ghostItem = <div class='border m-3 p-3'>-</div>;
+
   const items = () => {
     return props.items.filter((item) => item.colID == props.colID);
   };
-  let dragCounter = 0;
-  let colRef;
-  const ghostItem = <div class='border m-3 p-3'>-</div>;
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    items().forEach((item) => {
+      if (
+        closestItem() == null ||
+        Math.abs(e.clientY - props.itemLocations[item.itemID]) <
+          Math.abs(e.clientY - props.itemLocations[closestItem()])
+      ) {
+        setClosestItem(item.itemID);
+      }
+    });
+  };
 
   const handleDrop = (e) => {
     e.preventDefault();
     const itemID = e.dataTransfer.getData('id');
     props.updateItems('update', { itemID, colID: props.colID });
     dragCounter = 0;
-    colRef.removeChild(ghostItem);
+    ref.removeChild(ghostItem);
   };
 
   const handleDragEnter = (e) => {
     e.preventDefault();
     if (++dragCounter == 1) {
-      colRef.appendChild(ghostItem);
+      ref.appendChild(ghostItem);
     }
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     if (--dragCounter <= 0) {
-      colRef.removeChild(ghostItem);
+      ref.removeChild(ghostItem);
     }
   };
 
   return (
     <div
+      ref={ref}
       class='border border-black m-3 p-3'
       onDrop={(e) => handleDrop(e)}
-      onDragOver={(e) => e.preventDefault()}
+      onDragOver={(e) => handleDragOver(e)}
       onDragEnter={(e) => handleDragEnter(e)}
       onDragLeave={(e) => handleDragLeave(e)}
-      ref={colRef}
     >
       <button
         class='border border-black m-3 p-3'
