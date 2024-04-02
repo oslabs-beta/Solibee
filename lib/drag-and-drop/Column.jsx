@@ -51,10 +51,10 @@ export default (props) => {
     <div
       ref={ref}
       class="m-3 border border-black p-3"
-      onDrop={(e) => handleDrop(e)}
-      onDragOver={(e) => handleDragOver(e)}
       onDragEnter={(e) => handleDragEnter(e)}
+      onDragOver={(e) => handleDragOver(e)}
       onDragLeave={(e) => handleDragLeave(e)}
+      onDrop={(e) => handleDrop(e)}
     >
       <button
         class="m-3 border border-black p-3"
