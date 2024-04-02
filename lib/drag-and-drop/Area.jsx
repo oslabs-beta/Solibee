@@ -17,9 +17,6 @@ export default (props) => {
         setItems([...items, newItem]);
         setItemIndex((i) => i + 1);
         break;
-      case 'read':
-        // code
-        break;
       case 'update':
         console.log('updating item');
         setItems(
@@ -45,9 +42,6 @@ export default (props) => {
         const newCol = { ...payload, colID: colIndex() };
         setColumns([...columns, newCol]);
         setColIndex((i) => i + 1);
-        break;
-      case 'read':
-        // code
         break;
       case 'update':
         // code
