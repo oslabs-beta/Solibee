@@ -9,16 +9,12 @@ export default (props) => {
     props.setItemLocations({ ...props.itemLocations, [props.itemID]: y });
   });
 
-  const handleDragStart = (e) => {
-    e.dataTransfer.setData("id", props.itemID);
-  };
-
   return (
     <div
       ref={ref}
       class="m-3 flex cursor-move items-center justify-between border border-black p-3"
       draggable={true}
-      onDragStart={(e) => handleDragStart(e)}
+      onDragStart={(e) => e.dataTransfer.setData("id", props.itemID)}
     >
       {props.items.filter((i) => i.itemID == props.itemID)[0].title}{" "}
       {props.itemID}
