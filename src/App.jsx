@@ -1,4 +1,4 @@
-import { Area } from '../lib/DragAndDrop.jsx';
+import Area from '../lib/drag-and-drop/Area.jsx';
 
 function App() {
   return (
