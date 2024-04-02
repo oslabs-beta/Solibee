@@ -18,7 +18,6 @@ export default (props) => {
       onDrop={(e) => handleDrop(e)}
       onDragOver={(e) => e.preventDefault()}
     >
-      column
       <button
         class='border border-black m-3 p-3'
         onClick={() =>

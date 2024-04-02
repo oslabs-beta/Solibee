@@ -9,7 +9,7 @@ export default (props) => {
       draggable={true}
       onDragStart={(e) => handleDragStart(e)}
     >
-      item {props.items.filter((i) => i.itemID == props.itemID)[0].title}{' '}
+      {props.items.filter((i) => i.itemID == props.itemID)[0].title}{' '}
       {props.itemID}
     </div>
   );

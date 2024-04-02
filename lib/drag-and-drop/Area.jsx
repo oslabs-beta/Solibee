@@ -71,7 +71,6 @@ export default (props) => {
         New Col
       </button>
       <div class='border border-black m-3 p-3 flex'>
-        area
         <For each={columns}>
           {(col, i) => (
             <Column colID={i()} items={items} updateItems={updateItems} />
