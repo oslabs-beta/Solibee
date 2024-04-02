@@ -4,12 +4,30 @@ export default (props) => {
   const items = () => {
     return props.items.filter((item) => item.colID == props.colID);
   };
+  let dragCounter = 0;
+  let colRef;
+  const ghostItem = <div class='border m-3 p-3'>-</div>;
 
   const handleDrop = (e) => {
-    console.log('dropping');
     e.preventDefault();
     const itemID = e.dataTransfer.getData('id');
     props.updateItems('update', { itemID, colID: props.colID });
+    dragCounter = 0;
+    colRef.removeChild(ghostItem);
+  };
+
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    if (++dragCounter == 1) {
+      colRef.appendChild(ghostItem);
+    }
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    if (--dragCounter <= 0) {
+      colRef.removeChild(ghostItem);
+    }
   };
 
   return (
@@ -17,6 +35,9 @@ export default (props) => {
       class='border border-black m-3 p-3'
       onDrop={(e) => handleDrop(e)}
       onDragOver={(e) => e.preventDefault()}
+      onDragEnter={(e) => handleDragEnter(e)}
+      onDragLeave={(e) => handleDragLeave(e)}
+      ref={colRef}
     >
       <button
         class='border border-black m-3 p-3'
