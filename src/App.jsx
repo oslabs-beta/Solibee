@@ -1,7 +1,11 @@
-import DragAndDrop from '../lib/DragAndDrop.jsx';
+import { Area } from '../lib/DragAndDrop.jsx';
 
 function App() {
-  return <DragAndDrop />;
+  return (
+    <>
+      <Area />
+    </>
+  );
 }
 
 export default App;
