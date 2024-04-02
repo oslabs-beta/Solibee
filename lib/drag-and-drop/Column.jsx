@@ -12,6 +12,13 @@ export default (props) => {
     return props.items.filter((item) => item.colID == props.colID);
   };
 
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    if (++dragCounter == 1) {
+      ref.appendChild(ghostItem);
+    }
+  };
+
   const handleDragOver = (e) => {
     e.preventDefault();
     items().forEach((item) => {
@@ -25,26 +32,19 @@ export default (props) => {
     });
   };
 
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    if (--dragCounter <= 0) {
+      ref.removeChild(ghostItem);
+    }
+  };
+
   const handleDrop = (e) => {
     e.preventDefault();
     const itemID = e.dataTransfer.getData("id");
     props.updateItems("update", { itemID, colID: props.colID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
-  };
-
-  const handleDragEnter = (e) => {
-    e.preventDefault();
-    if (++dragCounter == 1) {
-      ref.appendChild(ghostItem);
-    }
-  };
-
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-    if (--dragCounter <= 0) {
-      ref.removeChild(ghostItem);
-    }
   };
 
   return (
