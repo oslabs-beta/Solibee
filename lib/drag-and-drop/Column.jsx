@@ -23,7 +23,7 @@ export default (props) => {
         class='border border-black m-3 p-3'
         onClick={() =>
           props.updateItems('create', {
-            title: 'new item',
+            title: Math.ceil(Math.random() * 999),
             content: 'some content',
             colID: props.colID,
           })
