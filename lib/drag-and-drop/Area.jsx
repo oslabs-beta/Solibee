@@ -7,6 +7,7 @@ export default (props) => {
   const [colIndex, setColIndex] = createSignal(0);
   const [items, setItems] = createStore([]);
   const [columns, setColumns] = createStore([]);
+  const [itemLocations, setItemLocations] = createStore({});
 
   const updateItems = (method, payload) => {
     const { itemID } = payload;
@@ -70,7 +71,13 @@ export default (props) => {
       <div class='border border-black m-3 p-3 flex'>
         <For each={columns}>
           {(col) => (
-            <Column colID={col.colID} items={items} updateItems={updateItems} />
+            <Column
+              colID={col.colID}
+              items={items}
+              updateItems={updateItems}
+              itemLocations={itemLocations}
+              setItemLocations={setItemLocations}
+            />
           )}
         </For>
       </div>
