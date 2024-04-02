@@ -6,14 +6,9 @@ export default (props) => {
   const [itemIndex, setItemIndex] = createSignal(0);
   const [colIndex, setColIndex] = createSignal(0);
   const [items, setItems] = createStore([]);
-  const columns = () => {
-    const c = [];
-    for (let i = 0; i < colIndex(); i++) c.push({});
-    return c;
-  };
+  const [columns, setColumns] = createStore([]);
 
   // TODO: fix itemIDs so that they re-assign IDs on move?
-  // TODO: make columns a real store
   const updateItems = (method, payload) => {
     const { itemID } = payload;
     switch (method) {
@@ -45,6 +40,8 @@ export default (props) => {
     switch (method) {
       case 'create':
         console.log('creating new column');
+        const newCol = { ...payload, colID: colIndex() };
+        setColumns([...columns, newCol]);
         setColIndex((i) => i + 1);
         break;
       case 'read':
@@ -76,7 +73,7 @@ export default (props) => {
       </button>
       <div class='border border-black m-3 p-3 flex'>
         area
-        <For each={columns()}>
+        <For each={columns}>
           {(col, i) => (
             <Column colID={i()} items={items} updateItems={updateItems} />
           )}
