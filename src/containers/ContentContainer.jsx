@@ -3,15 +3,22 @@ import { Router, Route } from '@solidjs/router';
 import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import ContentComponent from '../components/ContentComponent';
-
+import { useContext } from 'solid-js'; 
+import { ComponentContext } from '../context/ComponentContext';
 
 export default function ContentContainer() {
+  const { components } = useContext(ComponentContext);
+
   return (
     <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12 overflow-auto">
       <Router>
         <Route path="/installation" component={Installation} />
         <Route path="/introduction" component={Introduction} />
-        <Route path="/component/drawer" component={ContentComponent} />
+        <For each={components}>
+          {(component) => (
+            <Route path={`/component/${component.toLowerCase().replace(' ', '')}`} component={() => <ContentComponent component={component} />} />
+          )}
+        </For>
       </Router>
     </div>
   );
