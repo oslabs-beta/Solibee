@@ -26,8 +26,7 @@ export default (props) => {
         break;
       case 'delete':
         console.log('removing item');
-        const updatedItems = [...items].filter((item) => item.itemID != itemID);
-        setItems(updatedItems);
+        setItems((i) => i.filter((item) => item.itemID != itemID));
         break;
       default:
       // code
