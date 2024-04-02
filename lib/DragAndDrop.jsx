@@ -12,25 +12,51 @@ export const Area = (props) => {
   };
 
   // TODO: fix itemIDs so that they re-assign IDs on move?
-  // TODO: make new function updateColumns
-  // TODO: add CRUD method
-  const updateItems = (payload, remove = false) => {
-    const { colID, itemID } = payload;
-    if (remove) {
-      console.log('removing item');
-      const updatedItems = [...items].filter((item) => item.itemID != itemID);
-      setItems(updatedItems);
-    } else if (itemID != undefined) {
-      console.log('updating item');
-      setItems(itemID, { ...payload });
-    } else if (colID != undefined) {
-      console.log('creating new item');
-      const newItem = { ...payload, itemID: itemIndex() };
-      setItems([...items, newItem]);
-      setItemIndex((i) => i + 1);
-    } else {
-      console.log('creating new column');
-      setColIndex((i) => i + 1);
+  // TODO: make columns a real store
+  const updateItems = (method, payload) => {
+    const { itemID } = payload;
+    switch (method) {
+      case 'create':
+        console.log('creating new item');
+        const newItem = { ...payload, itemID: itemIndex() };
+        setItems([...items, newItem]);
+        setItemIndex((i) => i + 1);
+        break;
+      case 'read':
+        // code
+        break;
+      case 'update':
+        console.log('updating item');
+        setItems(itemID, { ...payload });
+        break;
+      case 'delete':
+        console.log('removing item');
+        const updatedItems = [...items].filter((item) => item.itemID != itemID);
+        setItems(updatedItems);
+        break;
+      default:
+      // code
+    }
+  };
+
+  const updateColumns = (method, payload) => {
+    const { colID } = payload;
+    switch (method) {
+      case 'create':
+        console.log('creating new column');
+        setColIndex((i) => i + 1);
+        break;
+      case 'read':
+        // code
+        break;
+      case 'update':
+        // code
+        break;
+      case 'delete':
+        // code
+        break;
+      default:
+      // code
     }
   };
 
@@ -39,7 +65,10 @@ export const Area = (props) => {
       <button
         class='border border-black m-3 p-3'
         onClick={() => {
-          updateItems({ title: 'new item', content: 'new content' });
+          updateColumns('create', {
+            title: 'new item',
+            content: 'new content',
+          });
         }}
       >
         New Col
@@ -65,7 +94,7 @@ export const Column = (props) => {
     console.log('dropping');
     e.preventDefault();
     const itemID = e.dataTransfer.getData('id');
-    props.updateItems({ itemID, colID: props.colID });
+    props.updateItems('update', { itemID, colID: props.colID });
   };
 
   return (
@@ -78,7 +107,7 @@ export const Column = (props) => {
       <button
         class='border border-black m-3 p-3'
         onClick={() =>
-          props.updateItems({
+          props.updateItems('create', {
             title: 'new item',
             content: 'some content',
             colID: props.colID,
