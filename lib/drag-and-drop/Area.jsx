@@ -8,7 +8,6 @@ export default (props) => {
   const [items, setItems] = createStore([]);
   const [columns, setColumns] = createStore([]);
 
-  // TODO: fix itemIDs so that they re-assign IDs on move?
   const updateItems = (method, payload) => {
     const { itemID } = payload;
     switch (method) {
