@@ -4,6 +4,13 @@ import Item from "./Item.jsx";
 export default (props) => {
   const [closestItem, setClosestItem] = createSignal(null);
 
+  const closestIndex = () => {
+    if (!closestItem()) return 0;
+    for (let i = 0; i < items().length; i++) {
+      if (items()[i].itemID == closestItem().itemID) return i;
+    }
+  };
+
   let ref;
   let dragCounter = 0;
   const ghostItem = <div class="m-3 border p-3">-</div>;
@@ -38,6 +45,7 @@ export default (props) => {
     e.preventDefault();
     if (--dragCounter <= 0) {
       ref.removeChild(ghostItem);
+      setClosestItem(null);
     }
   };
 
@@ -47,6 +55,7 @@ export default (props) => {
     props.updateItems("update", { itemID, colID: props.colID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
+    setClosestItem(null);
   };
 
   return (
