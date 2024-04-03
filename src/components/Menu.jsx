@@ -1,5 +1,7 @@
 import { createSignal, For, createEffect } from 'solid-js';
 import { Router, Route, A } from '@solidjs/router';
+import { useContext } from 'solid-js';
+import { ComponentContext } from '../context/ComponentContext'; 
 
 function MenuItem(props) {
 
@@ -14,7 +16,7 @@ function MenuItem(props) {
             console.log(item);
             return (
               <div>
-                <a class="block rounded-lg px-4 py-2 transition-colors duration-75 hover:bg-orange-200 cursor-pointer" href={"/component/" + item.toLowerCase()}>{item}</a>
+                <a class="block rounded-lg px-4 py-2 transition-colors duration-75 hover:bg-orange-200 cursor-pointer" href={"/component/" + item.toLowerCase().replace(' ', '')}>{item}</a>
               </div>
             );
           }}
@@ -25,7 +27,9 @@ function MenuItem(props) {
 }
 
 export default function Menu() {
-  const  components = ['Drawer ', 'Kanban Card', 'Input Form'] ; // get components from db if we set up and store them in db;
+
+  const { components } = useContext(ComponentContext); // get components from db if we set up and store them in db;
+  
   return (
     <div class="sticky top-20 hidden m-5 backdrop-blur-sm bg-white/30 shadow-md rounded-md h-full w-52 overflow-y-auto px-4 pb-4 scrollbar-thin md:block">
       <nav class="m-3 ">
