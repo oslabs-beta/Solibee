@@ -16,7 +16,6 @@ export default (props) => {
       draggable={true}
       onDragStart={(e) => e.dataTransfer.setData("id", props.itemID)}
     >
-      {props.items.filter((i) => i.itemID == props.itemID)[0].title}{" "}
       {props.itemID}
       <button
         class="m-1 border border-black p-1"
