@@ -34,10 +34,11 @@ export default (props) => {
     const { colID } = payload;
     switch (method) {
       case "create":
-        const updatedColumns = { ...columns };
-        updatedColumns[colIndex] = { ...payload, colID: colIndex };
+        setColumns({
+          ...columns,
+          [colIndex]: { ...payload, colID: colIndex },
+        });
         colIndex++;
-        setColumns(updatedColumns);
         break;
       // case "delete":
       //   setColumns((c) => c.filter((col) => col.colID != colID));
