@@ -2,7 +2,12 @@ import { createSignal } from "solid-js";
 import Item from "./Item.jsx";
 
 export default (props) => {
-  const [closestItem, setClosestItem] = createSignal(null);
+  const [closestItemID, setClosestItemID] = createSignal(null);
+
+  const closestItemReorderingIndex = () => {
+    if (closestItemID() == null) return 0;
+    return props.items[closestItemID()].order + 1;
+  };
 
   let ref;
   let dragCounter = 0;
@@ -18,7 +23,7 @@ export default (props) => {
   const handleDragOver = (e) => {
     e.preventDefault();
 
-    setClosestItem(
+    setClosestItemID(
       Object.keys(props.items)
         .filter((itemID) => props.items[itemID].colID == props.colID)
         .reduce((a, b) => {
@@ -31,25 +36,27 @@ export default (props) => {
           if (bDistance < aDistance) return b;
         }, null),
     );
-
-    console.log(closestItem());
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     if (--dragCounter <= 0) {
       ref.removeChild(ghostItem);
-      setClosestItem(null);
+      setClosestItemID(null);
     }
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
     const itemID = e.dataTransfer.getData("id");
-    props.updateItems("update", { itemID, colID: props.colID });
+    props.updateItems("update", {
+      itemID,
+      colID: props.colID,
+      order: closestItemReorderingIndex(),
+    });
     dragCounter = 0;
     ref.removeChild(ghostItem);
-    setClosestItem(null);
+    setClosestItemID(null);
   };
 
   return (

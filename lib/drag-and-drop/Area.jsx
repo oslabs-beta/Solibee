@@ -23,7 +23,7 @@ export default (props) => {
         setItems(itemID, { ...items[itemID], ...payload });
         if (payload.order != undefined) {
           Object.keys(items).forEach((id) => {
-            if (items[id].order >= order && id != itemID) {
+            if (items[id].order >= payload.order && id != itemID) {
               setItems(id, "order", (o) => o + 1);
             }
           });
