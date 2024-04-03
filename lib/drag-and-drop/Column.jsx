@@ -9,21 +9,20 @@ export default (props) => {
     return props.items[closestItemID()].order + 1;
   };
 
-  let ref;
-  let dragCounter = 0;
-
   const handleDragEnter = (e) => {
     e.preventDefault();
-    dragCounter++;
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
 
+    const itemID = e.dataTransfer.getData("id");
+
     setClosestItemID(
       Object.keys(props.items)
         .filter((itemID) => props.items[itemID].colID == props.colID)
         .reduce((a, b) => {
+          if (props.items[b].itemID == itemID) return a;
           const bDistance =
             e.clientY - props.itemYCoords[props.items[b].itemID];
           if (bDistance < 0) return a;
@@ -33,31 +32,25 @@ export default (props) => {
           if (bDistance < aDistance) return b;
         }, null),
     );
-  };
 
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-    dragCounter--;
-    if (dragCounter <= 0) {
-      setClosestItemID(null);
-    }
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const itemID = e.dataTransfer.getData("id");
     props.updateItems("update", {
       itemID,
       colID: props.colID,
       order: closestItemReorderingIndex(),
     });
-    dragCounter = 0;
-    setClosestItemID(null);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
   };
 
   return (
     <div
-      ref={ref}
+      // ref={ref}
       class="m-3 border border-black p-3"
       onDragEnter={(e) => handleDragEnter(e)}
       onDragOver={(e) => handleDragOver(e)}
@@ -81,7 +74,9 @@ export default (props) => {
           .filter((itemID) => props.items[itemID].colID == props.colID)
           .sort((a, b) => props.items[a].order > props.items[b].order)}
       >
-        {(itemID) => <Item itemID={itemID} {...props} />}
+        {(itemID) => (
+          <Item itemID={itemID} closestItemID={closestItemID} {...props} />
+        )}
       </For>
     </div>
   );
