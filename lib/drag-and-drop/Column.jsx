@@ -22,11 +22,13 @@ export default (props) => {
   const handleDragOver = (e) => {
     e.preventDefault();
     items().forEach((item) => {
-      if (
-        closestItem() == null ||
-        Math.abs(e.clientY - props.itemLocations[item.itemID]) <
-          Math.abs(e.clientY - props.itemLocations[closestItem()])
-      ) {
+      const itemDistance = Math.abs(
+        e.clientY - props.itemLocations[item.itemID],
+      );
+      const closestDistance = Math.abs(
+        e.clientY - props.itemLocations[closestItem()],
+      );
+      if (closestItem() == null || itemDistance < closestDistance) {
         setClosestItem(item.itemID);
       }
     });
