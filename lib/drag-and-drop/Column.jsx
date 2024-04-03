@@ -23,12 +23,10 @@ export default (props) => {
         .filter((itemID) => props.items[itemID].colID == props.colID)
         .reduce((a, b) => {
           if (props.items[b].itemID == itemID) return a;
-          const bDistance =
-            e.clientY - props.itemYCoords[props.items[b].itemID];
+          const bDistance = e.clientY - props.items[b].y;
           if (bDistance < 0) return a;
           if (!a) return b;
-          const aDistance =
-            e.clientY - props.itemYCoords[props.items[a].itemID];
+          const aDistance = e.clientY - props.items[a].y;
           if (bDistance < aDistance) return b;
         }, null),
     );

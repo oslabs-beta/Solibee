@@ -1,13 +1,13 @@
-import { createEffect } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
 export default (props) => {
   let itemIndex = 0;
   let colIndex = 0;
-  let itemYCoords = {};
   const [items, setItems] = createStore({});
   const [columns, setColumns] = createStore({});
+  const [selectedItem, setSelectedItem] = createSignal(null);
 
   const updateItems = (method, payload) => {
     const { itemID } = payload;
@@ -66,7 +66,8 @@ export default (props) => {
               colID={colID}
               items={items}
               updateItems={updateItems}
-              itemYCoords={itemYCoords}
+              selectedItem={selectedItem}
+              setSelectedItem={setSelectedItem}
             />
           )}
         </For>
