@@ -6,7 +6,7 @@ export default (props) => {
   onMount(() => {
     const rect = ref.getBoundingClientRect();
     const y = (rect.top + rect.bottom) / 2;
-    props.setItemLocations({ ...props.itemLocations, [props.itemID]: y });
+    props.itemYCoords[props.itemID] = y;
   });
 
   return (

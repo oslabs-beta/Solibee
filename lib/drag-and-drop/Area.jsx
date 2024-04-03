@@ -3,20 +3,19 @@ import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
 export default (props) => {
-  const [itemIndex, setItemIndex] = createSignal(0);
-  const [colIndex, setColIndex] = createSignal(0);
+  let itemIndex = 0;
+  let colIndex = 0;
+  let itemYCoords = {};
   const [items, setItems] = createStore([]);
   const [columns, setColumns] = createStore([]);
-  const [itemLocations, setItemLocations] = createStore({});
 
   const updateItems = (method, payload) => {
     const { itemID } = payload;
     switch (method) {
       case "create":
         console.log("creating new item");
-        const newItem = { ...payload, itemID: itemIndex() };
+        const newItem = { ...payload, itemID: itemIndex++ };
         setItems([...items, newItem]);
-        setItemIndex((i) => i + 1);
         break;
       case "update":
         console.log("updating item");
@@ -40,9 +39,8 @@ export default (props) => {
     switch (method) {
       case "create":
         console.log("creating new column");
-        const newCol = { ...payload, colID: colIndex() };
+        const newCol = { ...payload, colID: colIndex++ };
         setColumns([...columns, newCol]);
-        setColIndex((i) => i + 1);
         break;
       case "update":
         // code
@@ -75,8 +73,7 @@ export default (props) => {
               colID={col.colID}
               items={items}
               updateItems={updateItems}
-              itemLocations={itemLocations}
-              setItemLocations={setItemLocations}
+              itemYCoords={itemYCoords}
             />
           )}
         </For>

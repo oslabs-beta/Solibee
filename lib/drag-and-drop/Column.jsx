@@ -31,10 +31,10 @@ export default (props) => {
 
     setClosestItem(
       items().reduce((a, b) => {
-        const bDistance = e.clientY - props.itemLocations[b.itemID];
+        const bDistance = e.clientY - props.itemYCoords[b.itemID];
         if (bDistance < 0) return a;
         if (!a) return b;
-        const aDistance = e.clientY - props.itemLocations[a.itemID];
+        const aDistance = e.clientY - props.itemYCoords[a.itemID];
         if (bDistance < aDistance) return b;
       }, null),
     );
