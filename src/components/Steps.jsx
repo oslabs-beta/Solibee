@@ -1,4 +1,5 @@
 import { createSignal, createResource } from 'solid-js';
+import Step from './Step';
 
 export default function Steps() {
 
@@ -17,13 +18,8 @@ export default function Steps() {
         data-orientation='horizontal'
         class='steps relative mb-12 ml-4 border-l z-0'
       >
-        <p
-          class='step-counter font-heading mt-8 text-xl font-semibold tracking-tight
-  relative pl-10 before:z-10 before:content-[counter(step)] before:absolute before:left-0 before:flex before:items-center before:justify-center before:w-[calc(1.375rem+1px)] before:h-[calc(1.375rem+1px)] before:text-[0.9rem]
-before:font-bold before:text-slate-700 before:rounded-md before:shadow-md before:ring-2 before:ring-slate-900/5 before:z-20'
-        >
-          Install the following dependencies:
-        </p>
+      
+        <Step step = 'Install the following dependencies' /> 
         <div class='relative w-full'>
           <button
             class='absolute bottom-2 right-2 w-0.5 h-0.5 flex justify-center items-center py-4 px-4 rounded'
@@ -80,26 +76,13 @@ before:font-bold before:text-slate-700 before:rounded-md before:shadow-md before
           </div>
         </div>
         {/* Second step */}
-        <p
-          class='step-counter font-heading mt-8 text-xl font-semibold tracking-tight
-          relative pl-10 before:z-10 before:content-[counter(step)] before:absolute before:left-0 before:flex before:items-center before:justify-center before:w-[calc(1.375rem+1px)] before:h-[calc(1.375rem+1px)] before:text-[0.9rem]
-before:font-bold before:text-slate-700 before:rounded-md before:shadow-md before:ring-2 before:ring-slate-900/5 before:z-20'
-        >
-          Copy and paste the following code into your project
-        </p>
+        <Step step = 'Copy and paste the following code into your project' /> 
         <div>
           {console.log(typeof (textToCopy()))}
         </div>
 
         {/* Third step */}
-        <p
-          class='step-counter font-heading mt-8 text-xl font-semibold tracking-tight
-          relative pl-10 before:z-10 before:content-[counter(step)] before:absolute before:left-0 before:flex before:items-center before:justify-center before:w-[calc(1.375rem+1px)] before:h-[calc(1.375rem+1px)] before:text-[0.9rem]
-before:font-bold before:text-slate-700 before:rounded-md before:shadow-md before:ring-2 before:ring-slate-900/5 before:z-20'
-        >
-          Update the import paths to match your project setup
-        </p>
-        <div></div>
+        <Step step = 'Update and import paths to match your project setup' /> 
       </div>
     </>
   );
