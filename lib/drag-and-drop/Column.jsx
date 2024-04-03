@@ -74,9 +74,9 @@ export default (props) => {
         New Item
       </button>
       <For
-        each={Object.keys(props.items).filter(
-          (itemID) => props.items[itemID].colID == props.colID,
-        )}
+        each={Object.keys(props.items)
+          .filter((itemID) => props.items[itemID].colID == props.colID)
+          .sort((a, b) => a > b)}
       >
         {(itemID) => <Item itemID={itemID} {...props} />}
       </For>
