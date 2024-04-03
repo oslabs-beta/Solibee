@@ -38,7 +38,6 @@ export default (props) => {
         if (bDistance < aDistance) return b;
       }, null),
     );
-    // near ? console.log(near.itemID) : console.log(near);
   };
 
   const handleDragLeave = (e) => {
