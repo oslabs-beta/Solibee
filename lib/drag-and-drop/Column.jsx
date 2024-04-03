@@ -21,17 +21,17 @@ export default (props) => {
 
   const handleDragOver = (e) => {
     e.preventDefault();
-    items().forEach((item) => {
-      const itemDistance = Math.abs(
-        e.clientY - props.itemLocations[item.itemID],
-      );
-      const closestDistance = Math.abs(
-        e.clientY - props.itemLocations[closestItem()],
-      );
-      if (closestItem() == null || itemDistance < closestDistance) {
-        setClosestItem(item.itemID);
-      }
-    });
+
+    setClosestItem(
+      items().reduce((a, b) => {
+        const bDistance = e.clientY - props.itemLocations[b.itemID];
+        if (bDistance < 0) return a;
+        if (!a) return b;
+        const aDistance = e.clientY - props.itemLocations[a.itemID];
+        if (bDistance < aDistance) return b;
+      }, null),
+    );
+    // near ? console.log(near.itemID) : console.log(near);
   };
 
   const handleDragLeave = (e) => {
@@ -45,6 +45,7 @@ export default (props) => {
     e.preventDefault();
     const itemID = e.dataTransfer.getData("id");
     props.updateItems("update", { itemID, colID: props.colID });
+    props.updateItems("reorder", { itemID, spliceID: closestItem().itemID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
   };
