@@ -1,4 +1,3 @@
-import { createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
@@ -13,12 +12,10 @@ export default (props) => {
     const { itemID } = payload;
     switch (method) {
       case "create":
-        console.log("creating new item");
         const newItem = { ...payload, itemID: itemIndex++ };
         setItems([...items, newItem]);
         break;
       case "update":
-        console.log("updating item");
         setItems(
           items.map((item) =>
             item.itemID == itemID ? { ...item, ...payload } : item,
@@ -26,11 +23,8 @@ export default (props) => {
         );
         break;
       case "delete":
-        console.log("removing item");
         setItems((i) => i.filter((item) => item.itemID != itemID));
         break;
-      default:
-      // code
     }
   };
 
@@ -42,14 +36,9 @@ export default (props) => {
         const newCol = { ...payload, colID: colIndex++ };
         setColumns([...columns, newCol]);
         break;
-      case "update":
-        // code
-        break;
       case "delete":
-        // code
+        setColumns((c) => c.filter((col) => col.colID != colID));
         break;
-      default:
-      // code
     }
   };
 
@@ -57,12 +46,7 @@ export default (props) => {
     <>
       <button
         class="m-3 border border-black p-3"
-        onClick={() => {
-          updateColumns("create", {
-            title: "new item",
-            content: "new content",
-          });
-        }}
+        onClick={() => updateColumns("create", {})}
       >
         New Col
       </button>
