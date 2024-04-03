@@ -1,12 +1,14 @@
-import { codeToHtml } from 'shiki';
 import { createSignal, createResource } from 'solid-js';
+import { codeToHtml } from 'shiki';
+
 import { Code, CodeToString } from './Code';
 import Steps from './Steps';
 import CopyButton from './CopyButton.jsx';
 import Footer from './Footer.jsx'
+// custom components:
+import InputForm from '../lib/inputForm/InputForm';
+import FileUpload from '../lib/inputForm/FileUpload'
 
-// input form 
-import FileUpload from '../lib/inputForm/inputFile.jsx'
 
 const code = CodeToString;
 
@@ -31,9 +33,6 @@ export default function ContentComponent(props) {
   };
   getHtml();
 
-  // const [htmlCode] = createResource(getHtml);
-  // console.log('I am from createResource', htmlCode);
-  // setCodeHtml(htmlCode);
 
 
   return (
@@ -64,7 +63,7 @@ export default function ContentComponent(props) {
           <p class='text-slate-500'>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full justify-center items-center bg-slate-100 rounded-md'>
-            <FileUpload/>
+            <InputForm />
           </div>
         </div>
       </div>

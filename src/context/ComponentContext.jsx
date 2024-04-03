@@ -13,3 +13,11 @@ export function CompContextProvider(props) {
     </ComponentContext.Provider>
   );
 }
+
+
+// to use the context 
+// boiler plate: 
+// import { useContext } from 'solid-js';
+// import { ComponentContext } from '../context/ComponentContext';
+// use the following 
+// const { components } = useContext(ComponentContext);
