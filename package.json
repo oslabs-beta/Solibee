@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.13.1",
+    "clipboard-copy": "^4.0.1",
+    "monaco-editor": "^0.47.0",
     "solid-js": "^1.8.11"
   }
 }
