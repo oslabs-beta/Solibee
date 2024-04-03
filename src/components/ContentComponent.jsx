@@ -1,10 +1,11 @@
 import { codeToHtml } from 'shiki';
 import { createSignal, createResource } from 'solid-js';
-import Code from './Code';
+import { Code, CodeToString } from './Code';
 import Steps from './Steps';
 import CopyButton from './CopyButton.jsx';
+import Footer from './Footer.jsx'
 
-const code = Code.toString();
+const code = CodeToString;
 
 export default function ContentComponent(props) {
   const [formattedCode, setCodeHtml] = createSignal();
@@ -59,10 +60,8 @@ export default function ContentComponent(props) {
         <div class='w-full'>
           <p class='text-slate-500'>Preview</p>
           <hr />
-          {/* <div class="flex min-h-[350px] w-full justify-center items-center bg-slate-100"> */}
           <div class='my-6 flex min-h-[350px] w-full justify-center items-center bg-slate-100 rounded-md'>
-            <button title='Copy code' class='code'></button>
-            Content
+            <Steps/>
           </div>
         </div>
       </div>
