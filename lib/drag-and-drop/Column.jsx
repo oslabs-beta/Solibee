@@ -45,7 +45,6 @@ export default (props) => {
     e.preventDefault();
     const itemID = e.dataTransfer.getData("id");
     props.updateItems("update", { itemID, colID: props.colID });
-    props.updateItems("reorder", { itemID, spliceID: closestItem().itemID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
   };
