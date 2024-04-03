@@ -15,12 +15,19 @@ export default (props) => {
       case "create":
         setItems({
           ...items,
-          [itemIndex]: { ...payload, itemID: itemIndex },
+          [itemIndex]: { ...payload, itemID: itemIndex, order: itemIndex },
         });
         itemIndex++;
         break;
       case "update":
         setItems(itemID, { ...items[itemID], ...payload });
+        if (payload.order != undefined) {
+          Object.keys(items).forEach((id) => {
+            if (items[id].order >= order && id != itemID) {
+              setItems(id, "order", (o) => o + 1);
+            }
+          });
+        }
         break;
       case "delete":
         setItems(itemID, undefined);
