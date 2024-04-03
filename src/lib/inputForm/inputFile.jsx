@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
 
 function FileUpload() {
-  const [file, setFile] = (createSignal < File) | (null > null);
+  const [file, setFile] = createSignal(null);
 
   const handleFileChange = (event) => {
     const target = event.target;
