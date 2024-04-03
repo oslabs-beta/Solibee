@@ -2,22 +2,18 @@ import { createSignal } from "solid-js";
 import Item from "./Item.jsx";
 
 export default (props) => {
-  const [closestItem, setClosestItem] = createSignal(null);
+  // const [closestItem, setClosestItem] = createSignal(null);
 
-  const closestIndex = () => {
-    if (!closestItem()) return 0;
-    for (let i = 0; i < items().length; i++) {
-      if (items()[i].itemID == closestItem().itemID) return i;
-    }
-  };
+  // const closestIndex = () => {
+  //   if (!closestItem()) return 0;
+  //   for (let i = 0; i < items().length; i++) {
+  //     if (items()[i].itemID == closestItem().itemID) return i;
+  //   }
+  // };
 
   let ref;
   let dragCounter = 0;
   const ghostItem = <div class="m-3 border p-3">-</div>;
-
-  const items = () => {
-    return props.items.filter((item) => item.colID == props.colID);
-  };
 
   const handleDragEnter = (e) => {
     e.preventDefault();
@@ -29,22 +25,22 @@ export default (props) => {
   const handleDragOver = (e) => {
     e.preventDefault();
 
-    setClosestItem(
-      items().reduce((a, b) => {
-        const bDistance = e.clientY - props.itemYCoords[b.itemID];
-        if (bDistance < 0) return a;
-        if (!a) return b;
-        const aDistance = e.clientY - props.itemYCoords[a.itemID];
-        if (bDistance < aDistance) return b;
-      }, null),
-    );
+    // setClosestItem(
+    //   items().reduce((a, b) => {
+    //     const bDistance = e.clientY - props.itemYCoords[b.itemID];
+    //     if (bDistance < 0) return a;
+    //     if (!a) return b;
+    //     const aDistance = e.clientY - props.itemYCoords[a.itemID];
+    //     if (bDistance < aDistance) return b;
+    //   }, null),
+    // );
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     if (--dragCounter <= 0) {
       ref.removeChild(ghostItem);
-      setClosestItem(null);
+      // setClosestItem(null);
     }
   };
 
@@ -54,7 +50,7 @@ export default (props) => {
     props.updateItems("update", { itemID, colID: props.colID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
-    setClosestItem(null);
+    // setClosestItem(null);
   };
 
   return (
@@ -78,8 +74,12 @@ export default (props) => {
       >
         New Item
       </button>
-      <For each={items()}>
-        {(item) => <Item itemID={item.itemID} {...props} />}
+      <For
+        each={Object.keys(props.items).filter(
+          (itemID) => props.items[itemID].colID == props.colID,
+        )}
+      >
+        {(itemID) => <Item itemID={itemID} {...props} />}
       </For>
     </div>
   );

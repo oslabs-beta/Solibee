@@ -6,26 +6,24 @@ export default (props) => {
   let itemIndex = 0;
   let colIndex = 0;
   let itemYCoords = {};
-  const [items, setItems] = createStore([]);
+  const [items, setItems] = createStore({});
   const [columns, setColumns] = createStore({});
-  const colComponents = [];
 
   const updateItems = (method, payload) => {
     const { itemID } = payload;
     switch (method) {
       case "create":
-        const newItem = { ...payload, itemID: itemIndex++ };
-        setItems([...items, newItem]);
+        setItems({
+          ...items,
+          [itemIndex]: { ...payload, itemID: itemIndex },
+        });
+        itemIndex++;
         break;
       case "update":
-        setItems(
-          items.map((item) =>
-            item.itemID == itemID ? { ...item, ...payload } : item,
-          ),
-        );
+        setItems(itemID, { ...items[itemID], ...payload });
         break;
       case "delete":
-        setItems((i) => i.filter((item) => item.itemID != itemID));
+        setItems(itemID, undefined);
         break;
     }
   };
