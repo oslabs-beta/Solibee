@@ -1,3 +1,4 @@
+import { createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
@@ -6,7 +7,8 @@ export default (props) => {
   let colIndex = 0;
   let itemYCoords = {};
   const [items, setItems] = createStore([]);
-  const [columns, setColumns] = createStore([]);
+  const [columns, setColumns] = createStore({});
+  const colComponents = [];
 
   const updateItems = (method, payload) => {
     const { itemID } = payload;
@@ -32,13 +34,14 @@ export default (props) => {
     const { colID } = payload;
     switch (method) {
       case "create":
-        console.log("creating new column");
-        const newCol = { ...payload, colID: colIndex++ };
-        setColumns([...columns, newCol]);
+        const updatedColumns = { ...columns };
+        updatedColumns[colIndex] = { ...payload, colID: colIndex };
+        colIndex++;
+        setColumns(updatedColumns);
         break;
-      case "delete":
-        setColumns((c) => c.filter((col) => col.colID != colID));
-        break;
+      // case "delete":
+      //   setColumns((c) => c.filter((col) => col.colID != colID));
+      //   break;
     }
   };
 
@@ -51,10 +54,10 @@ export default (props) => {
         New Col
       </button>
       <div class="m-3 flex border border-black p-3">
-        <For each={columns}>
-          {(col) => (
+        <For each={Object.keys(columns)}>
+          {(colID) => (
             <Column
-              colID={col.colID}
+              colID={colID}
               items={items}
               updateItems={updateItems}
               itemYCoords={itemYCoords}
