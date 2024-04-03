@@ -2,14 +2,7 @@ import { createSignal } from "solid-js";
 import Item from "./Item.jsx";
 
 export default (props) => {
-  // const [closestItem, setClosestItem] = createSignal(null);
-
-  // const closestIndex = () => {
-  //   if (!closestItem()) return 0;
-  //   for (let i = 0; i < items().length; i++) {
-  //     if (items()[i].itemID == closestItem().itemID) return i;
-  //   }
-  // };
+  const [closestItem, setClosestItem] = createSignal(null);
 
   let ref;
   let dragCounter = 0;
@@ -25,22 +18,28 @@ export default (props) => {
   const handleDragOver = (e) => {
     e.preventDefault();
 
-    // setClosestItem(
-    //   items().reduce((a, b) => {
-    //     const bDistance = e.clientY - props.itemYCoords[b.itemID];
-    //     if (bDistance < 0) return a;
-    //     if (!a) return b;
-    //     const aDistance = e.clientY - props.itemYCoords[a.itemID];
-    //     if (bDistance < aDistance) return b;
-    //   }, null),
-    // );
+    setClosestItem(
+      Object.keys(props.items)
+        .filter((itemID) => props.items[itemID].colID == props.colID)
+        .reduce((a, b) => {
+          const bDistance =
+            e.clientY - props.itemYCoords[props.items[b].itemID];
+          if (bDistance < 0) return a;
+          if (!a) return b;
+          const aDistance =
+            e.clientY - props.itemYCoords[props.items[a].itemID];
+          if (bDistance < aDistance) return b;
+        }, null),
+    );
+
+    console.log(closestItem());
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     if (--dragCounter <= 0) {
       ref.removeChild(ghostItem);
-      // setClosestItem(null);
+      setClosestItem(null);
     }
   };
 
@@ -50,7 +49,7 @@ export default (props) => {
     props.updateItems("update", { itemID, colID: props.colID });
     dragCounter = 0;
     ref.removeChild(ghostItem);
-    // setClosestItem(null);
+    setClosestItem(null);
   };
 
   return (
