@@ -76,7 +76,7 @@ export default (props) => {
       <For
         each={Object.keys(props.items)
           .filter((itemID) => props.items[itemID].colID == props.colID)
-          .sort((a, b) => a > b)}
+          .sort((a, b) => props.items[a].order > props.items[b].order)}
       >
         {(itemID) => <Item itemID={itemID} {...props} />}
       </For>
