@@ -11,13 +11,10 @@ export default (props) => {
 
   let ref;
   let dragCounter = 0;
-  const ghostItem = <div class="m-3 border p-3">-</div>;
 
   const handleDragEnter = (e) => {
     e.preventDefault();
-    if (++dragCounter == 1) {
-      ref.appendChild(ghostItem);
-    }
+    dragCounter++;
   };
 
   const handleDragOver = (e) => {
@@ -40,8 +37,8 @@ export default (props) => {
 
   const handleDragLeave = (e) => {
     e.preventDefault();
-    if (--dragCounter <= 0) {
-      ref.removeChild(ghostItem);
+    dragCounter--;
+    if (dragCounter <= 0) {
       setClosestItemID(null);
     }
   };
@@ -55,7 +52,6 @@ export default (props) => {
       order: closestItemReorderingIndex(),
     });
     dragCounter = 0;
-    ref.removeChild(ghostItem);
     setClosestItemID(null);
   };
 
