@@ -1,6 +1,7 @@
 export default function Installation(){
   return (
-    <div class="max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12">
+    // previous article class styling: max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12
+    <article class="prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]">
 
       <header>
         <h1 class="font-bold text-4xl mb-4">Installation</h1>
@@ -15,6 +16,6 @@ export default function Installation(){
       </section><section>
         <div>Tailwind CSS </div>
       </section>
-    </div>
+    </article>
   );
 }
