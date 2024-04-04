@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -16,7 +16,10 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-      }
+      },
+      fontFamily: {
+        serif: ['Mulish', 'sans-serif']
+      },
     },
   },
   plugins: [],
