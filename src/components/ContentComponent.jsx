@@ -1,6 +1,9 @@
 import { createSignal, createResource, Show } from "solid-js";
 import { codeToHtml } from "shiki";
+import Step from "./Step";
+import CodeBoxWithCopy from "./CodeBoxWithCopy";
 
+// use the following
 import { useContext } from "solid-js";
 import { StringRepContext } from "../context/StrRepresentationContext";
 // use the following
@@ -20,6 +23,8 @@ import { ToDoList } from "../lib/inputForm/ToDoList";
 import DragAndDrop from "../lib/drag-and-drop/Area";
 
 export default function ContentComponent(props) {
+  //initialize an install step which will dynamically change instructions based on prop comp
+  const installStepCode = `npx solibee add ${props.component}`;
   // this takes care of the string representation of the current component's jsx format code
   const currentComponent = props.component.replaceAll(" ", ""); // converts 'Input Form' to 'InputForm'
   const { string } = useContext(StringRepContext); // this is context that wraps the whole app. This context contains the string representation of each Solibee component saved in an obj;
@@ -29,16 +34,24 @@ export default function ContentComponent(props) {
   const [textToCopy, setTextToCopy] = createSignal(code);
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
 
+  const [formattedStep, setformattedStep] = createSignal();
+
   console.log(props); // checking is this component renders for each comp in the Context
 
   const getHtml = async () => {
-    console.log(code);
     let codeHtml = await codeToHtml(code, {
       lang: "jsx",
-      theme: "rose-pine-dawn",
+      theme: "dark-plus",
     });
+
+    let formattedStep = await codeToHtml(installStepCode, {
+      lang: "jsx",
+      theme: "dark-plus",
+    });
+
     setCodeHtml(codeHtml);
-    console.log(codeHtml);
+    setformattedStep(formattedStep);
+
     return codeHtml;
   };
   getHtml();
@@ -58,7 +71,7 @@ export default function ContentComponent(props) {
           {currentComp()}
         </h1>
         <hr />
-        <p class="text-slate-500">
+        <p class="my-5 text-slate-500">
           A vertically stacked set of interactive headings that each reveal a
           section of content.
         </p>
@@ -108,26 +121,50 @@ export default function ContentComponent(props) {
           Installation Guide
         </p>
         <hr />
-        <Steps />
+        {/* Automatic installation instructions */}
+        <section class="mb-5">
+          <h2 class="m-2 text-2xl font-bold">Automatic Installation</h2>
+          <div
+            data-orientation="horizontal"
+            class="steps relative z-0 mb-12 ml-4 border-l"
+          >
+            <Step step="Add a component to your project via CLI" />
+            <div class="flex-column gap-col-5 m-5">
+              <div class="mb-3">
+                Solibee provides a CLI to help you get started quickly. To use a
+                component, for example the Input Form, run the following command
+                in your terminal.
+              </div>
+              <CodeBoxWithCopy html={formattedStep()} />
+            </div>
+
+            <Step step="Configure a tailwind.config.js file" />
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="m-2 text-2xl font-bold">Manual Installation</h2>
+          <div
+            data-orientation="horizontal"
+            class="steps relative z-0 mb-12 ml-4 border-l"
+          >
+            <Step step="Copy the code of the chosen component" />
+            <div class="flex-column gap-col-5 m-5">
+              <div class="mb-3"></div>
+            </div>
+
+            <Step step="Refer to our Installation page for more information on how to set the necessary dependencies." />
+            <div class="flex-column gap-col-5 m-5">
+              <div class="mb-3">
+                <a target="_blank" href="/installation" class="solibee-link">
+                  Click here
+                </a>{" "}
+                to navigate to the Installation Page
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      {/* <div class='my-5 flex flex-col mt-12'>
-        <p class='text-slate-500 text-2xl tracking-tight' id='Usage'>
-          Usage
-        </p>
-        <hr />
-        <div>
-          <p />
-        </div>
-      </div>
-      <div class='my-5 flex flex-col mt-12'>
-        <p class='text-slate-500 text-2xl tracking-tight' id='installation'>
-          Test
-        </p>
-        <hr />
-        <div>
-          <p />
-        </div>
-      </div> */}
     </div>
   );
 }

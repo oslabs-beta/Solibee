@@ -1,20 +1,20 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, For } from 'solid-js';
 
 function InputOTP() {
-  const [otpDigits, setOtpDigits] = createSignal(["", "", "", "", "", ""]);
+  const [otpDigits, setOtpDigits] = createSignal(['', '', '', '', '', '']);
 
   function handleSubmit() {
-    const submittedOTP = otpDigits().join("");
-    alert("Submitted OTP: " + submittedOTP);
-    setOtpDigits(["", "", "", "", "", ""]);
+    const submittedOTP = otpDigits().join('');
+    alert('Submitted OTP: ' + submittedOTP);
+    setOtpDigits(['', '', '', '', '', '']);
   }
 
   function handlePaste(e) {
     e.preventDefault();
-    const pasteData = e.clipboardData.getData("text/plain").slice(0, 6);
-    const updatedDigits = pasteData.split("").map((digit) => digit);
+    const pasteData = e.clipboardData.getData('text/plain').slice(0, 6);
+    const updatedDigits = pasteData.split('').map((digit) => digit);
     setOtpDigits(updatedDigits);
-    document.getElementById("otpInput5").focus();
+    document.getElementById('otpInput5').focus();
   }
 
   function handleKeyDown(e, index) {
@@ -27,9 +27,9 @@ function InputOTP() {
       if (index < 5) {
         document.getElementById(`otpInput${index + 1}`).focus();
       }
-    } else if (e.key === "Backspace" && index > 0) {
+    } else if (e.key === 'Backspace' && index > 0) {
       const updatedDigits = [...otpDigits()];
-      updatedDigits[index] = "";
+      updatedDigits[index] = '';
       setOtpDigits(updatedDigits);
       console.log(index);
       document.getElementById(`otpInput${index - 1}`).focus();
@@ -42,12 +42,12 @@ function InputOTP() {
         <For each={otpDigits()} fallback={<div>Loading...</div>}>
           {(digit, index) => (
             <input
-              type="text"
+              type='text'
               id={`otpInput${index}`}
               value={digit}
-              placeholder=""
+              placeholder=''
               onKeyDown={(e) => handleKeyDown(e, index)}
-              maxLength="1"
+              maxLength='1'
               onPaste={handlePaste}
             />
           )}

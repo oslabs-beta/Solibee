@@ -1,7 +1,7 @@
-import { createSignal } from "solid-js";
-import clipboardCopy from "clipboard-copy";
+import { createSignal } from 'solid-js';
+import clipboardCopy from 'clipboard-copy';
 
-function GenerateOTP() {
+function GenerateOTP () {
   const [otp, setOTP] = createSignal(generateOTP());
 
   function generateOTP() {
@@ -18,12 +18,12 @@ function GenerateOTP() {
 
   return (
     <div>
-      <div aria-live="polite">
+      <div aria-live='polite'>
         Your one-time password is: <span>{otp()}</span>
         <button onClick={regenerateOTP}>Regenerate</button>
       </div>
       <button onClick={copyOTP}>Copy OTP</button>
-      <span id="copied-msg"></span>
+      <span id='copied-msg'></span>
     </div>
   );
 }
