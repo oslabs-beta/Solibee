@@ -7,8 +7,8 @@ export default function Introduction() {
   //   //Thanks/inspired by
   //   //Designed by
   return (
-    // previous article class styling : max-w-3xl mx-auto pt-10  w-10/12
-    <article class="prose max-w-[800px] p-5 w-10/12 bg-white/[0.9]">
+    // previous article class styling : max-w-3xl mx-auto pt-10 w-10/12
+    <article class="prose max-w-[800px] mx-auto w-10/12 bg-white/[0.9]">
       <header>
         <h1 class="font-bold text-4xl mb-4">Introduction</h1>
         <p>
@@ -25,7 +25,7 @@ export default function Introduction() {
           <li>
             <span class="font-semibold">Accessible:</span> Designed with
             accessibility in mind to ensure all users can interact with the
-            components. Our components follow <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" class ="underline underline-offset-2 transition-colors hover:text-orange-200" rel = "noopener noreferrer">WAI-ARIA design patterns. </a> 
+            components. Our components follow <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" class ="underline underline-offset-2 transition-colors hover:text-orange-200" rel = "noopener noreferrer">WAI-ARIA design patterns. </a>
           </li>
           <li>
             <span class="font-semibold">Customizable:</span> You can easily
@@ -52,7 +52,7 @@ export default function Introduction() {
       <section class="mt-8">
         <h2 class="font-bold text-2xl mb-4 border-b">Inspiration</h2>
         <p>
-          Some of the projects that inspired our project: 
+          Some of the projects that inspired our project:
         </p>
         <ul class="list-disc list-inside">
           <li><a href="https://ui.shadcn.com/" target="_blank" class ="solibee-link" rel = "noopener noreferrer">shadcn/ui </a></li>
@@ -64,7 +64,7 @@ export default function Introduction() {
         <h2 class="font-bold text-2xl mb-4 border-b">Designed By</h2>
         <p>
           This collection of Solid.js components was designed and developed by
-          these amazing people! 
+          these amazing people!
           <Contributors githubHandles = {['tenn501', 'trialnerr', 'neulseo2', 'CK-Zhao', 'marsbird']}/>
         </p>
       </section>

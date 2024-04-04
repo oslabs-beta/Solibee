@@ -127,6 +127,6 @@ export default function Installation(props){
            </div>
         </div>
       </section>
-    </div>
+    </article>
   );
 }
