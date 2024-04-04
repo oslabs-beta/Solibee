@@ -153,7 +153,7 @@ export default function ContentComponent(props) {
             <Step step="Refer to our Installation page for more information on how to set the necessary dependencies." />
             <div class="flex-column gap-col-5 m-5">
               <div class="mb-3">
-                Click here to navigate to the Installation Page
+                <a target = "_blank" href="/installation" class="solibee-link">Click here</a> to navigate to the Installation Page
               </div>
             </div>
           </div>
