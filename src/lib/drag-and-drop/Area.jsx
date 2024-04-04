@@ -3,10 +3,19 @@ import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
 export default (props) => {
-  let itemIndex = 0;
-  let colIndex = 0;
-  const [items, setItems] = createStore({});
-  const [columns, setColumns] = createStore({});
+  const defaultItems = {};
+  const defaultColumns = {};
+
+  if (props.columns) {
+    for (let i = 0; i < props.columns; i++) {
+      defaultColumns[i] = { colID: i };
+    }
+  }
+
+  let itemIndex = props.items || 0;
+  let colIndex = props.columns || 0;
+  const [items, setItems] = createStore(defaultItems);
+  const [columns, setColumns] = createStore(defaultColumns);
   const [selectedItem, setSelectedItem] = createSignal(null);
 
   const updateItems = (method, payload) => {
