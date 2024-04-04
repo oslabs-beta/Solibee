@@ -6,7 +6,7 @@ import { StringRepContext } from "../context/StrRepresentationContext";
 // use the following
 // const { components } = useContext(ComponentContext);
 
-import { Code, CodeToString } from "./Code";
+import Code from "./Code";
 import Steps from "./Steps";
 import CopyButton from "./CopyButton.jsx";
 import Footer from "./Footer.jsx";
