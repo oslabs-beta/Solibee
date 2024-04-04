@@ -44,19 +44,19 @@ export default (props) => {
 
   const handleDrop = (e) => {
     e.preventDefault();
+    props.setSelectedItem(null);
   };
 
   return (
     <div
-      // ref={ref}
-      class="m-3 border border-black p-3"
+      class="m-3 flex flex-col items-center justify-start rounded-xl bg-slate-300 p-1"
       onDragEnter={(e) => handleDragEnter(e)}
       onDragOver={(e) => handleDragOver(e)}
       onDragLeave={(e) => handleDragLeave(e)}
       onDrop={(e) => handleDrop(e)}
     >
       <button
-        class="m-3 border border-black p-3"
+        class="m-4 rounded-md border-2 border-slate-400 p-2 pb-1 pt-1"
         onClick={() =>
           props.updateItems("create", {
             title: null,

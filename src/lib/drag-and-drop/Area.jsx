@@ -54,12 +54,12 @@ export default (props) => {
   return (
     <>
       <button
-        class="m-3 border border-black p-3"
+        class="m-1 rounded-md bg-slate-200 p-4 pb-2 pt-2"
         onClick={() => updateColumns("create", {})}
       >
         New Col
       </button>
-      <div class="m-3 flex border border-black p-3">
+      <div class="m-1 flex rounded-xl bg-slate-200 p-1">
         <For each={Object.keys(columns)}>
           {(colID) => (
             <Column
