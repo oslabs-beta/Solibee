@@ -6,8 +6,15 @@ import CodeBoxWithCopy from "./CodeBoxWithCopy";
 import { useContext } from "solid-js";
 import { StringRepContext } from "../context/StrRepresentationContext";
 // use the following
+import { useContext } from "solid-js";
+import { StringRepContext } from "../context/StrRepresentationContext";
+// use the following
 // const { components } = useContext(ComponentContext);
 
+import { Code, CodeToString } from "./Code";
+import Steps from "./Steps";
+import CopyButton from "./CopyButton.jsx";
+import Footer from "./Footer.jsx";
 import { Code, CodeToString } from "./Code";
 import Steps from "./Steps";
 import CopyButton from "./CopyButton.jsx";
@@ -19,11 +26,11 @@ import InputFile from "../lib/inputForm/InputFile";
 import GenerateOTP from "../lib/inputForm/GenerateOTP";
 import InputOTP from "../lib/inputForm/InputOTP";
 import { ToDoList } from "../lib/inputForm/ToDoList";
+import DragAndDrop from "../lib/drag-and-drop/Area";
 
 export default function ContentComponent(props) {
   //initialize an install step which will dynamically change instructions based on prop comp
   const installStepCode = `npx solibee add ${props.component}`;
-
   // this takes care of the string representation of the current component's jsx format code
   const currentComponent = props.component.replaceAll(" ", ""); // converts 'Input Form' to 'InputForm'
   const { string } = useContext(StringRepContext); // this is context that wraps the whole app. This context contains the string representation of each Solibee component saved in an obj;
@@ -64,7 +71,6 @@ export default function ContentComponent(props) {
         <svg class="h-4 w-4">
           <path d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"></path>
         </svg>
-        {/* <div>Drawer</div> */}
       </div>
       <header class="">
         <h1 class="inline-block text-4xl font-bold tracking-tight">
@@ -95,6 +101,9 @@ export default function ContentComponent(props) {
           </Show>
           <Show when={currentComp() === "To Do List"}>
             <ToDoList />
+          </Show>
+          <Show when={currentComp() === "Drag And Drop"}>
+            <DragAndDrop />
           </Show>
         </div>
       </div>

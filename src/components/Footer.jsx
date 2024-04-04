@@ -1,5 +1,3 @@
-
-
 export default function Footer() {
   return (
     <footer class="mx-auto backdrop-blur-sm bg-white-200/30 text-sm font-medium text-slate-700 left-0 w-full flex-col justify-center items-center px-5 py-5">
