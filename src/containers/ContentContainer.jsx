@@ -18,7 +18,7 @@ export default function ContentContainer() {
         <For each={components}>
           {(component) => (
             <Route
-              path={`/component/${component.toLowerCase().replace(" ", "")}`}
+              path={`/component/${component.toLowerCase().replaceAll(" ", "")}`}
               component={() => <ContentComponent component={component} />}
             />
           )}

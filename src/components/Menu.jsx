@@ -17,7 +17,7 @@ function MenuItem(props) {
               <div>
                 <a
                   class="block cursor-pointer rounded-lg px-4 py-2 transition-colors duration-75 hover:bg-orange-200"
-                  href={"/component/" + item.toLowerCase().replace(" ", "")}
+                  href={"/component/" + item.toLowerCase().replaceAll(" ", "")}
                 >
                   {item}
                 </a>
