@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
 import clipboardCopy from 'clipboard-copy';
 
-function GOTPComponent() {
+function GenerateOTP () {
   const [otp, setOTP] = createSignal(generateOTP());
 
   function generateOTP() {
@@ -28,4 +28,4 @@ function GOTPComponent() {
   );
 }
 
-export default GOTPComponent;
+export default GenerateOTP;

@@ -1,4 +1,4 @@
-import { createSignal, createResource } from 'solid-js';
+import { createSignal, createResource, Show } from 'solid-js';
 import { codeToHtml } from 'shiki';
 
 import { useContext } from 'solid-js';
@@ -10,9 +10,13 @@ import { Code, CodeToString } from './Code';
 import Steps from './Steps';
 import CopyButton from './CopyButton.jsx';
 import Footer from './Footer.jsx'
+
 // custom components:
-// import InputForm from '../lib/inputForm/InputForm';
-// import FileUpload from '../lib/inputForm/InputFile'
+import InputForm from '../lib/inputForm/InputForm';
+import InputFile from '../lib/inputForm/InputFile';
+import GenerateOTP from '../lib/inputForm/GenerateOTP';
+import InputOTP from '../lib/inputForm/InputOTP';
+import { ToDoList } from '../lib/inputForm/ToDoList';
 
 
 
@@ -26,7 +30,7 @@ export default function ContentComponent(props) {
 
   const [formattedCode, setCodeHtml] = createSignal();
   const [textToCopy, setTextToCopy] = createSignal(code);
-  const [currentComp, setCurrentComp] = createSignal(props.component);
+  const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
   
 
   console.log(props) // checking is this component renders for each comp in the Context
@@ -73,7 +77,32 @@ export default function ContentComponent(props) {
           <p class='text-slate-500'>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full justify-center items-center bg-slate-100 rounded-md'>
-            < Code />
+            <Show
+              when={currentComp()==='Input Form'}
+            >
+              <InputForm/>
+            </Show>
+            <Show
+              when={currentComp()==='Input File'}
+            >
+              <InputFile/>
+            </Show>
+            <Show
+              when={currentComp()==='Generate OTP'}
+            >
+              <GenerateOTP/>
+            </Show>
+            <Show
+              when={currentComp()==='Input OTP'}
+            >
+              <InputOTP/>
+            </Show>
+            <Show
+              when={currentComp()==='To Do List'}
+            >
+              <ToDoList/>
+            </Show>
+
           </div>
         </div>
       </div>

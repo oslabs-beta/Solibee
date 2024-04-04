@@ -5,7 +5,7 @@ import { createStore } from 'solid-js/store';
 export const ComponentContext = createContext();
 
 export function CompContextProvider(props) {
-  const [components, setComponents] = createStore(['Input File', 'Input Form', 'Input OPT', 'To Do List']);
+  const [components, setComponents] = createStore(['Generate OTP', 'Input File', 'Input Form', 'Input OTP', 'To Do List']);
 
   return (
     <ComponentContext.Provider value={{components, setComponents}}>
