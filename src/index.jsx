@@ -5,6 +5,7 @@ import { Router } from '@solidjs/router';
 import "./index.css";
 import App from "./App";
 import { CompContextProvider } from "./context/ComponentContext";
+import { StrContextProvider } from "./context/StrRepresentationContext";
 
 const root = document.getElementById("root");
 
@@ -16,7 +17,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(() =>(
     <CompContextProvider>
-         <App />
+        <StrContextProvider>
+            <App />
+        </StrContextProvider>
     </CompContextProvider>
 ) , root);
 

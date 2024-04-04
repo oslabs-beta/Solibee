@@ -10,7 +10,7 @@ import { ComponentContext } from '../context/ComponentContext';
 
 export default function NavBar() {
   const { components } = useContext(ComponentContext);
-  const href = `/component/${components[0].toLowerCase()}`;
+  const href = `/component/${components[0].toLowerCase().replace(' ', '')}`;
 
   return (
     <div class="sticky h-16 backdrop-blur-sm top-0 z-50 bg-white-200">
