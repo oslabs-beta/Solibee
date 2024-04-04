@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
+@layer components {
   .solibee-link {
     @apply underline underline-offset-2 transition-colors hover:text-orange-200;
   }
-} */
+}
 
 * {
   font-family: "Mulish", sans-serif;
