@@ -3,18 +3,12 @@ import { codeToHtml } from "shiki";
 import Step from "./Step";
 import CodeBoxWithCopy from "./CodeBoxWithCopy";
 
-import { useContext } from "solid-js";
-import { StringRepContext } from "../context/StrRepresentationContext";
 // use the following
 import { useContext } from "solid-js";
 import { StringRepContext } from "../context/StrRepresentationContext";
 // use the following
 // const { components } = useContext(ComponentContext);
 
-import { Code, CodeToString } from "./Code";
-import Steps from "./Steps";
-import CopyButton from "./CopyButton.jsx";
-import Footer from "./Footer.jsx";
 import { Code, CodeToString } from "./Code";
 import Steps from "./Steps";
 import CopyButton from "./CopyButton.jsx";
@@ -168,24 +162,6 @@ export default function ContentComponent(props) {
           </div>
         </section>
       </div>
-      {/* <div class='my-5 flex flex-col mt-12'>
-        <p class='text-slate-500 text-2xl tracking-tight' id='Usage'>
-          Usage
-        </p>
-        <hr />
-        <div>
-          <p />
-        </div>
-      </div>
-      <div class='my-5 flex flex-col mt-12'>
-        <p class='text-slate-500 text-2xl tracking-tight' id='installation'>
-          Test
-        </p>
-        <hr />
-        <div>
-          <p />
-        </div>
-      </div> */}
     </div>
   );
 }
