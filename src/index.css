@@ -2,14 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
   .solibee-link {
     @apply underline underline-offset-2 transition-colors hover:text-orange-200;
   }
-}
+} */
 
 * {
-	font-family: ;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* styling of the button location; inside styling exists as tailwind */
