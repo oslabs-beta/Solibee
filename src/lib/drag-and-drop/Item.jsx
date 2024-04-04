@@ -17,15 +17,16 @@ export default (props) => {
   return (
     <div
       ref={ref}
-      class="m-2 flex cursor-move items-center justify-between rounded-xl bg-slate-200 p-4 pb-2 pt-2"
+      class="m-2 flex w-4/5 cursor-move items-center justify-between rounded-xl bg-slate-200 pb-2 pl-4 pr-2 pt-2 text-sm"
       draggable={true}
       onDragStart={(e) => handleDragStart(e)}
-      classList={{ "border-2 shadow": props.selectedItem() == props.itemID }}
+      classList={{ shadow: props.selectedItem() == props.itemID }}
     >
-      {props.itemID}
+      {`Item ${props.itemID}`}
+      {/* {props.itemID} */}
       {/* {props.items[props.itemID].y} */}
       <button
-        class="ml-2 rounded-full bg-slate-600 p-1 text-xs font-bold text-slate-50"
+        class="ml-2 w-6 rounded-full bg-slate-300 p-1 text-xs font-bold"
         onClick={() => props.updateItems("delete", { itemID: props.itemID })}
       >
         X

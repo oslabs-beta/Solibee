@@ -3,10 +3,28 @@ import { createStore } from "solid-js/store";
 import Column from "./Column.jsx";
 
 export default (props) => {
-  let itemIndex = 0;
-  let colIndex = 0;
-  const [items, setItems] = createStore({});
-  const [columns, setColumns] = createStore({});
+  const defaultItems = {};
+  const defaultColumns = {};
+  let showNewColBtn = true;
+
+  if (props.items != undefined) {
+    for (let i = 0; i < props.items; i++) {
+      defaultItems[i] = { itemID: i, colID: i, order: i };
+    }
+  }
+
+  if (props.columns != undefined) {
+    for (let i = 0; i < props.columns; i++) {
+      defaultColumns[i] = { colID: i };
+    }
+  }
+
+  if (props.showNewColBtn != undefined) showNewColBtn = props.showNewColBtn;
+
+  let itemIndex = props.items || 0;
+  let colIndex = props.columns || 0;
+  const [items, setItems] = createStore(defaultItems);
+  const [columns, setColumns] = createStore(defaultColumns);
   const [selectedItem, setSelectedItem] = createSignal(null);
 
   const updateItems = (method, payload) => {
@@ -53,12 +71,14 @@ export default (props) => {
 
   return (
     <>
-      <button
-        class="m-1 rounded-md bg-slate-200 p-4 pb-2 pt-2"
-        onClick={() => updateColumns("create", {})}
-      >
-        New Col
-      </button>
+      <Show when={showNewColBtn == true}>
+        <button
+          class="m-1 rounded-md bg-slate-200 p-4 pb-2 pt-2"
+          onClick={() => updateColumns("create", {})}
+        >
+          New Col
+        </button>
+      </Show>
       <div class="m-1 flex rounded-xl bg-slate-200 p-1">
         <For each={Object.keys(columns)}>
           {(colID) => (
