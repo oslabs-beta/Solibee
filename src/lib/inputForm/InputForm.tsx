@@ -11,8 +11,10 @@ function InputForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label for='name'>Name:</label>
+      <div id="name" class="my-2.5">
+        <div><label for='name'>Name:</label></div>
+        
+        
         <input
           id='name'
           type='text'
@@ -22,8 +24,8 @@ function InputForm() {
           required
         />
       </div>
-      <div>
-        <label for='email'>Email:</label>
+      <div class="my-2.5">
+        <div><label for='email'>Email:</label></div>
         <input
           id='email'
           type='email'
@@ -33,7 +35,7 @@ function InputForm() {
           required
         />
       </div>
-      <button type='submit'>Submit</button>
+      <button class="bg-orange-100 rounded-md	p-1 px-2" type='submit'>Submit</button>
     </form>
   );
 }

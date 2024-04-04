@@ -49,7 +49,7 @@ export default (props) => {
 
   return (
     <div
-      class="m-3 flex flex-col items-center justify-start rounded-xl bg-slate-300 p-1"
+      class="m-3 flex h-72 flex-col items-center justify-start rounded-xl bg-slate-300 p-1"
       onDragEnter={(e) => handleDragEnter(e)}
       onDragOver={(e) => handleDragOver(e)}
       onDragLeave={(e) => handleDragLeave(e)}
