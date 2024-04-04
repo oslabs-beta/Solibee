@@ -1,6 +1,6 @@
 import { createSignal, For } from 'solid-js';
 
-function OTPComponent() {
+function InputOPT() {
   const [otpDigits, setOtpDigits] = createSignal(['', '', '', '', '', '']);
 
   function handleSubmit() {
@@ -68,4 +68,4 @@ function OTPComponent() {
   );
 }
 
-export default OTPComponent;
+export default InputOPT;
