@@ -74,117 +74,117 @@ export const JsxToString = {
   function InputOTP() {
   const [otpDigits, setOtpDigits] = createSignal(['', '', '', '', '', '']);
 
-  function handleSubmit() {
-    const submittedOTP = otpDigits().join('');
-    alert('Submitted OTP: ' + submittedOTP);
-    setOtpDigits(['', '', '', '', '', '']);
-  }
-
-  function handlePaste(e) {
-    e.preventDefault();
-    const pasteData = e.clipboardData.getData('text/plain').slice(0, 6);
-    const updatedDigits = pasteData.split('').map((digit) => digit);
-    setOtpDigits(updatedDigits);
-    document.getElementById('otpInput5').focus();
-  }
-
-  function handleKeyDown(e, index) {
-    if (e.key >= 0 && e.key <= 9) {
-      const updatedDigits = [...otpDigits()];
-      updatedDigits[index] = e.key;
-      setOtpDigits(updatedDigits);
-      console.log(otpDigits());
-      console.log(index);
-      if (index < 5) {
-        document.getElementById(\`otpInput\${index + 1}\`).focus();
-      }
-    } else if (e.key === 'Backspace' && index > 0) {
-      const updatedDigits = [...otpDigits()];
-      updatedDigits[index] = '';
-      setOtpDigits(updatedDigits);
-      console.log(index);
-      document.getElementById(\`otpInput\${index - 1}\`).focus();
+    function handleSubmit() {
+      const submittedOTP = otpDigits().join('');
+      alert('Submitted OTP: ' + submittedOTP);
+      setOtpDigits(['', '', '', '', '', '']);
     }
-  }
 
-  return (
-    <div>
+    function handlePaste(e) {
+      e.preventDefault();
+      const pasteData = e.clipboardData.getData('text/plain').slice(0, 6);
+      const updatedDigits = pasteData.split('').map((digit) => digit);
+      setOtpDigits(updatedDigits);
+      document.getElementById('otpInput5').focus();
+    }
+
+    function handleKeyDown(e, index) {
+      if (e.key >= 0 && e.key <= 9) {
+        const updatedDigits = [...otpDigits()];
+        updatedDigits[index] = e.key;
+        setOtpDigits(updatedDigits);
+        console.log(otpDigits());
+        console.log(index);
+        if (index < 5) {
+          document.getElementById(\`otpInput\${index + 1}\`).focus();
+        }
+      } else if (e.key === 'Backspace' && index > 0) {
+        const updatedDigits = [...otpDigits()];
+        updatedDigits[index] = '';
+        setOtpDigits(updatedDigits);
+        console.log(index);
+        document.getElementById(\`otpInput\${index - 1}\`).focus();
+      }
+    }
+
+    return (
       <div>
-        <For each={otpDigits()} fallback={<div>Loading...</div>}>
-          {(digit, index) => (
-            <input
-              type='text'
-              id={\`otpInput\${index}\`}
-              value={digit}
-              placeholder=''
-              onKeyDown={(e) => handleKeyDown(e, index)}
-              maxLength='1'
-              onPaste={handlePaste}
-            />
-          )}
-        </For>
-        <button onClick={handleSubmit}>Submit OTP</button>
+        <div>
+          <For each={otpDigits()} fallback={<div>Loading...</div>}>
+            {(digit, index) => (
+              <input
+                type='text'
+                id={\`otpInput\${index}\`}
+                value={digit}
+                placeholder=''
+                onKeyDown={(e) => handleKeyDown(e, index)}
+                maxLength='1'
+                onPaste={handlePaste}
+              />
+            )}
+          </For>
+          <button onClick={handleSubmit}>Submit OTP</button>
+        </div>
       </div>
-    </div>
-  );
-}`,
+    );
+  }`,
   ToDoList: `
   import { For, createSignal } from 'solid-js';
   type Todo = { id: number; text: string; completed: boolean };
 
   const ToDoList = () => {
-  let input!: HTMLInputElement;
-  let todoId = 0;
-  const [todos, setTodos] = createSignal<Todo[]>([]);
-  const addTodo = (text: string) => {
-    setTodos([...todos(), { id: ++todoId, text, completed: false }]);
-  };
-  const toggleTodo = (id: number) => {
-    setTodos(
-      todos().map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  };
+    let input!: HTMLInputElement;
+    let todoId = 0;
+    const [todos, setTodos] = createSignal<Todo[]>([]);
+    const addTodo = (text: string) => {
+      setTodos([...todos(), { id: ++todoId, text, completed: false }]);
+    };
+    const toggleTodo = (id: number) => {
+      setTodos(
+        todos().map((todo) =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        )
+      );
+    };
 
-  return (
-    <>
-      <div>
-        <input placeholder='new todo here' ref={input} />
-        <button
-          onClick={() => {
-            if (!input.value.trim()) return;
-            addTodo(input.value);
-            input.value = '';
+    return (
+      <>
+        <div>
+          <input placeholder='new todo here' ref={input} />
+          <button
+            onClick={() => {
+              if (!input.value.trim()) return;
+              addTodo(input.value);
+              input.value = '';
+            }}
+          >
+            Add Todo
+          </button>
+        </div>
+        <For each={todos()}>
+          {(todo) => {
+            const { id, text } = todo;
+            return (
+              <div>
+                <input
+                  type='checkbox'
+                  checked={todo.completed}
+                  onchange={[toggleTodo, id]}
+                />
+                <span
+                  style={{
+                    'text-decoration': todo.completed ? 'line-through' : 'none',
+                  }}
+                >
+                  {text}
+                </span>
+              </div>
+            );
           }}
-        >
-          Add Todo
-        </button>
-      </div>
-      <For each={todos()}>
-        {(todo) => {
-          const { id, text } = todo;
-          return (
-            <div>
-              <input
-                type='checkbox'
-                checked={todo.completed}
-                onchange={[toggleTodo, id]}
-              />
-              <span
-                style={{
-                  'text-decoration': todo.completed ? 'line-through' : 'none',
-                }}
-              >
-                {text}
-              </span>
-            </div>
-          );
-        }}
-      </For>
-    </>
-  );
-};`,
+        </For>
+      </>
+    );
+  };`,
   GenerateOTP: `
   import { createSignal } from 'solid-js';
   import clipboardCopy from 'clipboard-copy';
