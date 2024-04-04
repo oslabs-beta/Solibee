@@ -11,20 +11,20 @@ import { ComponentContext } from '../context/ComponentContext';
 export default function NavBar() {
   const { components } = useContext(ComponentContext);
   const href = `/component/${components[0].toLowerCase()}`;
-  
+
   return (
-    <div class="sticky backdrop-blur-sm top-0 z-50 bg-white-200">
-      <div class="text-sm font-medium text-slate-700  top-0 w-full flex justify-between items-center px-5 py-2">
+    <div class="sticky h-16 backdrop-blur-sm top-0 z-50 bg-white-200">
+      <div class="text-sm font-medium text-slate-700  top-0 h-5/6 w-full flex justify-between items-center px-5 py-2">
         <div class="flex items-center">
           <img
             class='h-8 mr-6'
             src={name}
             alt='The word SOLIBEE with a bee on top of the letter I'
           />
-          <span class="mr-6">
+          <span class="mr-6 mt-1">
             <a href="/introduction">Docs</a>
           </span>
-          <span>
+          <span class="mt-1">
             <a href={href} >Components</a>
           </span>
         </div>
