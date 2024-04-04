@@ -27,9 +27,9 @@
 }
 
 .steps {
-	counter-reset: step 0;
+  counter-reset: step 0;
 }
 
 .steps p {
-	counter-increment: step 1;
+  counter-increment: step 1;
 }

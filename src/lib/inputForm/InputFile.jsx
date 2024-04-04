@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal } from "solid-js";
 
 function InputFile() {
   const [file, setFile] = createSignal(null);
@@ -13,15 +13,15 @@ function InputFile() {
 
   const handleSubmit = () => {
     if (file()) {
-      console.log('Uploading file:', file().name);
+      console.log("Uploading file:", file().name);
     } else {
-      console.error('No file selected.');
+      console.error("No file selected.");
     }
   };
 
   return (
     <div>
-      <input type='file' onChange={handleFileChange} />
+      <input type="file" onChange={handleFileChange} />
       <button onClick={handleSubmit}>Upload</button>
     </div>
   );

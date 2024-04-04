@@ -1,23 +1,28 @@
-import { createContext } from 'solid-js';
-import { createStore } from 'solid-js/store';
-
+import { createContext } from "solid-js";
+import { createStore } from "solid-js/store";
 
 export const ComponentContext = createContext();
 
 export function CompContextProvider(props) {
-  const [components, setComponents] = createStore(['Generate OTP', 'Input File', 'Input Form', 'Input OTP', 'To Do List']);
+  const [components, setComponents] = createStore([
+    "Drag and Drop",
+    "Generate OTP",
+    "Input File",
+    "Input Form",
+    "Input OTP",
+    "To Do List",
+  ]);
 
   return (
-    <ComponentContext.Provider value={{components, setComponents}}>
+    <ComponentContext.Provider value={{ components, setComponents }}>
       {props.children}
     </ComponentContext.Provider>
   );
 }
 
-
-// to use the context 
-// boiler plate: 
+// to use the context
+// boiler plate:
 // import { useContext } from 'solid-js';
 // import { ComponentContext } from '../context/ComponentContext';
-// use the following 
+// use the following
 // const { components } = useContext(ComponentContext);

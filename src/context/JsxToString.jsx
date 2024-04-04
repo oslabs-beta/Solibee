@@ -68,7 +68,7 @@ export const JsxToString = {
     </form>
   );
 }`,
-  InputOTP:`
+  InputOTP: `
   import { createSignal, For } from 'solid-js';
 
   function InputOTP() {
@@ -214,5 +214,5 @@ function GenerateOTP () {
       <span id='copied-msg'></span>
     </div>
   );
-}`
+}`,
 };
