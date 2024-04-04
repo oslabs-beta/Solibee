@@ -1,7 +1,7 @@
-import { createSignal, For, createEffect } from "solid-js";
-import { Router, Route, A } from "@solidjs/router";
-import { useContext } from "solid-js";
-import { ComponentContext } from "../context/ComponentContext";
+import { createSignal, For, createEffect } from 'solid-js';
+import { Router, Route, A } from '@solidjs/router';
+import { useContext } from 'solid-js';
+import { ComponentContext } from '../context/ComponentContext';
 
 function MenuItem(props) {
   const [items, setItems] = createSignal();
@@ -17,7 +17,7 @@ function MenuItem(props) {
               <div>
                 <a
                   class="block cursor-pointer rounded-lg px-4 py-2 transition-colors duration-75 hover:bg-orange-200"
-                  href={"/component/" + item.toLowerCase().replaceAll(" ", "")}
+                  href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
                 >
                   {item}
                 </a>

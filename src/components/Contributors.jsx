@@ -1,4 +1,4 @@
-import { createSignal, For, createEffect } from "solid-js";
+import { createSignal, For, createEffect } from 'solid-js';
 
 //a component that renders github avatars when given github handles.
 export default function Contributors(props) {
@@ -29,7 +29,7 @@ export default function Contributors(props) {
               <img
                 class=" avatar inline-block h-40 w-40 rounded-full ring-2 ring-white"
                 src={`https://github.com/${gitHandle}.png`}
-                style={{ display: "block" }}
+                style={{ display: 'block' }}
                 alt="Avatar"
               />
             </a>

@@ -1,15 +1,15 @@
-import NavBar from "./components/NavBar";
-import MainContainer from "./containers/MainContainer";
-import Footer from "./components/Footer";
+import NavBar from './components/NavBar';
+import MainContainer from './containers/MainContainer';
+import Footer from './components/Footer';
 
 function App() {
   // list of the components;
-  const components = ["Drawer", "Kanban Card", "Input Form"];
+  const components = ['Drawer', 'Kanban Card', 'Input Form'];
 
   return (
     <div
       class="relative bg-cover bg-fixed bg-center"
-      style="background-image: url('../assets/494-[Converted].png')"
+      style={{'background-image':'url(\'../assets/494-[Converted].png\')'}}
     >
       <NavBar />
       <MainContainer />
