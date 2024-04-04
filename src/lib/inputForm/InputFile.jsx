@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js';
 
-function FileUpload() {
+function InputFile() {
   const [file, setFile] = createSignal(null);
 
   const handleFileChange = (event) => {
@@ -27,4 +27,4 @@ function FileUpload() {
   );
 }
 
-export default FileUpload;
+export default InputFile;

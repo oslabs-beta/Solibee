@@ -2,40 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
   .solibee-link {
     @apply underline underline-offset-2 transition-colors hover:text-orange-200;
   }
-}
-/* *,
-:after,
-:before {
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
-}
+} */
 
-.step:before {
-	position: absolute;
-	display: inline-flex;
-	height: 2.25rem;
-	width: 2.25rem;
-	align-items: center;
-	justify-content: center;
-	border-radius: 9999px;
-	border-width: 4px;
-	border-color: hsl(var(--background));
-	background-color: hsl(var(--muted));
-	text-align: center;
-	text-indent: -1px;
-	font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-	font-size: 1rem;
-	line-height: 1.5rem;
-	font-weight: 500;
-	margin-left: -50px;
-	margin-top: -4px;
-	content: counter(step)
+* {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-*/
 
 /* styling of the button location; inside styling exists as tailwind */
 .steps p:before {

@@ -1,6 +1,6 @@
 import { createSignal, For } from 'solid-js';
 
-function OTPComponent() {
+function InputOTP() {
   const [otpDigits, setOtpDigits] = createSignal(['', '', '', '', '', '']);
 
   function handleSubmit() {
@@ -8,16 +8,6 @@ function OTPComponent() {
     alert('Submitted OTP: ' + submittedOTP);
     setOtpDigits(['', '', '', '', '', '']);
   }
-
-  // function handleInput(index, e) {
-  //   const inputValue = e.target.value.replace(/\D/g, '');
-  //   const updatedDigits = [...otpDigits()];
-  //   updatedDigits[index] = inputValue.slice(-1);
-  //   setOtpDigits(updatedDigits);
-  //   if (index < 5) {
-  //     document.getElementById(`otpInput${index + 1}`).focus();
-  //   }
-  // }
 
   function handlePaste(e) {
     e.preventDefault();
@@ -68,4 +58,4 @@ function OTPComponent() {
   );
 }
 
-export default OTPComponent;
+export default InputOTP;
