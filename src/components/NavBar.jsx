@@ -21,10 +21,10 @@ export default function NavBar() {
             src={name}
             alt='The word SOLIBEE with a bee on top of the letter I'
           />
-          <span class="mr-6 mt-1">
+          <span class="mr-6 mt-1 hover:text-orange-200">
             <a href="/introduction">Docs</a>
           </span>
-          <span class="mt-1">
+          <span class="mt-1 hover:text-orange-200">
             <a href={href} >Components</a>
           </span>
         </div>
@@ -35,8 +35,8 @@ export default function NavBar() {
             target='_blank'
             href='https://github.com/oslabs-beta/solibee/'
           >
-            <span>
-              <img class='h-6 ' src={gitLogo} alt='GitHub logo' />
+            <span class="">
+              <img class='h-6' src={gitLogo} alt='GitHub logo' />
             </span>
           </a>
           <img class='h-6 ml-6 ' src={sunIcon} alt='Sun icon' />
