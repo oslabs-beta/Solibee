@@ -9,7 +9,7 @@ export default (props) => {
 
   if (props.items != undefined) {
     for (let i = 0; i < props.items; i++) {
-      defaultItems[i] = { itemID: i, colID: i };
+      defaultItems[i] = { itemID: i, colID: i, order: i };
     }
   }
 
