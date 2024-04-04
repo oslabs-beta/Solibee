@@ -85,7 +85,7 @@ export default function ContentComponent(props) {
         <hr />
         <Steps />
       </div>
-      <div class='my-5 flex flex-col mt-12'>
+      {/* <div class='my-5 flex flex-col mt-12'>
         <p class='text-slate-500 text-2xl tracking-tight' id='Usage'>
           Usage
         </p>
@@ -102,7 +102,7 @@ export default function ContentComponent(props) {
         <div>
           <p />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
