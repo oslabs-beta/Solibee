@@ -9,8 +9,8 @@ export default function Introduction() {
   return (
     // previous article class styling : max-w-3xl mx-auto pt-10 w-10/12
     <article class="prose mx-auto w-10/12 max-w-[800px] bg-white/[0.9]">
-      <header>
-        <h1 class="mb-4 text-4xl font-bold">Introduction</h1>
+      <header >
+        <h1 class="mb-4 text-4xl font-bold border-b">Introduction</h1>
         <p>
           Solibee is an open-source collection of accessible and customizable
           components for Solid.JS. Solibee has easily integratable components:
