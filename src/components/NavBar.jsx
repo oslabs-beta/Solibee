@@ -28,7 +28,7 @@ export default function NavBar() {
             <a href={href} >Components</a>
           </span>
         </div>
-        <div class='flex items-center'>
+        <div class='flex items-center mt-1'>
           <Search />
           <a
             class='ml-6'
