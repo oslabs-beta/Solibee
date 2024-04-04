@@ -1,5 +1,5 @@
 import CopyButton from './CopyButton';
-import { Code } from './Code';
+import Code  from './Code';
 
 export default function CodeBoxWithCopy(props){
   //create a codeBox that includes a copy button on the bottom right corner
