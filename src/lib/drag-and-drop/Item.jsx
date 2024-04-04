@@ -23,7 +23,7 @@ export default (props) => {
       classList={{ "border-2 shadow": props.selectedItem() == props.itemID }}
     >
       {props.itemID}
-      {props.items[props.itemID].y}
+      {/* {props.items[props.itemID].y} */}
       <button
         class="ml-2 rounded-full bg-slate-600 p-1 text-xs font-bold text-slate-50"
         onClick={() => props.updateItems("delete", { itemID: props.itemID })}
