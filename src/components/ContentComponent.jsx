@@ -40,9 +40,10 @@ export default function ContentComponent(props) {
     console.log(code);
     let codeHtml = await codeToHtml(code, {
       lang: 'jsx',
-      theme: 'rose-pine',
+      theme: 'rose-pine-dawn',
     });
     setCodeHtml(codeHtml);
+    console.log(codeHtml);
     return codeHtml;
   };
   getHtml();
@@ -61,19 +62,7 @@ export default function ContentComponent(props) {
         </p>
       </header>
 
-      {/* Code and preview */}
-      <div class='my-5 flex flex-col space-y-4'>
-        {/* class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border" */}
-        <div class='w-full'>
-          <p class='text-slate-500'>Code</p>
-          <hr />
-          <div class='relative w-full'>
-            <CopyButton textToCopy={textToCopy()} />
-            <Code html={formattedCode()} />
-          </div>
-        </div>
-
-        <div class='w-full'>
+      <div class='w-full'>
           <p class='text-slate-500'>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full justify-center items-center bg-slate-100 rounded-md'>
@@ -103,6 +92,18 @@ export default function ContentComponent(props) {
               <ToDoList/>
             </Show>
 
+          </div>
+        </div>
+
+      {/* Code and preview */}
+      <div class='my-5 flex flex-col space-y-4'>
+        {/* class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border" */}
+        <div class='w-full'>
+          <p class='text-slate-500'>Code</p>
+          <hr />
+          <div class='my-6 relative w-full'>
+            <CopyButton textToCopy={textToCopy()} />
+            <Code html={formattedCode()} />
           </div>
         </div>
       </div>
