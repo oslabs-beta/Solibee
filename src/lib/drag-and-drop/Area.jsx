@@ -7,6 +7,12 @@ export default (props) => {
   const defaultColumns = {};
   let showNewColBtn = true;
 
+  if (props.items != undefined) {
+    for (let i = 0; i < props.items; i++) {
+      defaultItems[i] = { itemID: i, colID: i };
+    }
+  }
+
   if (props.columns != undefined) {
     for (let i = 0; i < props.columns; i++) {
       defaultColumns[i] = { colID: i };

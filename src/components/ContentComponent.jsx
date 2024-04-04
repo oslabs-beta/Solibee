@@ -84,7 +84,7 @@ export default function ContentComponent(props) {
             <ToDoList />
           </Show>
           <Show when={currentComp() === "Drag And Drop"}>
-            <DragAndDrop columns={4} showNewColBtn={false} />
+            <DragAndDrop items={2} columns={4} showNewColBtn={false} />
           </Show>
         </div>
       </div>
