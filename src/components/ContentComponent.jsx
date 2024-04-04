@@ -5,7 +5,7 @@ import Steps from './Steps';
 import CopyButton from './CopyButton.jsx';
 import Footer from './Footer.jsx'
 
-// input form 
+// input form
 import FileUpload from '../lib/inputForm/inputFile.jsx'
 
 const code = CodeToString;
@@ -37,7 +37,8 @@ export default function ContentComponent(props) {
 
 
   return (
-    <div class='max-w-3xl mx-auto pt-10 xl:max-w-none w-10/12 overflow-auto'>
+    // previously existed: xl:max-w-none
+    <div class='prose max-w-[800px] mt-10 mx-auto w-10/12 bg-white/[0.9] overflow-auto'>
       {/* Component name and description */}
       <header class=''>
         <h1 class='inline-block text-4xl font-bold tracking-tight'>Drawer</h1>
