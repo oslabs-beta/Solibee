@@ -17,10 +17,10 @@ export const ToDoList = () => {
   };
 
   return (
-    <>
+    <div class="flex flex-col">
       <div>
         <input placeholder='new todo here' ref={input} />
-        <button
+        <button class="bg-slate-200 hover:bg-orange-100 rounded-md	p-1 px-2 ml-2"
           onClick={() => {
             if (!input.value.trim()) return;
             addTodo(input.value);
@@ -30,6 +30,7 @@ export const ToDoList = () => {
           Add Todo
         </button>
       </div>
+      <div>
       <For each={todos()}>
         {(todo) => {
           const { id, text } = todo;
@@ -51,6 +52,7 @@ export const ToDoList = () => {
           );
         }}
       </For>
-    </>
+      </div>
+    </div>
   );
 };

@@ -20,9 +20,11 @@ function GenerateOTP () {
     <div>
       <div aria-live='polite'>
         Your one-time password is: <span>{otp()}</span>
-        <button onClick={regenerateOTP}>Regenerate</button>
+        <div>
+          <button class="bg-slate-200 hover:bg-orange-100 rounded-md	p-1 px-2 mr-2" onClick={regenerateOTP}>Regenerate</button>
+          <button class="bg-slate-200 hover:bg-orange-100 rounded-md	p-1 px-2" onClick={copyOTP}>Copy</button>
+          </div>
       </div>
-      <button onClick={copyOTP}>Copy OTP</button>
       <span id='copied-msg'></span>
     </div>
   );
