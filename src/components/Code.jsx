@@ -1,4 +1,3 @@
-
 //need to find an alternative to innerHTML
 export function Code(props) {
   return (
@@ -7,7 +6,6 @@ export function Code(props) {
       innerHTML={props.html}
     />
   );
-
 }
 
 export const CodeToString = `function Code(props) {
