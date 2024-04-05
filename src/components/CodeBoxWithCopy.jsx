@@ -5,7 +5,7 @@ export default function CodeBoxWithCopy(props){
   //create a codeBox that includes a copy button on the bottom right corner
   return (
     <div class='relative w-full'>
-      <CopyButton textToCopy={props.html} />
+      <CopyButton textToCopy={props.textToCopy} />
       <Code html={props.html} />
     </div>
   );
