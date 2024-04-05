@@ -1,25 +1,17 @@
-import { createSignal, createResource, Show } from "solid-js";
+import { createSignal, Show, useContext, createResource } from "solid-js";
 import { codeToHtml } from "shiki";
+import { StringRepContext } from "../context/StrRepresentationContext";
+
+// web components
 import Step from "./Step";
 import CodeBoxWithCopy from "./CodeBoxWithCopy";
 
-// use the following
-import { useContext } from "solid-js";
-import { StringRepContext } from "../context/StrRepresentationContext";
-// use the following
-// const { components } = useContext(ComponentContext);
-
-import Code from "./Code";
-import Steps from "./Steps";
-import CopyButton from "./CopyButton.jsx";
-import Footer from "./Footer.jsx";
-
-// custom components:
+// custom components
 import InputForm from "../lib/inputForm/InputForm";
 import InputFile from "../lib/inputForm/InputFile";
 import GenerateOTP from "../lib/inputForm/GenerateOTP";
 import InputOTP from "../lib/inputForm/InputOTP";
-import { ToDoList } from "../lib/inputForm/ToDoList";
+import ToDoList  from "../lib/inputForm/ToDoList";
 import DragAndDrop from "../lib/drag-and-drop/Area";
 
 export default function ContentComponent(props) {
@@ -30,34 +22,32 @@ export default function ContentComponent(props) {
   const { string } = useContext(StringRepContext); // this is context that wraps the whole app. This context contains the string representation of each Solibee component saved in an obj;
   const code = string[currentComponent]; // selects the str representation of the component we currently selected ie: Input Form
 
-  const [formattedCode, setCodeHtml] = createSignal();
-  const [textToCopy, setTextToCopy] = createSignal(code);
+  const [formattedCode, setFormattedCode] = createSignal();
+  const [textToCopy, setTextToCopy] = createSignal(code); 
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
+  const [formattedStep, setFormattedStep] = createSignal();
 
-  const [formattedStep, setformattedStep] = createSignal();
+  createResource(() => {
+    const getHtml = async () => {
+      let codeHtml = await codeToHtml(code, {
+        lang: "jsx",
+        theme: "dark-plus",
+      });
 
-  console.log(props); // checking is this component renders for each comp in the Context
+      let formattedStep = await codeToHtml(installStepCode, {
+        lang: "jsx",
+        theme: "dark-plus",
+      });
 
-  const getHtml = async () => {
-    let codeHtml = await codeToHtml(code, {
-      lang: "jsx",
-      theme: "dark-plus",
-    });
+      setFormattedCode(codeHtml);
+      setFormattedStep(formattedStep);
 
-    let formattedStep = await codeToHtml(installStepCode, {
-      lang: "jsx",
-      theme: "dark-plus",
-    });
-
-    setCodeHtml(codeHtml);
-    setformattedStep(formattedStep);
-
-    return codeHtml;
-  };
-  getHtml();
-
+      return codeHtml;
+    };
+    getHtml();
+  });
+  
   return (
-    // previously existed: xl:max-w-none
     <div class="prose mx-auto w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]">
       {/* Component name and description */}
       <div class="mb-4 flex max-h-8 items-center text-sm">
@@ -72,6 +62,7 @@ export default function ContentComponent(props) {
         </h1>
         <hr />
         <p class="my-5 text-slate-500">
+          {/* TODO: make this description dynamic */}
           A vertically stacked set of interactive headings that each reveal a
           section of content.
         </p>
@@ -104,13 +95,11 @@ export default function ContentComponent(props) {
 
       {/* Code and preview */}
       <div class="my-5 flex flex-col space-y-4">
-        {/* class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border" */}
         <div class="w-full">
           <p class="text-slate-500">Code</p>
           <hr />
           <div class="relative my-6 w-full">
-            <CopyButton textToCopy={textToCopy()} />
-            <Code html={formattedCode()} />
+            <CodeBoxWithCopy textToCopy={textToCopy()} html={formattedCode()}/>
           </div>
         </div>
       </div>
@@ -135,7 +124,7 @@ export default function ContentComponent(props) {
                 component, for example the Input Form, run the following command
                 in your terminal.
               </div>
-              <CodeBoxWithCopy html={formattedStep()} />
+              <CodeBoxWithCopy html={formattedStep()} textToCopy = {installStepCode} />
             </div>
 
             <Step step="Configure a tailwind.config.js file" />
@@ -162,7 +151,7 @@ export default function ContentComponent(props) {
                 to navigate to the Installation Page
               </div>
             </div>
-          </div>
+            </div>
         </section>
       </div>
     </div>
