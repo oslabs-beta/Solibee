@@ -69,7 +69,7 @@ export default function Installation(props){
 
   return (
     // prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]
-    <article class="prose max-w-3xl mx-auto max-w-[800px] w-10/12 bg-white/[0.9]">
+    <article class="prose max-w-3xl mx-auto w-10/12 bg-white/[0.9]">
       <header>
         <h1 class=" border-b font-bold text-4xl mb-4">Installation</h1>
         <p class="text-lg my-5">How to install and use solibee in your application</p>
