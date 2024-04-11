@@ -8,8 +8,7 @@ function App() {
 
   return (
     <div
-      class="relative bg-cover bg-fixed bg-center min-h-screen"
-      style="background-image: url('../assets/494-[Converted].png')"
+      class="background"
     >
       <NavBar />
       <MainContainer />
