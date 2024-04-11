@@ -11,6 +11,7 @@ export function CompContextProvider(props) {
     "Input Form",
     "Input OTP",
     "To Do List",
+    "Switch"
   ]);
 
   return (
