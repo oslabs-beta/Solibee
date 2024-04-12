@@ -7,8 +7,8 @@ function App() {
   const components = ['Drawer', 'Kanban Card', 'Input Form'];
 
   return (
-    <div class='background flex flex-col min-h-screen'>
-      <div class='flex flex-col grow'>
+    <div class='background flex min-h-screen flex-col'>
+      <div class='flex grow flex-col'>
         <NavBar />
         <MainContainer />
       </div>
