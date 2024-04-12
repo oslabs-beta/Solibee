@@ -83,7 +83,7 @@ function InputOTP() {
       index() < 5 ? `otpInput${index() + 1}` : `otpInput${index()}`;
 
     if (e.key >= 0 && e.key <= 9) {
-      setOtpDigits(index(), e.key);
+      setOtpDigits(index(), parseInt(e.key));
       focusNextInput(e.target, prevId, nextId);
     } else if (e.key === 'Backspace') {
       setOtpDigits(index(), '-');
