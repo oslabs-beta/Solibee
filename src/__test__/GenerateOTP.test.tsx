@@ -1,7 +1,6 @@
 import GenerateOTP from '../lib/inputForm/GenerateOTP';
 import { render, cleanup, fireEvent, screen } from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
-import { createSignal } from 'solid-js';
 
 jest.mock('clipboard-copy', () => jest.fn());
 
