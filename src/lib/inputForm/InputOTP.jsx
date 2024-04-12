@@ -1,10 +1,11 @@
-import { createSignal, For } from 'solid-js';
+import { For } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
 function InputOTP() {
-  const [otpDigits, setOtpDigits] = createSignal(['', '', '', '', '', '']);
+  const [otpDigits, setOtpDigits] = createStore(['', '', '', '', '', '']);
 
   function handleSubmit() {
-    const submittedOTP = otpDigits().join('');
+    const submittedOTP = otpDigits.join('');
     alert('Submitted OTP: ' + submittedOTP);
     setOtpDigits(['', '', '', '', '', '']);
   }
@@ -13,42 +14,49 @@ function InputOTP() {
     e.preventDefault();
     const pasteData = e.clipboardData.getData('text/plain').slice(0, 6);
     const updatedDigits = pasteData.split('').map((digit) => digit);
+    // console.log(updatedDigits);
     setOtpDigits(updatedDigits);
-    document.getElementById('otpInput5').focus();
+    // console.log('OTP digits state:', otpDigits);
+    // document.getElementById('otpInput5').focus();
+    const lastInput = document.getElementById('otpInput5');
+    if (lastInput) {
+      lastInput.focus();
+    }
   }
 
   function handleKeyDown(e, index) {
+    e.preventDefault();
     if (e.key >= 0 && e.key <= 9) {
-      const updatedDigits = [...otpDigits()];
-      updatedDigits[index] = e.key;
-      setOtpDigits(updatedDigits);
-      console.log(otpDigits());
-      console.log(index);
-      if (index < 5) {
-        document.getElementById(`otpInput${index + 1}`).focus();
+      setOtpDigits(index(), e.key);
+      if (index() < 5) {
+        const nextInput = document.getElementById(`otpInput${index() + 1}`);
+        if (nextInput) {
+          nextInput.focus();
+        }
       }
-    } else if (e.key === 'Backspace' && index > 0) {
-      const updatedDigits = [...otpDigits()];
-      updatedDigits[index] = '';
-      setOtpDigits(updatedDigits);
-      console.log(index);
-      document.getElementById(`otpInput${index - 1}`).focus();
+    } else if (e.key === 'Backspace' && index() >= 0) {
+      setOtpDigits(index(), '');
+      const prevInput = document.getElementById(`otpInput${index() - 1}`);
+      if (prevInput) {
+        prevInput.focus();
+      }
     }
   }
 
   return (
     <div>
       <div>
-        <For each={otpDigits()} fallback={<div>Loading...</div>}>
+        <For each={otpDigits} fallback={<div>Loading...</div>}>
           {(digit, index) => (
             <input
               type='text'
-              id={`otpInput${index}`}
+              id={`otpInput${index()}`}
               value={digit}
               placeholder=''
               onKeyDown={(e) => handleKeyDown(e, index)}
               maxLength='1'
-              onPaste={handlePaste}
+              onPaste={(e) => handlePaste(e)}
+              ref={index() === 5 ? (el) => { if (el) el.focus(); } : null}
             />
           )}
         </For>
