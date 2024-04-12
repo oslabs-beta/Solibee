@@ -11,8 +11,9 @@ import InputForm from "../lib/inputForm/InputForm";
 import InputFile from "../lib/inputForm/InputFile";
 import GenerateOTP from "../lib/inputForm/GenerateOTP";
 import InputOTP from "../lib/inputForm/InputOTP";
-import ToDoList  from "../lib/inputForm/ToDoList";
+import ToDoList from "../lib/inputForm/ToDoList";
 import DragAndDrop from "../lib/drag-and-drop/Area";
+import Switch from "../lib/switch/Switch";
 
 export default function ContentComponent(props) {
   //initialize an install step which will dynamically change instructions based on prop comp
@@ -23,7 +24,7 @@ export default function ContentComponent(props) {
   const code = string[currentComponent]; // selects the str representation of the component we currently selected ie: Input Form
 
   const [formattedCode, setFormattedCode] = createSignal();
-  const [textToCopy, setTextToCopy] = createSignal(code); 
+  const [textToCopy, setTextToCopy] = createSignal(code);
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
   const [formattedStep, setFormattedStep] = createSignal();
 
@@ -46,7 +47,7 @@ export default function ContentComponent(props) {
     };
     getHtml();
   });
-  
+
   return (
     <div class="prose mx-auto w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]">
       {/* Component name and description */}
@@ -62,9 +63,8 @@ export default function ContentComponent(props) {
         </h1>
         <hr />
         <p class="my-5 text-slate-500">
-          {/* TODO: make this description dynamic */}
-          A vertically stacked set of interactive headings that each reveal a
-          section of content.
+          {/* TODO: make this description dynamic */}A vertically stacked set of
+          interactive headings that each reveal a section of content.
         </p>
       </header>
 
@@ -87,6 +87,9 @@ export default function ContentComponent(props) {
           <Show when={currentComp() === "To Do List"}>
             <ToDoList />
           </Show>
+          <Show when={currentComp() === "Switch"}>
+            <Switch />
+          </Show>
           <Show when={currentComp() === "Drag And Drop"}>
             <DragAndDrop items={2} columns={4} showNewColBtn={false} />
           </Show>
@@ -99,7 +102,7 @@ export default function ContentComponent(props) {
           <p class="text-slate-500">Code</p>
           <hr />
           <div class="relative my-6 w-full">
-            <CodeBoxWithCopy textToCopy={textToCopy()} html={formattedCode()}/>
+            <CodeBoxWithCopy textToCopy={textToCopy()} html={formattedCode()} />
           </div>
         </div>
       </div>
@@ -124,7 +127,10 @@ export default function ContentComponent(props) {
                 component, for example the Input Form, run the following command
                 in your terminal.
               </div>
-              <CodeBoxWithCopy html={formattedStep()} textToCopy = {installStepCode} />
+              <CodeBoxWithCopy
+                html={formattedStep()}
+                textToCopy={installStepCode}
+              />
             </div>
 
             <Step step="Configure a tailwind.config.js file" />
@@ -151,7 +157,7 @@ export default function ContentComponent(props) {
                 to navigate to the Installation Page
               </div>
             </div>
-            </div>
+          </div>
         </section>
       </div>
     </div>
