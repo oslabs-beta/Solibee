@@ -1,6 +1,5 @@
-import {  For } from 'solid-js';
+import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
-
 
 function InputOTP() {
   //array of string representations of the otp digits
@@ -17,22 +16,18 @@ function InputOTP() {
   function handleSubmit(e) {
     e.preventDefault();
     const submittedOTP = otpDigits.join('');
-    
-    if (submittedOTP.length < 6) {
 
+    if (submittedOTP.length < 6) {
       e.preventDefault();
       alert('Enter 6 digits');
     }
-    if (otpDigits.some(el => typeof(el) !== 'number')) {
-
+    if (otpDigits.some((el) => typeof el !== 'number')) {
       e.preventDefault();
-      alert ('Enter numbers only');
+      alert('Enter numbers only');
+    } else {
+      alert(`Submitted OPT ${submittedOTP}`);
+    }
 
-    }
-    else{
-      alert(`Submitted OPT ${submittedOTP}`)
-    }
-  
     otpDigits.map((el, index) => {
       setOtpDigits(index, '');
     });
@@ -63,7 +58,7 @@ function InputOTP() {
   }
 
   /**
-   * A function that handles paste events on pin inputs. 
+   * A function that handles paste events on pin inputs.
    * When a string of inputs is pasted, the store is updated
    * @function
    * @param {e} event - paste event to be handled
@@ -76,7 +71,6 @@ function InputOTP() {
     updatedDigits.map((el, index) => {
       setOtpDigits(index, el);
     });
-
   }
 
   /**
@@ -94,15 +88,12 @@ function InputOTP() {
       index() < 5 ? `otpInput${index() + 1}` : `otpInput${index()}`;
 
     if (e.key >= 0 && e.key <= 9) {
-
       setOtpDigits(index(), parseInt(e.key));
       focusNextInput(e.target, prevId, nextId);
     } else if (e.key === 'Backspace') {
-
       setOtpDigits(index(), '');
       focusNextInput(e.target, prevId, nextId);
-    }else{
-
+    } else {
       setOtpDigits(index(), e.key);
       focusNextInput(e.target, prevId, nextId);
     }

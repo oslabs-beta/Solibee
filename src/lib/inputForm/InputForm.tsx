@@ -1,12 +1,12 @@
 //the docs should include the following update your tailwind config to include the ff
 // tailwind.config.js
-  // module.exports = {
-  //   // ...
-  //   plugins: [
-  //     // ...
-  //     require('@tailwindcss/forms'),
-  //   ],
-  // }
+// module.exports = {
+//   // ...
+//   plugins: [
+//     // ...
+//     require('@tailwindcss/forms'),
+//   ],
+// }
 import { createSignal } from 'solid-js';
 
 function InputForm() {
@@ -21,9 +21,9 @@ function InputForm() {
   return (
     <div class='mx-auto p-2'>
       <form class='flex flex-col gap-2' onSubmit={handleSubmit}>
-        <div id ='name' class='mt-2.5'>
+        <div id='name' class='mt-2.5'>
           <div>
-            <label id ='nameLabel' class='font-medium text-gray-900' for='name'>
+            <label id='nameLabel' class='font-medium text-gray-900' for='name'>
               Name
             </label>
           </div>
@@ -39,7 +39,11 @@ function InputForm() {
         </div>
         <div class='my-2.5'>
           <div>
-            <label id='emailLabel' class='font-medium text-gray-900' for='email'>
+            <label
+              id='emailLabel'
+              class='font-medium text-gray-900'
+              for='email'
+            >
               Email
             </label>
           </div>

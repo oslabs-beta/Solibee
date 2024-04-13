@@ -2,23 +2,21 @@ import { onMount, createEffect, createUniqueId } from 'solid-js';
 
 export default (props) => {
   let ref;
- 
+
   console.log('I am props in Item.jsx', props);
 
-  //why do we need this function? 
+  //why do we need this function?
 
   createEffect(() => {
     const rect = ref.getBoundingClientRect();
-    console.log({rect});
+    console.log({ rect });
     const y = (rect.top + rect.bottom) / 2;
     props.updateItems('update', { itemID: props.itemID, y });
   });
 
   const handleDragStart = (e) => {
-    
     e.dataTransfer.setData('id', props.itemID);
     props.setSelectedItem(props.itemID);
-
   };
 
   return (
@@ -32,7 +30,7 @@ export default (props) => {
       {`Item ${props.itemID}`}
       {/* {props.itemID} */}
       {/* {props.items[props.itemID].y} */}
-     
+
       {/* <button
         class='bg-orange-100 text-xs size-4 rounded-md text-white'
         onClick={() => props.updateItems('delete', { itemID: props.itemID })}

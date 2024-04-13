@@ -1,7 +1,6 @@
 // pass in the props.textToCopy to select the text to copy
 
 export default function CopyButton(props) {
-
   // fn for copying to clipboard
   const copyToClipboard = () => {
     navigator.clipboard.writeText(props.textToCopy);
@@ -9,7 +8,7 @@ export default function CopyButton(props) {
 
   return (
     <button
-      class='absolute bottom-2 right-2 w-0.5 h-0.5 flex justify-center items-center py-4 px-4 rounded'
+      class='absolute bottom-2 right-2 flex h-0.5 w-0.5 items-center justify-center rounded px-4 py-4'
       onClick={copyToClipboard}
     >
       <svg
