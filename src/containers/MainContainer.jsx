@@ -6,13 +6,10 @@ import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 
 export default function MainContainer() {
-
   return (
-    <div>
-      <div class="flex">
-        <Menu />
-        <ContentContainer />
-      </div>
+    <div class='flex grow'>
+      <Menu />
+      <ContentContainer />
     </div>
   );
 }
