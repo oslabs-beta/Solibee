@@ -5,7 +5,8 @@
       "browser": true,
       "es2021": true,
       "jquery": true,
-      "node": true
+      "node": true, 
+      "es6": true
     },
     "extends": ["eslint:recommended", "plugin:solid/recommended"],
     "parserOptions": { "sourceType": "module" },
@@ -15,7 +16,8 @@
       "prefer-const": "warn",
       "quotes": ["warn", "single"],
       "semi": ["warn", "always"],
-      "space-infix-ops": "warn"
+      "space-infix-ops": "warn",
+      "arrow-functions": ["warn", 1]
     }, 
     "plugins": ["solid"]
 }

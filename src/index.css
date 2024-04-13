@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .solibee-link {
+    @apply underline underline-offset-2 transition-colors hover:text-orange-200;
+  }
+}
+
+* {
+  /* font-family: "Mulish", sans-serif; */
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.background {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+             url('../assets/honeycomb-background.jpeg');
+  background-size: 50rem;
+}
+
+/* styling of the button location; inside styling exists as tailwind */
+.steps p:before {
+  /* content: counter(step); /* Generate the numbering */
+  /* counter-increment: step;  */
+  position: absolute; /* Position the numbering absolutely */
+  left: -0.75rem; /* Adjust the left positioning as needed */
+  top: 50%; /* Position it vertically centered */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  z-index: 10; /* Set the z-index to ensure it's above other content */
+  background-color: white;
+}
+
+.steps {
+  counter-reset: step 0;
+}
+
+.steps p {
+  counter-increment: step 1;
+}

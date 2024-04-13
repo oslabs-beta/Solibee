@@ -1,7 +1,20 @@
+import NavBar from './components/NavBar';
+import MainContainer from './containers/MainContainer';
+import Footer from './components/Footer';
+
 function App() {
-    return (
-        <></>
-    );
+  // list of the components;
+  const components = ['Drawer', 'Kanban Card', 'Input Form'];
+
+  return (
+    <div
+      class="background"
+    >
+      <NavBar />
+      <MainContainer />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
