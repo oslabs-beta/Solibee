@@ -21,7 +21,7 @@ function InputFile() {
 
   return (
     <div>
-      <input class="" type='file' onChange={handleFileChange} />
+      <input data-testid="upInput" class="rounded-md" type='file' onChange={handleFileChange} />
       <button class="bg-orange-100 rounded-md	p-1 px-2" onClick={handleSubmit}>Upload</button>
     </div>
   );
