@@ -1,5 +1,5 @@
 import { createSignal, useContext } from 'solid-js';
-import solibeeLogo from '../../assets/Solibee-name.png';
+import solibeeLogo from '../../assets/solibee-logo2.png';
 import gitLogo from '../../assets/github-mark.png';
 import gitLogoWhite from '../../assets/github-mark-white.png';
 import sunIcon from '../../assets/sun-svgrepo-com.svg';
@@ -18,7 +18,7 @@ export default function NavBar() {
           <img
             class="mr-6 h-8"
             src={solibeeLogo}
-            alt="The word SOLIBEE with a bee on top of the letter I"
+            alt="the solibee logo: a bee in a honeycomb"
           />
           <span class="mr-6 mt-1 hover:text-orange-200">
             <a href="/introduction">Docs</a>
