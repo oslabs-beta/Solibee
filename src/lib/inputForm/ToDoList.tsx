@@ -17,10 +17,15 @@ export default function ToDoList () {
   };
 
   return (
-    <div class="flex flex-col">
-      <div>
-        <input placeholder='new todo here' ref={input} />
-        <button class="bg-slate-200 hover:bg-orange-100 rounded-md	p-1 px-2 ml-2"
+    <div class='flex flex-col bg-gray-100 p-4'>
+      <div class='mb-4'>
+        <input
+          class='mt-2 rounded-md border-2 border-orange-100 shadow shadow focus:border-orange-100 focus:outline-none focus:ring-1 focus:ring-orange-100'
+          placeholder='new todo here'
+          ref={input}
+        />
+        <button
+          class='ml-2 rounded-md bg-orange-200 p-1 px-2 text-white'
           onClick={() => {
             if (!input.value.trim()) return;
             addTodo(input.value);
@@ -31,28 +36,87 @@ export default function ToDoList () {
         </button>
       </div>
       <div>
-      <For each={todos()}>
-        {(todo) => {
-          const { id, text } = todo;
-          return (
-            <div>
-              <input
-                type='checkbox'
-                checked={todo.completed}
-                onchange={[toggleTodo, id]}
-              />
-              <span
-                style={{
-                  'text-decoration': todo.completed ? 'line-through' : 'none',
-                }}
-              >
-                {text}
-              </span>
-            </div>
-          );
-        }}
-      </For>
+        <For each={todos()}>
+          {(todo) => {
+            const { id, text } = todo;
+            return (
+              <div class='w-full rounded-t-lg border-b border-orange-100'>
+                <div class='flex items-center ps-3'>
+                  <input
+                    class='y-700 h-4 w-4 rounded-full border border-0 bg-orange-100 shadow checked:bg-orange-100 hover:bg-orange-200 checked:hover:bg-orange-200 focus:ring-2 focus:ring-orange-200'
+                    type='checkbox'
+                    checked={todo.completed}
+                    onchange={[toggleTodo, id]}
+                  />
+                  <span
+                    class='ms-2 w-full py-3 text-base '
+                    style={{
+                      'text-decoration': todo.completed
+                        ? 'line-through'
+                        : 'none',
+                    }}
+                  >
+                    {text}
+                  </span>
+                </div>
+              </div>
+            );
+          }}
+        </For>
       </div>
     </div>
   );
 };
+
+
+
+
+
+
+//         <button
+//           class='ml-2 rounded-md bg-blue-500 p-1 px-2 text-white'
+//           onClick={() => {
+//             if (!input.value.trim()) return;
+//             addTodo(input.value);
+//             input.value = '';
+//           }}
+//         >
+//           Add Todo
+//         </button>
+//       </div>
+//       <div class='overflow-y-auto'>
+//         <For each={todos()}>
+//           {(todo) => {
+//             const { id, text } = todo;
+//             return (
+//               <div class='w-full rounded-t-lg border-b border-gray-300'>
+//                 <div class='flex items-center ps-3'>
+//                   <input
+//                     class='h-4 w-4 rounded-full border border-0 bg-blue-500 checked:bg-blue-500 hover:bg-blue-600 checked:hover:bg-blue-600 focus:ring-2 focus:ring-blue-500'
+//                     type='checkbox'
+//                     checked={todo.completed}
+//                     onchange={[toggleTodo, id]}
+//                   />
+//                   <span
+//                     class='ms-2 w-full py-3 text-base'
+//                     style={{
+//                       'text-decoration': todo.completed
+//                         ? 'line-through'
+//                         : 'none',
+//                     }}
+//                   >
+//                     {text}
+//                   </span>
+//                 </div>
+//               </div>
+//             );
+//           }}
+//         </For>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
