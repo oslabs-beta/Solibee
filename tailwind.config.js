@@ -18,7 +18,8 @@ module.exports = {
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
       fontFamily: {
-        serif: ['Mulish', 'sans-serif']
+        serif: ['Mulish', 'sans-serif'],
+        pacifico: ['Pacifico', 'serif']
       },
     },
   },
