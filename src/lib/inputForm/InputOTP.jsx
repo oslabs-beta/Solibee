@@ -3,10 +3,9 @@ import { createStore } from 'solid-js/store';
 
 
 function InputOTP() {
-
   //array of string representations of the otp digits
-  const [otpDigits, setOtpDigits] = createStore(Array(6).fill('-'));
- 
+  const [otpDigits, setOtpDigits] = createStore(Array(6).fill(''));
+
   /**
    * A function that handles form submit
    * on submit it will alert the user to the input they inputted
@@ -14,23 +13,30 @@ function InputOTP() {
    * @function
    *
    */
+  //if the number is less than 6 deal with that
   function handleSubmit(e) {
-    
+    e.preventDefault();
     const submittedOTP = otpDigits.join('');
-    if (otpDigits.some(el => typeof(el) !== 'number')) {
-      alert('Enter numbers only'); 
-      e.preventDefault();
-    }
-    else if (submittedOTP.length === 6) {
-      alert('Submitted OTP: ' + submittedOTP);
-      e.preventDefault(); 
-    }
-    else {
-      alert('Your input does not have valid length');
-      e.preventDefault();
-    }
-  }
+    
+    if (submittedOTP.length < 6) {
 
+      e.preventDefault();
+      alert('Enter 6 digits');
+    }
+    if (otpDigits.some(el => typeof(el) !== 'number')) {
+
+      e.preventDefault();
+      alert ('Enter numbers only');
+
+    }
+    else{
+      alert(`Submitted OPT ${submittedOTP}`)
+    }
+  
+    otpDigits.map((el, index) => {
+      setOtpDigits(index, '');
+    });
+  }
 
   /**
    * A function that handles keyup events on pin inputs. If a button has a pin number added,
@@ -55,17 +61,22 @@ function InputOTP() {
       }
     }
   }
-  
-  function handlePaste(e) {
 
+  /**
+   * A function that handles paste events on pin inputs. 
+   * When a string of inputs is pasted, the store is updated
+   * @function
+   * @param {e} event - paste event to be handled
+   */
+
+  function handlePaste(e) {
     e.preventDefault();
     const pasteData = e.clipboardData.getData('text/plain').slice(0, 6);
     const updatedDigits = pasteData.split('').map((digit) => digit);
-    
     updatedDigits.map((el, index) => {
       setOtpDigits(index, el);
-    }); 
-    
+    });
+
   }
 
   /**
@@ -83,13 +94,18 @@ function InputOTP() {
       index() < 5 ? `otpInput${index() + 1}` : `otpInput${index()}`;
 
     if (e.key >= 0 && e.key <= 9) {
-      setOtpDigits(index(), e.key);
+
+      setOtpDigits(index(), parseInt(e.key));
       focusNextInput(e.target, prevId, nextId);
     } else if (e.key === 'Backspace') {
-      setOtpDigits(index(), '-');
+
+      setOtpDigits(index(), '');
+      focusNextInput(e.target, prevId, nextId);
+    }else{
+
+      setOtpDigits(index(), e.key);
       focusNextInput(e.target, prevId, nextId);
     }
-   
   }
 
   return (
@@ -106,10 +122,11 @@ function InputOTP() {
                   <input
                     type='text'
                     id={`otpInput${index()}`}
+                    placeholder='-'
                     value={digit}
                     maxLength='1'
                     onPaste={handlePaste}
-                    class='h-12 w-12 rounded-lg border border-orange-100 focus:border-0 focus:ring focus:ring-orange-100 text-center shadow-sm'
+                    class='h-12 w-12 rounded-lg border border-orange-100 text-center shadow-sm focus:border-0 focus:ring focus:ring-orange-100'
                     onKeyUp={(e) => handleKeyUp(e, index)}
                   />
                 </>

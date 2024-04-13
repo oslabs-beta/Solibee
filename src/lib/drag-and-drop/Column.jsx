@@ -49,16 +49,16 @@ export default (props) => {
 
   return (
     <div
-      class="m-3 flex h-72 flex-col items-center justify-start rounded-xl bg-slate-300 p-1"
+      class='m-3 flex min-h-72 flex-col items-center justify-start rounded-xl border-2 border-orange-100 bg-slate-100 p-1'
       onDragEnter={(e) => handleDragEnter(e)}
       onDragOver={(e) => handleDragOver(e)}
       onDragLeave={(e) => handleDragLeave(e)}
       onDrop={(e) => handleDrop(e)}
     >
       <button
-        class="m-4 rounded-md border-2 border-slate-400 p-2 pb-1 pt-1"
+        class='m-4 rounded-md bg-orange-100 p-2 px-4 pb-1 pt-1'
         onClick={() =>
-          props.updateItems("create", {
+          props.updateItems('create', {
             title: null,
             content: null,
             colID: props.colID,
