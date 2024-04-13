@@ -15,11 +15,13 @@ export default function NavBar() {
     <div class="bg-white-200 sticky top-0 z-50 h-16 backdrop-blur-sm">
       <div class="flex h-5/6  w-full items-center justify-between px-5 py-2 text-sm font-medium text-slate-700">
         <div class="flex items-center">
-          <img
-            class="mr-6 h-8"
-            src={solibeeLogo}
-            alt="the solibee logo: a bee in a honeycomb"
-          />
+          <a href="/">
+            <img
+              class="mr-6 h-8"
+              src={solibeeLogo}
+              alt="the solibee logo a bee in a honeycomb"
+            />
+          </a>
           <span class="mr-6 mt-1 hover:text-orange-200">
             <a href="/introduction">Docs</a>
           </span>
