@@ -1,7 +1,7 @@
 import { For, createSignal } from 'solid-js';
 type Todo = { id: number; text: string; completed: boolean };
 
-export default function ToDoList () {
+export default function ToDoList() {
   let input!: HTMLInputElement;
   let todoId = 0;
   const [todos, setTodos] = createSignal<Todo[]>([]);
@@ -11,8 +11,8 @@ export default function ToDoList () {
   const toggleTodo = (id: number) => {
     setTodos(
       todos().map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
     );
   };
 
@@ -66,9 +66,4 @@ export default function ToDoList () {
       </div>
     </div>
   );
-};
-
-
-
-
-
+}

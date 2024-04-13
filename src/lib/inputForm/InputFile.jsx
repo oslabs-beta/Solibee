@@ -32,7 +32,10 @@ function InputFile() {
           type='file'
           onChange={handleFileChange}
         />
-        <button class='rounded-md bg-orange-100	py-1 px-2' onClick={handleSubmit}>
+        <button
+          class='rounded-md bg-orange-100	px-2 py-1'
+          onClick={handleSubmit}
+        >
           Upload
         </button>
       </div>

@@ -1,5 +1,5 @@
-import { createSignal } from "solid-js";
-import Item from "./Item.jsx";
+import { createSignal } from 'solid-js';
+import Item from './Item.jsx';
 
 export default (props) => {
   const [closestItemID, setClosestItemID] = createSignal(null);
@@ -16,7 +16,7 @@ export default (props) => {
   const handleDragOver = (e) => {
     e.preventDefault();
 
-    const itemID = e.dataTransfer.getData("id");
+    const itemID = e.dataTransfer.getData('id');
 
     setClosestItemID(
       Object.keys(props.items)
@@ -31,7 +31,7 @@ export default (props) => {
         }, null),
     );
 
-    props.updateItems("update", {
+    props.updateItems('update', {
       itemID,
       colID: props.colID,
       order: closestItemReorderingIndex(),

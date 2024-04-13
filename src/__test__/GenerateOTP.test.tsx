@@ -5,19 +5,18 @@ import '@testing-library/jest-dom';
 jest.mock('clipboard-copy', () => jest.fn());
 
 describe('GenerateOTP', () => {
-
   // let getByText: (text: string) => HTMLElement;
 
   // beforeEach(() => {
-    // const result = render(() => <GenerateOTP />);
-    // getByText = result.getByText;
+  // const result = render(() => <GenerateOTP />);
+  // getByText = result.getByText;
   // });
 
   afterEach(() => {
     cleanup();
   });
 
-  it ('renders component with correct text', () => {
+  it('renders component with correct text', () => {
     // Verify if the component renders with the correct text
     render(() => <GenerateOTP />);
     const buttonRegenerate = screen.getByText('Regenerate');
@@ -26,11 +25,11 @@ describe('GenerateOTP', () => {
     expect(buttonCopy).toBeInTheDocument();
   });
 
-  it ('regenerate a new OTP and displays it each time the button is clicked', async () => {
+  it('regenerate a new OTP and displays it each time the button is clicked', async () => {
     const { getByText } = render(() => <GenerateOTP />);
     const initialOTP = getByText(/Your one-time password is:/).textContent;
     const buttonRegenerate = screen.getByText('Regenerate');
-    
+
     fireEvent.click(buttonRegenerate);
     await Promise.resolve();
 
@@ -38,17 +37,20 @@ describe('GenerateOTP', () => {
     expect(newOTP).not.toEqual(initialOTP);
   });
 
-  it ('copies the new generated OTP after OTP is regenerated', async () => {
-  
+  it('copies the new generated OTP after OTP is regenerated', async () => {
     const { getByText, findByText } = render(() => <GenerateOTP />);
 
-    const initialOTPElement = getByText(/Your one-time password is:/).querySelector('span') as HTMLSpanElement;
+    const initialOTPElement = getByText(
+      /Your one-time password is:/,
+    ).querySelector('span') as HTMLSpanElement;
     const initialOTP = initialOTPElement.textContent;
     const regenerateButton = getByText('Regenerate');
     fireEvent.click(regenerateButton);
     await Promise.resolve();
 
-    const newOTPElement = (await findByText(/Your one-time password is:/)).querySelector('span') as HTMLSpanElement;;
+    const newOTPElement = (
+      await findByText(/Your one-time password is:/)
+    ).querySelector('span') as HTMLSpanElement;
     const newOTP = newOTPElement.textContent;
 
     const copyButton = getByText('Copy');
@@ -59,4 +61,3 @@ describe('GenerateOTP', () => {
     expect(jest.requireMock('clipboard-copy')).toHaveBeenCalledWith(newOTP);
   });
 });
-  

@@ -1,8 +1,8 @@
-import { createEffect, createSignal } from "solid-js";
-import { createStore } from "solid-js/store";
-import Column from "./Column.jsx";
+import { createEffect, createSignal } from 'solid-js';
+import { createStore } from 'solid-js/store';
+import Column from './Column.jsx';
 
-//area item that takes in the following props: 
+//area item that takes in the following props:
 //   items:  the number of default items to display
 //   columns:  the number of default columns to display
 //   showNewColBtn: a boolean which displays an add new column button if set to true
@@ -38,12 +38,11 @@ export default (props) => {
   const [selectedItem, setSelectedItem] = createSignal(null);
 
   /**
-   * A function that updates items. 
+   * A function that updates items.
    * @function
    * @param {method} method - could be create, update, or delete
    * @param {payload} payload - an object { itemID: the id of the selectedItem, y: the y-coordinates of the item}
    */
-
 
   const updateItems = (method, payload) => {
     // console.log({ method, payload });
