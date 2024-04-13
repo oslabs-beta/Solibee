@@ -19,7 +19,7 @@ export default function NavBar() {
             <img
               class="mr-6 h-8"
               src={solibeeLogo}
-              alt="the solibee logo a bee in a honeycomb"
+              alt="the solibee logo: a bee in a honeycomb"
             />
           </a>
           <span class="mr-6 mt-1 hover:text-orange-200">
