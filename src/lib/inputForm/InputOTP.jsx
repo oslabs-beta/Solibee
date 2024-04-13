@@ -29,6 +29,9 @@ function InputOTP() {
       alert ('Enter numbers only');
 
     }
+    else{
+      alert(`Submitted OPT ${submittedOTP}`)
+    }
   
     otpDigits.map((el, index) => {
       setOtpDigits(index, '');
