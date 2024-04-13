@@ -19,41 +19,41 @@ function InputForm() {
   };
 
   return (
-    <div class="mx-auto p-2">
-      <form class="flex flex-col gap-2 " onSubmit={handleSubmit}>
-        <div id="name" class="mt-2.5">
+    <div class='mx-auto p-2'>
+      <form class='flex flex-col gap-2' onSubmit={handleSubmit}>
+        <div id ='name' class='mt-2.5'>
           <div>
-            <label id="nameLabel" class="font-medium text-gray-900" for="name">
+            <label id ='nameLabel' class='font-medium text-gray-900' for='name'>
               Name
             </label>
           </div>
           <input
-            id="name"
-            type="text"
-            placeholder="solidbee"
+            id='name'
+            type='text'
+            placeholder='solidbee'
             value={name()}
             onInput={(e) => setName(e.target.value)}
             required
-            class="mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5] focus:border-orange-100 focus:shadow focus:outline-none focus:ring-2 focus:ring-orange-100"
+            class='mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5] focus:border-orange-100 focus:shadow focus:outline-none focus:ring-2 focus:ring-orange-100'
           />
         </div>
-        <div class="my-2.5">
+        <div class='my-2.5'>
           <div>
-            <label id="emailLabel" class="font-medium text-gray-900" for="email">
+            <label id='emailLabel' class='font-medium text-gray-900' for='email'>
               Email
             </label>
           </div>
           <input
-            id="email"
-            type="email"
-            placeholder="solidbee@gmail.com"
+            id='email'
+            type='email'
+            placeholder='solidbee@gmail.com'
             value={email()}
             onInput={(e) => setEmail(e.target.value)}
             required
-            class="mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5]  focus:border-orange-100 focus:shadow focus:outline-none focus:ring-2 focus:ring-orange-100"
+            class='mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5]  focus:border-orange-100 focus:shadow focus:outline-none focus:ring-2 focus:ring-orange-100'
           />
         </div>
-        <button class="mx-auto rounded-md	bg-orange-100 p-1 px-2" type="submit">
+        <button class='mx-auto rounded-md	bg-orange-100 p-1 px-2' type='submit'>
           Submit
         </button>
       </form>
