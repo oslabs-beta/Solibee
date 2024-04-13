@@ -2,7 +2,7 @@ import solibeeLogo from '../../assets/solibee-logo2.png';
 
 export default () => {
   return (
-    <div class='flex h-full flex-col items-center justify-center'>
+    <div class='fixed inset-0 top-40 flex h-full w-full flex-col items-center'>
       <div class='mb-8 flex items-center justify-center'>
         <img
           class='mr-4 h-36'
