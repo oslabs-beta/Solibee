@@ -7,11 +7,11 @@ function App() {
   const components = ['Drawer', 'Kanban Card', 'Input Form'];
 
   return (
-    <div
-      class="background"
-    >
-      <NavBar />
-      <MainContainer />
+    <div class='background flex min-h-screen flex-col'>
+      <div class='flex grow flex-col'>
+        <NavBar />
+        <MainContainer />
+      </div>
       <Footer />
     </div>
   );
