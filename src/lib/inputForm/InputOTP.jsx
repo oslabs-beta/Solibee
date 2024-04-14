@@ -17,7 +17,8 @@ function InputOTP() {
   function handleSubmit(e) {
     
     const submittedOTP = otpDigits.join('');
-    if (otpDigits.some(el => typeof(el) !== 'number')) {
+    // if (otpDigits.some(el => typeof(el) !== 'number')) {
+    if (otpDigits.some(el => isNaN(Number(el)))) {
       alert('Enter numbers only'); 
       e.preventDefault();
     }
@@ -88,6 +89,7 @@ function InputOTP() {
     } else if (e.key === 'Backspace') {
       setOtpDigits(index(), '-');
       focusNextInput(e.target, prevId, nextId);
+      console.log(otpDigits);
     }
    
   }
@@ -99,10 +101,10 @@ function InputOTP() {
         <div class='mb-2 flex gap-2'>
           <For each={otpDigits} fallback={<div>Loading...</div>}>
             {(digit, index) => {
-              console.log({ digit, index, otpDigits });
+              // console.log({ digit, index, otpDigits });
               return (
                 <>
-                  <label for={`otpInput${index()}`} class='sr-only' />
+                  <label for={`otpInput${index()}`} class='sr-only'>OTP Input {index()}</label>
                   <input
                     type='text'
                     id={`otpInput${index()}`}
