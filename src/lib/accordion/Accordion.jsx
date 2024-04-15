@@ -3,15 +3,26 @@ import { createStore } from 'solid-js/store';
 
 export default function Accordion() {
 
-  const [data, setData] = createStore([
+ const data = [
     {
       question: 'What is Solibee?',
       answer:
-        'Solibee is an open-source project simply styled, and accessible SolidJS components and a bunch of other things and another one and another',
+        'Solibee is an open-source collection of simply styled, tested and accessible SolidJS components.',
     },
-    { question: 'Who is on the team?', answer: 'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol' },
-    { question: 'I am question?', answer: 'I am answer' },
-  ]);
+    {
+      question: "Accessible? Tell me more...",
+      answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
+    },
+    {
+      question: 'Who is on the team?',
+      answer:
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol',
+    },
+    {
+      question: "I'm excited, how do I install the components?",
+      answer: 'You can install each component either manually or via CLI',
+    },
+  ];
 
   const [activeID, setActiveID] = createStore(Array(data.length).fill(false));
 
@@ -21,7 +32,7 @@ export default function Accordion() {
 
   return (
     <div
-      class='flex w-[500px] flex-col rounded-md shadow-md p-4 transition-all'
+      class='flex w-[500px] flex-col rounded-md  p-4'
       id='accordion-collapse'
     >
       <div class='border border-orange-100 rounded-md'>
@@ -34,13 +45,13 @@ export default function Accordion() {
                 class={`${isLastIndex ? '' : 'border-b'}  border-orange-100`}
                 classList={{}}
               >
-                <h2 id={`accordion-collapse-heading-${i}`}>
+                <h2 id={`accordion-collapse-heading-${i()}`}>
                   <button
                     type='button'
-                    class='flex w-full items-center justify-between gap-10 px-1 py-2 pr-2 text-sm font-bold hover:bg-orange-200/[0.1]'
-                    data-accordion-target={`#accordion-collapse-body-${i}`}
+                    class='flex w-full items-center justify-between gap-10 px-2 py-3 text-sm font-bold hover:bg-orange-200/[0.1]'
+                    data-accordion-target={`#accordion-collapse-body-${i()}`}
                     aria-expanded={activeID[i()] ? true : false}
-                    aria-controls={`accordion-collapse-body-${i}`}
+                    aria-controls={`accordion-collapse-body-${i()}`}
                     onClick={() => toggleAccordion(i())}
                   >
                     <span>{obj.question}</span>
@@ -61,24 +72,18 @@ export default function Accordion() {
                     </svg>
                   </button>
                 </h2>
-                <Show when={activeID[i()] === true} fallback={<></>}>
-                  {/* <div
-                    class='overflow-hidden'
-                    id={`accordion-collapse-body-${i}`}
-                    aria-labelledby={`accordion-collapse-heading-${i}`}
-                  >
-                    <p class='px-1 text-sm'>{obj.answer}</p>
-                  </div> */}
-                  <div
-                    class={`transition-height overflow-hidden duration-150 ${
-                      activeID[i()] ? 'h-auto' : 'h-0'
-                    }`}
-                    id={`accordion-collapse-body-${i}`}
-                    aria-labelledby={`accordion-collapse-heading-${i}`}
-                  >
-                    <p class='px-1 text-sm'>{obj.answer}</p>
-                  </div>
-                </Show>
+
+                <div
+                  class={` overflow-hidden ${
+                    activeID[i()]
+                      ? 'transition-transform transition-max-height max-h-full duration-200 ease-in-out'
+                      : 'transition-transform transition-max-height max-h-0 duration-200 ease-in-out'
+                  }`}
+                  id={`accordion-collapse-body-${i()}`}
+                  aria-labelledby={`accordion-collapse-heading-${i()}`}
+                >
+                  <p class='p-2 text-sm'>{obj.answer}</p>
+                </div>
               </div>
             );
           }}
