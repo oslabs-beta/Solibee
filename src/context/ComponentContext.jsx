@@ -5,6 +5,7 @@ export const ComponentContext = createContext();
 
 export function CompContextProvider(props) {
   const [components, setComponents] = createStore([
+    'Accordion',
     'Drag And Drop',
     'Generate OTP',
     'Input File',
