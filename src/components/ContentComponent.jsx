@@ -48,7 +48,7 @@ export default function ContentComponent(props) {
   });
 
   return (
-    <div class='prose mx-auto w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]'>
+    <div class='prose w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]'>
       {/* Component name and description */}
       <div class='mb-4 flex max-h-8 items-center text-sm'>
         <div class=''>Components</div>
