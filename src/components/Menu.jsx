@@ -32,7 +32,7 @@ export default function Menu() {
   const { components } = useContext(ComponentContext); // get components from db if we set up and store them in db;
 
   return (
-    <div class='sticky top-28 hidden h-full w-52 px-3 backdrop-blur-sm md:block'>
+    <div class='sticky top-28 hidden h-full w-52 px-3 mr-6 backdrop-blur-sm md:block'>
       <ul>
         <li class='mb-3 px-3 font-bold text-orange-200'>Getting Started</li>
         <li>
