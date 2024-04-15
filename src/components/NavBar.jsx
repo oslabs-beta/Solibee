@@ -4,7 +4,6 @@ import gitLogo from '../../assets/github-mark.png';
 import gitLogoWhite from '../../assets/github-mark-white.png';
 import sunIcon from '../../assets/sun-svgrepo-com.svg';
 import nightIcon from '../../assets/night-svgrepo-com.svg';
-import Search from './Search';
 import { ComponentContext } from '../context/ComponentContext';
 
 export default function NavBar() {
@@ -33,7 +32,6 @@ export default function NavBar() {
         </span>
       </div>
       <div class='mt-1 flex items-center'>
-        <Search />
         <a
           class='ml-6'
           target='_blank'
