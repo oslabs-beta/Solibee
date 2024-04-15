@@ -293,4 +293,6 @@ export const JsxToString = {
       </>
     );
   };`,
+  Accordion: `
+  I am Accordion code.`
 };
