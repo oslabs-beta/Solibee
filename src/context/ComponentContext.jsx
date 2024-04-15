@@ -10,6 +10,7 @@ export function CompContextProvider(props) {
     'Input File',
     'Input Form',
     'Input OTP',
+    'Search Button',
     'To Do List',
   ]);
 
