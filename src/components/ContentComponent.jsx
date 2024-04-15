@@ -76,7 +76,7 @@ export default function ContentComponent(props) {
       <div class='w-full'>
         <p class='text-h3font'>Preview</p>
         <hr />
-        <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100'>
+        <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
           <Show when={currentComp() === 'Input Form'}>
             <InputForm />
           </Show>
