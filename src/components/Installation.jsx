@@ -68,7 +68,7 @@ export default function Installation(props) {
   return (
     // prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]
     // <article class="prose mx-auto w-10/12 max-w-3xl max-w-[800px]">
-    <article class='prose mx-auto w-10/12 max-w-3xl bg-white/[0.9]'>
+    <article class='prose mx-auto w-10/12 max-w-3xl'>
       <header>
         <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
         <p class='my-5 text-lg'>

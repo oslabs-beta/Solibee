@@ -8,7 +8,7 @@ export default function Introduction() {
   //   //Designed by
   return (
     // previous article class styling : max-w-3xl mx-auto pt-10 w-10/12
-    <article class='prose mx-auto w-10/12 max-w-[800px] bg-white/[0.9]'>
+    <article class='prose mx-auto w-10/12 max-w-[800px]'>
       <header>
         <h1 class='mb-4 border-b text-4xl font-bold'>Introduction</h1>
         <p>
