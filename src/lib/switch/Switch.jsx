@@ -12,7 +12,7 @@ function Switch({ darkMode, toggleMode }) {
           {/* in class at the end:  */}
           <div
             id="switch-btn"
-            class={`absolute top-0 h-7 w-7 rounded-full bg-white transition duration-300 ease-in-out ${darkMode() ? "right-0" : "left-0"}`}
+            class={`absolute top-0 h-7 w-7 rounded-full bg-white transition duration-500 ease-in-out  ${darkMode() ? "right-0 bg-black" : "left-0"}`}
           />
         </div>
       </div>
