@@ -6,7 +6,6 @@ import '@testing-library/jest-dom';
 window.alert = jest.fn();
 
 describe('InputOTP', () => {
-
   afterEach(() => {
     cleanup();
   });
@@ -16,9 +15,8 @@ describe('InputOTP', () => {
     render(() => <InputOTP />);
     
     const buttonSubmit = screen.getByText('Submit OTP');
-    
+
     expect(buttonSubmit).toBeInTheDocument();
-    
   });
 
   it ('pasting data updates the state and displays code in each input box', async () => {

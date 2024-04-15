@@ -20,10 +20,26 @@ function InputFile() {
   };
 
   return (
-    <div>
-      <input data-testid="upInput" class="rounded-md" type='file' onChange={handleFileChange} />
-      <button class="bg-orange-100 rounded-md	p-1 px-2" onClick={handleSubmit}>Upload</button>
-    </div>
+    <form>
+      <div class='flex items-baseline gap-2'>
+        <label for='fileInput' class='mb-2 block p-2'>
+          Choose a file:
+        </label>
+        <input
+          class='rounded-md border border-gray-300 bg-white p-2'
+          id='fileInput'
+          name='fileInput'
+          type='file'
+          onChange={handleFileChange}
+        />
+        <button
+          class='rounded-md bg-orange-100	px-2 py-1'
+          onClick={handleSubmit}
+        >
+          Upload
+        </button>
+      </div>
+    </form>
   );
 }
 

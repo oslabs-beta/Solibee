@@ -4,24 +4,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'yellow': {
+        yellow: {
           100: '#fcef46',
           200: '#ffd231',
         },
-        'orange': {
+        orange: {
           100: '#faaa3d',
-          200: '#f47833'
+          200: '#f47833',
         },
-        'black': '#191818'
+        black: '#191818',
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
       fontFamily: {
         serif: ['Mulish', 'sans-serif'],
-        pacifico: ['Pacifico', 'serif']
+        pacifico: ['Pacifico', 'serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
