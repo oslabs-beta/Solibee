@@ -1,10 +1,13 @@
-import { createSignal, useContext } from 'solid-js';
+// solidJS
+import { useContext } from 'solid-js';
+import { ComponentContext } from '../context/ComponentContext';
+
+// assets
 import solibeeLogo from '../../assets/solibee-logo2.png';
 import gitLogo from '../../assets/github-mark.png';
 import gitLogoWhite from '../../assets/github-mark-white.png';
 import sunIcon from '../../assets/sun-svgrepo-com.svg';
 import nightIcon from '../../assets/night-svgrepo-com.svg';
-import { ComponentContext } from '../context/ComponentContext';
 
 export default function NavBar() {
   const { components } = useContext(ComponentContext);
