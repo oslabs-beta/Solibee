@@ -35,17 +35,17 @@ describe('InputOTP', () => {
 
     const input0 = getByLabelText('OTP Input 0');
     const input1 = getByLabelText('OTP Input 1');
-    // const input2 = getByLabelText('OTP Input 2');
-    // const input3 = getByLabelText('OTP Input 3');
-    // const input4 = getByLabelText('OTP Input 4');
-    // const input5 = getByLabelText('OTP Input 5');
+    const input2 = getByLabelText('OTP Input 2');
+    const input3 = getByLabelText('OTP Input 3');
+    const input4 = getByLabelText('OTP Input 4');
+    const input5 = getByLabelText('OTP Input 5');
 
     expect(input0.value).toBe('1');
     expect(input1.value).toBe('2');
-    // expect(input2.value).toBe('3');
-    // expect(input3.value).toBe('4');
-    // expect(input4.value).toBe('5');
-    // expect(input5.value).toBe('6');
+    expect(input2.value).toBe('3');
+    expect(input3.value).toBe('4');
+    expect(input4.value).toBe('5');
+    expect(input5.value).toBe('6');
   });
 
   it ('handles key up events and updates the state correctly', async () => {
