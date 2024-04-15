@@ -293,4 +293,134 @@ export const JsxToString = {
       </>
     );
   };`,
+  Accordion: `import { For } from 'solid-js';
+import { createStore } from 'solid-js/store';
+
+export default function Accordion() {
+
+ const data = [
+    {
+      question: 'What is Solibee?',
+      answer:
+        'Solibee is an open-source collection of simply styled, tested and accessible SolidJS components.',
+    },
+    {
+      question: "Accessible? Tell me more...",
+      answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
+    },
+    {
+      question: 'Who is on the team?',
+      answer:
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol',
+    },
+    {
+      question: "I'm excited, how do I install the components?",
+      answer: 'You can install each component either manually or via CLI',
+    },
+  ];
+
+  const [activeID, setActiveID] = createStore(Array(data.length).fill(false));
+
+  function toggleAccordion(index) {
+    setActiveID(activeID.map((_, i) => (i === index ? !activeID[i] : false)));
+  }
+
+  return (
+    <div
+      class='flex w-[500px] flex-col rounded-md  p-4'
+      id='accordion-collapse'
+    >
+      <div class='border border-orange-100 rounded-md'>
+        <For each={data}>
+          {(obj, i) => {
+            const isLastIndex = i() === data.length - 1; 
+            return (
+              <div
+                id='wrapper'
+                class={\`\${isLastIndex ? '' : 'border-b'}  border-orange-100\`}
+                classList={{}}
+              >
+                <h2 id={\`accordion-collapse-heading-\${i()}\`}>
+                  <button
+                    type='button'
+                    class='flex w-full items-center justify-between gap-10 px-2 py-3 text-sm font-bold hover:bg-orange-200/[0.1]'
+                    data-accordion-target={\`#accordion-collapse-body-\${i()}\`}
+                    aria-expanded={activeID[i()] ? true : false}
+                    aria-controls={\`accordion-collapse-body-\${i()}\`}
+                    onClick={() => toggleAccordion(i())}
+                  >
+                    <span>{obj.question}</span>
+                    <svg
+                      class={\`size-2 shrink-0 \${activeID[i()] ? 'rotate-180' : ''} transition-transform\`}
+                      aria-hidden='true'
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 10 6'
+                    >
+                      <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M9 5 5 1 1 5'
+                      />
+                    </svg>
+                  </button>
+                </h2>
+
+                <div
+                  class={\` overflow-hidden \${
+                    activeID[i()]
+                      ? 'transition-transform transition-max-height max-h-full duration-200 ease-in-out'
+                      : 'transition-transform transition-max-height max-h-0 duration-200 ease-in-out'
+                  }\`}
+                  id={\`accordion-collapse-body-\${i()}\`}
+                  aria-labelledby={\`accordion-collapse-heading-\${i()}\`}
+                >
+                  <p class='p-2 text-sm'>{obj.answer}</p>
+                </div>
+              </div>
+            );
+          }}
+        </For>
+      </div>
+    </div>
+  );
+}
+`,
+SearchButton: `export default function Search() {
+  return (
+    <form class='mx-auto flex max-w-sm items-center' role='search'>
+      <label for='search-input' class='sr-only'>
+        Search
+      </label>
+      <div class='relative mx-2 flex items-center justify-center'>
+        <div class='absolute left-2  text-orange-200'>
+          <svg
+            class=' h-4 w-4 '
+            aria-hidden='true'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 20 20'
+          >
+            <path
+              stroke='currentColor'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z'
+            />
+          </svg>
+        </div>
+
+        <input
+          aria-label='Search input'
+          id='search-input'
+          placeholder='Search ...'
+          class='h-10 w-full items-center rounded-md px-2 py-4 pl-8 text-sm text-gray-600 hover:bg-orange-50 focus:border-orange-100  focus:ring-1 focus:ring-orange-100 border border-orange-100'
+        ></input>
+      </div>
+    </form>
+  );
+}`,
 };

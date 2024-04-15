@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      transitionProperty:{
+        'max-height': 'max-height'
+      },
       colors: {
         yellow: {
           100: '#fcef46',
