@@ -6,7 +6,7 @@ export default function Introduction() {
   return (
     <>
       <Menu />
-      <article class='prose w-10/12 max-w-[800px] bg-white/[0.9]'>
+      <article class='prose w-10/12 max-w-[800px] backdrop-blur-sm px-3'>
         <header>
           <h1 class='mb-4 border-b text-4xl font-bold'>Introduction</h1>
           <p>

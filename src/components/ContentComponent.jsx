@@ -54,7 +54,7 @@ export default function ContentComponent(props) {
   return (
     <>
       <Menu />
-      <div class='prose w-10/12 max-w-[800px] bg-white/[0.9]'>
+      <div class='prose w-10/12 max-w-[800px] backdrop-blur-sm px-3'>
         {/* Component name and description */}
         {/* <div class='mb-4 flex max-h-8 items-center text-sm'>
         <div class=''>Components</div>
