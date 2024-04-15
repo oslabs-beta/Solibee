@@ -58,7 +58,7 @@ export default function NavBar() {
           </a>
           <div id='mode-icon' onClick={toggleTheme} class='cursor-pointer'>
             {isDarkTheme() ? (
-              <img class='ml-5 h-5 ' src={nightIcon} alt='Night icon' />
+              <img class='ml-6 h-6' src={nightIcon} alt='Night icon' />
             ) : (
               <img class='ml-6 h-6 ' src={sunIcon} alt='Sun icon' />
             )}
