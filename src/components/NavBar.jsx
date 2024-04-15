@@ -6,7 +6,6 @@ import sunIcon from "../../assets/sun-svgrepo-com.svg";
 import nightIcon from "../../assets/night-svgrepo-com.svg";
 import Search from "./Search";
 import { ComponentContext } from "../context/ComponentContext";
-import Switch from "../lib/switch/Switch";
 
 export default function NavBar() {
   const { components } = useContext(ComponentContext);
@@ -44,7 +43,6 @@ export default function NavBar() {
             src={sunIcon}
             alt="Sun icon"
           />
-          <Switch />
         </div>
       </div>
       <hr class="border-1 border-orange-100" />

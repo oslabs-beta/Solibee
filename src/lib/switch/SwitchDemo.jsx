@@ -12,12 +12,11 @@ export default function SwitchDemo() {
     <div>
       <Switch darkMode={darkMode} toggleMode={toggleMode} />
       <div>
-        {/* {darkMode() ? (
-          <span class="absolute top-10 w-20 text-sm">Dark Mode</span>
+        {darkMode() ? (
+          <span class="top-10 w-20 text-sm">Dark Mode</span>
         ) : (
-          <span class="absolute top-10 w-20 text-sm">Light Mode</span>
-        )} */}
-        <span>Test</span>
+          <span class="top-10 w-20 text-sm">Light Mode</span>
+        )}
       </div>
     </div>
   );
