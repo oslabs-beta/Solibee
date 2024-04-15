@@ -20,8 +20,7 @@ function InputOTP() {
     if (submittedOTP.length < 6) {
       e.preventDefault();
       alert('Enter 6 digits');
-    }
-    else if (otpDigits.some((el) => typeof el !== 'number')) {
+    } else if (otpDigits.some((el) => typeof el !== 'number')) {
       e.preventDefault();
       alert('Enter numbers only');
     } else {

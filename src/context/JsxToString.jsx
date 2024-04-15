@@ -388,7 +388,7 @@ export default function Accordion() {
   );
 }
 `,
-SearchButton: `export default function Search() {
+  SearchButton: `export default function Search() {
   return (
     <form class='mx-auto flex max-w-sm items-center' role='search'>
       <label for='search-input' class='sr-only'>

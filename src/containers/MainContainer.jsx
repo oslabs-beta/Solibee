@@ -7,14 +7,14 @@ import { ComponentContext } from '../context/ComponentContext';
 import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import Homepage from '../components/Homepage';
-import ContentComponent from '../components/ContentComponent'
+import ContentComponent from '../components/ContentComponent';
 
 export default function MainContainer() {
   const { components } = useContext(ComponentContext);
 
   return (
     //<div class='mx-auto mb-80 flex w-10/12 max-w-3xl grow justify-center overflow-auto pt-10 xl:max-w-none'>
-    <div class='flex justify-center m-10'>  
+    <div class='m-10 flex justify-center'>
       <Router>
         <Route path='/' component={Homepage} />
         <Route path='/introduction' component={Introduction} />

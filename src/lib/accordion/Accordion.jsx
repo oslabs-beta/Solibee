@@ -2,16 +2,16 @@ import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
 export default function Accordion() {
-
- const data = [
+  const data = [
     {
       question: 'What is Solibee?',
       answer:
         'Solibee is an open-source collection of simply styled, tested and accessible SolidJS components.',
     },
     {
-      question: "Accessible? Tell me more...",
-      answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
+      question: 'Accessible? Tell me more...',
+      answer:
+        'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
     },
     {
       question: 'Who is on the team?',
@@ -35,10 +35,10 @@ export default function Accordion() {
       class='flex w-[500px] flex-col rounded-md  p-4'
       id='accordion-collapse'
     >
-      <div class='border border-orange-100 rounded-md'>
+      <div class='rounded-md border border-orange-100'>
         <For each={data}>
           {(obj, i) => {
-            const isLastIndex = i() === data.length - 1; 
+            const isLastIndex = i() === data.length - 1;
             return (
               <div
                 id='wrapper'
@@ -76,8 +76,8 @@ export default function Accordion() {
                 <div
                   class={` overflow-hidden ${
                     activeID[i()]
-                      ? 'transition-transform transition-max-height max-h-full duration-200 ease-in-out'
-                      : 'transition-transform transition-max-height max-h-0 duration-200 ease-in-out'
+                      ? 'max-h-full transition-max-height transition-transform duration-200 ease-in-out'
+                      : 'max-h-0 transition-max-height transition-transform duration-200 ease-in-out'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
@@ -92,5 +92,3 @@ export default function Accordion() {
     </div>
   );
 }
-
-
