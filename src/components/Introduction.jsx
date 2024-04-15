@@ -1,4 +1,4 @@
-import Contributors from './Contributors';
+import Contributors from "./Contributors";
 
 export default function Introduction() {
   //   //Introduction
@@ -8,9 +8,9 @@ export default function Introduction() {
   //   //Designed by
   return (
     // previous article class styling : max-w-3xl mx-auto pt-10 w-10/12
-    <article class="prose mx-auto w-10/12 max-w-[800px] bg-white/[0.9]">
-      <header >
-        <h1 class="mb-4 text-4xl font-bold border-b">Introduction</h1>
+    <article class="prose mx-auto w-10/12 max-w-[800px]">
+      <header>
+        <h1 class="mb-4 border-b text-4xl font-bold">Introduction</h1>
         <p>
           Solibee is an open-source collection of accessible and customizable
           components for Solid.JS. Solibee has easily integratable components:
@@ -20,19 +20,19 @@ export default function Introduction() {
 
       <section class="mt-8">
         {/* font-bold  mb-4 */}
-        <h2 class=" mb-2 border-b text-2xl font-bold">Features</h2>
+        <h2 class="mb-2 border-b text-2xl font-bold">Features</h2>
         <ul class="list-inside list-disc space-y-1">
           <li>
             <span class="font-semibold">Accessible:</span> Designed with
             accessibility in mind to ensure all users can interact with the
-            components. Our components follow{' '}
+            components. Our components follow{" "}
             <a
               href="https://www.w3.org/WAI/ARIA/apg/"
               target="_blank"
               class="underline underline-offset-2 transition-colors hover:text-orange-200"
               rel="noopener noreferrer"
             >
-              WAI-ARIA design patterns.{' '}
+              WAI-ARIA design patterns.{" "}
             </a>
           </li>
           <li>
@@ -53,15 +53,15 @@ export default function Introduction() {
         <subsection>
           Solibee is an open-source project built for the Solid.JS community. If
           you have any questions, feedback, or suggestions, feel free to reach
-          out or contribute to our project by sending a PR to{' '}
+          out or contribute to our project by sending a PR to{" "}
           <a
             href="https://github.com/oslabs-beta/Solibee"
             target="_blank"
             class="underline underline-offset-2 transition-colors hover:text-orange-200"
             rel="noopener noreferrer"
           >
-            {' '}
-            our GitHub.{' '}
+            {" "}
+            our GitHub.{" "}
           </a>
         </subsection>
       </section>
@@ -77,7 +77,7 @@ export default function Introduction() {
               class="solibee-link"
               rel="noopener noreferrer"
             >
-              shadcn/ui{' '}
+              shadcn/ui{" "}
             </a>
           </li>
           <li>
@@ -87,7 +87,7 @@ export default function Introduction() {
               class="solibee-link"
               rel="noopener noreferrer"
             >
-              corvu.dev/{' '}
+              corvu.dev/{" "}
             </a>
           </li>
         </ul>
@@ -100,11 +100,11 @@ export default function Introduction() {
           these amazing people!
           <Contributors
             githubHandles={[
-              'tenn501',
-              'trialnerr',
-              'neulseo2',
-              'CK-Zhao',
-              'marsbird',
+              "tenn501",
+              "trialnerr",
+              "neulseo2",
+              "CK-Zhao",
+              "marsbird",
             ]}
           />
         </p>

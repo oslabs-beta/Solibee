@@ -5,17 +5,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        border: "var(--border)",
+        background: "rgba(var(--color-background))",
+        font: "rgba(var(--color-font))",
+        h3font: "rgba(var(--color-h3font))",
+        boldfont: "rgba(var(--color-boldfont))",
+        hover: "rgba(var(--color-hover))",
+
         yellow: {
-          100: "var(--lightyellow)",
-          200: "var(--darkyellow)",
+          100: "#fcef46",
+          200: "#ffd231",
         },
         orange: {
-          100: "var(--lightorange)",
-          200: "var(--darkorange)",
+          100: "#faaa3d",
+          200: "#f47833",
         },
-        black: "var(--black)",
+        black: "#191818",
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",

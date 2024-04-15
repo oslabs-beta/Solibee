@@ -1,40 +1,30 @@
-import { onCleanup } from "solid-js";
+import { createSignal, createEffect, onCleanup } from "solid-js";
 import NavBar from "./components/NavBar";
 import MainContainer from "./containers/MainContainer";
 import Footer from "./components/Footer";
 
 function App() {
-  // // Set theme in localStorage
-  // localStorage.setItem("theme", "light");
+  // const [isDarkTheme, setIsDarkTheme] = createSignal(false);
+  // // toggle dark theme
+  // const toggleTheme = () => {
+  //   setIsDarkTheme(prevState => !prevState);
+  // };
 
-  // // Retrieve theme from localStorage
-  // const selectedTheme = localStorage.getItem("theme") || "light";
-
-  // // Apply theme to the body
-  // document.body.classList.add(selectedTheme);
-
-  // // Clean up theme class on component unmount
-  // onCleanup(() => {
-  //   document.body.classList.remove(selectedTheme);
-  // });
-
-  // useEffect(() => {
-  //   localStorage.setItem("theme", "light");
-
-  //   const selectedTheme = localStorage.getItem("theme");
-
-  //   if (selectedTheme) {
-  //     document.body.classList.add(selectedTheme);
-  //   } else if (selectedTheme === "dark") {
-  //     document.body.classList.add("dark");
+  // createEffect(() => {
+  //   if (isDarkTheme()) {
+  //     document.documentElement.setAttribute("data-theme", "dark");
   //   } else {
-  //     document.body.classList.add("light");
+  //     document.documentElement.removeAttribute("data-theme");
   //   }
   // });
 
+  onCleanup(() => {
+    document.documentElement.remove("data-theme");
+  });
+
   return (
     <div
-      class="dark relative min-h-screen bg-cover bg-fixed bg-center"
+      class="text-font bg-background relative min-h-screen bg-cover bg-fixed bg-center"
       style="background-image: url('../assets/494-[Converted].png')"
     >
       <NavBar />

@@ -14,20 +14,22 @@
   font-style: normal;
 }
 
-:root {
-  --lightyellow:#fcef46;
-  --darkyellow:#ffd231;
-  --lightorange: #faaa3d;
-  --darkorange: #f47833;
-  --black: #191818;
-}
+@layer base {
+  :root {
+    --color-background: 255, 255, 255;
+    --color-font: 0, 0, 0;
+    --color-h3font: 124 45 18;
+    --color-boldfont: 244, 120, 51;
+    --color-hover: 244, 120, 51;
+  }
 
-.light {
-  background-color: pink;
-}
-
-.dark {
-  background-color: grey;
+  :root[data-theme="dark"] {
+    --color-background: 0, 0, 0;
+    --color-font: 255, 255, 255;
+    --color-h3font: 253 186 116;
+    --color-boldfont: 153, 153, 153;
+    --color-hover: 244, 120, 51;
+  }
 }
 
 /* styling of the button location; inside styling exists as tailwind */
