@@ -14,7 +14,7 @@ export default function NavBar() {
   const href = `/component/${components[0].toLowerCase().replaceAll(' ', '')}`;
 
   return (
-    <div class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between  border border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
+    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between  border border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
       <div class='flex items-center'>
         <a
           href='/'
@@ -46,6 +46,6 @@ export default function NavBar() {
         </a>
         <img class='ml-6 h-6 ' src={sunIcon} alt='Sun icon' />
       </div>
-    </div>
+    </header>
   );
 }
