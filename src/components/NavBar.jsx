@@ -38,11 +38,13 @@ export default function NavBar() {
               <img class="h-6" src={gitLogo} alt="GitHub logo" />
             </span>
           </a>
-          <img
-            class="ml-6 h-6 hover:text-orange-200"
-            src={sunIcon}
-            alt="Sun icon"
-          />
+          <div id="mode-icon">
+            <img
+              class="ml-6 h-6 hover:text-orange-200"
+              src={sunIcon}
+              alt="Sun icon"
+            />
+          </div>
         </div>
       </div>
       <hr class="border-1 border-orange-100" />
