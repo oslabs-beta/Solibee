@@ -52,12 +52,12 @@ export default function NavBar() {
               <img class="h-6" src={gitLogo} alt="GitHub logo" />
             </span>
           </a>
-          <div id="mode-icon" onClick={toggleTheme}>
-            <img
-              class="ml-6 h-6 hover:text-orange-200"
-              src={sunIcon}
-              alt="Sun icon"
-            />
+          <div id="mode-icon" onClick={toggleTheme} class="cursor-pointer">
+            {isDarkTheme() ? (
+              <img class="ml-5 h-5" src={nightIcon} alt="Night icon" />
+            ) : (
+              <img class="ml-6 h-6" src={sunIcon} alt="Sun icon" />
+            )}
           </div>
         </div>
       </div>
