@@ -13,7 +13,8 @@ export default function MainContainer() {
   const { components } = useContext(ComponentContext);
 
   return (
-    <div class='mx-auto mb-80 flex w-10/12 max-w-3xl grow justify-center overflow-auto pt-10 xl:max-w-none'>
+    //<div class='mx-auto mb-80 flex w-10/12 max-w-3xl grow justify-center overflow-auto pt-10 xl:max-w-none'>
+    <div class='flex justify-center m-10'>  
       <Router>
         <Route path='/' component={Homepage} />
         <Route path='/introduction' component={Introduction} />
