@@ -2,6 +2,7 @@ import CodeBoxWithCopy from './CodeBoxWithCopy';
 import Step from './Step';
 import { codeToHtml } from 'shiki';
 import { createSignal } from 'solid-js';
+import Menu from './Menu';
 
 //TO DO: Create a different file for the codeStrings;
 export default function Installation(props) {
@@ -66,8 +67,9 @@ export default function Installation(props) {
   getHtml();
 
   return (
-    // prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]
-    <article class='prose w-10/12 max-w-3xl bg-white/[0.9]'>
+    <>
+    <Menu/>
+    <article class='prose w-10/12 max-w-[800px] bg-white/[0.9]'>
       <header>
         <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
         <p class='my-5 text-lg'>
@@ -139,5 +141,6 @@ export default function Installation(props) {
         </div>
       </section>
     </article>
+    </>
   );
 }
