@@ -1,20 +1,9 @@
 import { createSignal } from "solid-js";
 
-function Switch() {
-  const [darkMode, setDarkMode] = createSignal(false);
-
-  const toggleMode = () => {
-    setDarkMode(!darkMode());
-  };
-
+function Switch({ darkMode, toggleMode }) {
   return (
     <div class="justify-center">
       <div class="relative">
-        {darkMode() ? (
-          <span class="absolute top-10 w-20 text-sm">Dark Mode</span>
-        ) : (
-          <span class="absolute top-10 w-20 text-sm">Light Mode</span>
-        )}
         <div
           id="switch-container"
           onClick={toggleMode}
