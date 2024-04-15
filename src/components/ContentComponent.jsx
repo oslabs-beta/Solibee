@@ -5,6 +5,7 @@ import { StringRepContext } from '../context/StrRepresentationContext';
 // web components
 import Step from './Step';
 import CodeBoxWithCopy from './CodeBoxWithCopy';
+import Menu from './Menu';
 
 // custom components
 import Accordion from '../lib/accordion/Accordion';
@@ -51,20 +52,22 @@ export default function ContentComponent(props) {
   });
 
   return (
-    <div class='prose w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]'>
+    <>
+    <Menu/>
+    <div class='prose w-10/12 max-w-[800px] bg-white/[0.9]'>
       {/* Component name and description */}
-      <div class='mb-4 flex max-h-8 items-center text-sm'>
+      {/* <div class='mb-4 flex max-h-8 items-center text-sm'>
         <div class=''>Components</div>
         <svg class='h-4 w-4'>
           <path d='M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z'></path>
         </svg>
-      </div>
-      <header class='my-4'>
-        <h1 class='my-4 inline-block text-4xl font-bold tracking-tight'>
+      </div> */}
+      <header class='mb-4'>
+        <h1 class='mb-4 inline-block text-4xl font-bold tracking-tight'>
           {currentComp()}
         </h1>
         <hr />
-        <p class='my-5 text-slate-500'>
+        <p class='mb-5 text-slate-500'>
           {/* TODO: make this description dynamic */}A vertically stacked set of
           interactive headings that each reveal a section of content.
         </p>
@@ -166,5 +169,6 @@ export default function ContentComponent(props) {
         </section>
       </div>
     </div>
+    </>
   );
 }
