@@ -1,7 +1,7 @@
-import { createSignal, createEffect, onCleanup } from "solid-js";
-import NavBar from "./components/NavBar";
-import MainContainer from "./containers/MainContainer";
-import Footer from "./components/Footer";
+import { createSignal, createEffect, onCleanup } from 'solid-js';
+import NavBar from './components/NavBar';
+import MainContainer from './containers/MainContainer';
+import Footer from './components/Footer';
 
 function App() {
   // const [isDarkTheme, setIsDarkTheme] = createSignal(false);
@@ -19,12 +19,12 @@ function App() {
   // });
 
   onCleanup(() => {
-    document.documentElement.remove("data-theme");
+    document.documentElement.remove('data-theme');
   });
 
   return (
     <div
-      class="text-font bg-background relative min-h-screen bg-cover bg-fixed bg-center"
+      class='text-font bg-background relative min-h-screen bg-cover bg-fixed bg-center'
       style="background-image: url('../assets/494-[Converted].png')"
     >
       <NavBar />

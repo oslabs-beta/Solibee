@@ -16,21 +16,21 @@ export default function Contributors(props) {
 
   //using solid For method
   return (
-    <ul class="m-5 flex flex-wrap justify-center -space-x-2 overflow-hidden">
+    <ul class='m-5 flex flex-wrap justify-center -space-x-2 overflow-hidden'>
       <For each={contributors()}>
         {(gitHandle) => (
-          <li class="ml-3">
+          <li class='ml-3'>
             <a
-              class="avatar"
+              class='avatar'
               href={`https://github.com/${gitHandle}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <img
-                class=" avatar inline-block h-40 w-40 rounded-full ring-2 ring-white"
+                class=' avatar inline-block h-40 w-40 rounded-full ring-2 ring-white'
                 src={`https://github.com/${gitHandle}.png`}
                 style={{ display: 'block' }}
-                alt="Avatar"
+                alt='Avatar'
               />
             </a>
           </li>

@@ -5,7 +5,11 @@ import { createSignal } from "solid-js";
 
 //TO DO: Create a different file for the codeStrings;
 export default function Installation(props) {
+<<<<<<< HEAD
   const codeStep1 = "npx solibee add componentName";
+=======
+  const codeStep1 = 'npx solibee add componentName';
+>>>>>>> dev
   const codeTailwindConfig = `/** @type {import('tailwindcss').Config} */
   module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -67,15 +71,23 @@ export default function Installation(props) {
 
   return (
     // prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]
+<<<<<<< HEAD
     <article class="prose mx-auto w-10/12 max-w-3xl max-w-[800px]">
       <header>
         <h1 class="mb-4 border-b text-4xl font-bold">Installation</h1>
         <p class="my-5 text-lg">
+=======
+    <article class='prose mx-auto w-10/12 max-w-3xl bg-white/[0.9]'>
+      <header>
+        <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
+        <p class='my-5 text-lg'>
+>>>>>>> dev
           How to install and use solibee in your application
         </p>
       </header>
 
       {/* Automatic installation instructions */}
+<<<<<<< HEAD
       <section class="mb-5">
         <h2 class="mb-2 border-b text-2xl font-bold">Automatic Installation</h2>
         <div
@@ -85,6 +97,17 @@ export default function Installation(props) {
           <Step step="Add a component to your project via CLI" />
           <div class="flex-column gap-col-5 m-5">
             <div class="mb-3">
+=======
+      <section class='mb-5'>
+        <h2 class='mb-2 border-b text-2xl font-bold'>Automatic Installation</h2>
+        <div
+          data-orientation='horizontal'
+          class='steps relative z-0 mb-12 ml-4 border-l'
+        >
+          <Step step='Add a component to your project via CLI' />
+          <div class='flex-column gap-col-5 m-5'>
+            <div class='mb-3'>
+>>>>>>> dev
               Solibee provides a CLI to help you get started quickly. To use a
               component, for example the Input Form, run the following command
               in your terminal.
@@ -92,9 +115,15 @@ export default function Installation(props) {
             <CodeBoxWithCopy html={formattedCode()} />
           </div>
 
+<<<<<<< HEAD
           <Step step="Configure a tailwind.config.js file" />
           <div class="flex-column gap-col-5 m-5">
             <div class="mb-3">
+=======
+          <Step step='Configure a tailwind.config.js file' />
+          <div class='flex-column gap-col-5 m-5'>
+            <div class='mb-3'>
+>>>>>>> dev
               Here's what our tailwind config file looks like!
             </div>
             <CodeBoxWithCopy html={formattedConfig()} />
@@ -105,6 +134,7 @@ export default function Installation(props) {
       {/* Manual installation instructions */}
       <section>
         <div>
+<<<<<<< HEAD
           <h2 class="mb-2 border-b text-2xl font-bold">Manual Installation</h2>
           <div
             data-orientation="horizontal"
@@ -112,27 +142,52 @@ export default function Installation(props) {
           >
             <Step step="Install Tailwind" />
             <div class="m-5">
+=======
+          <h2 class='mb-2 border-b text-2xl font-bold'>Manual Installation</h2>
+          <div
+            data-orientation='horizontal'
+            class='steps relative z-0 mb-12 ml-4 border-l'
+          >
+            <Step step='Install Tailwind' />
+            <div class='m-5'>
+>>>>>>> dev
               Our components are styled using Tailwind CSS. You need to install
               Tailwind CSS in your project.
             </div>
 
+<<<<<<< HEAD
             <Step step="Configure a tailwind.config.js file" />
             <div class="flex-column gap-col-5 m-5">
               <div class="mb-3">
+=======
+            <Step step='Configure a tailwind.config.js file' />
+            <div class='flex-column gap-col-5 m-5'>
+              <div class='mb-3'>
+>>>>>>> dev
                 Here's what our tailwind config file looks like!
               </div>
               <CodeBoxWithCopy html={formattedConfig()} />
             </div>
 
+<<<<<<< HEAD
             <Step step="Configure styles" />
             <div class="flex-column gap-col-5 m-5">
               <div class="mb-3">
+=======
+            <Step step='Configure styles' />
+            <div class='flex-column gap-col-5 m-5'>
+              <div class='mb-3'>
+>>>>>>> dev
                 Add the following to your global css styles file.
               </div>
               <CodeBoxWithCopy html={formattedStyles()} />
             </div>
 
+<<<<<<< HEAD
             <Step step="Copy the code for the component you chose" />
+=======
+            <Step step='Copy the code for the component you chose' />
+>>>>>>> dev
 
             <Step step={`You're ready to go!`} />
           </div>

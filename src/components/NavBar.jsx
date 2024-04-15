@@ -1,15 +1,15 @@
-import { createSignal, createEffect, useContext } from "solid-js";
-import solibeeLogo from "../../assets/Solibee-name.png";
-import gitLogo from "../../assets/github-mark.png";
-import gitLogoWhite from "../../assets/github-mark-white.png";
-import sunIcon from "../../assets/sun-svgrepo-com.svg";
-import nightIcon from "../../assets/night-svgrepo-com.svg";
-import Search from "./Search";
-import { ComponentContext } from "../context/ComponentContext";
+import { createSignal, createEffect, useContext } from 'solid-js';
+import solibeeLogo from '../../assets/solibee-logo2.png';
+import gitLogo from '../../assets/github-mark.png';
+import gitLogoWhite from '../../assets/github-mark-white.png';
+import sunIcon from '../../assets/sun-svgrepo-com.svg';
+import nightIcon from '../../assets/night-svgrepo-com.svg';
+import Search from './Search';
+import { ComponentContext } from '../context/ComponentContext';
 
 export default function NavBar() {
   const { components } = useContext(ComponentContext);
-  const href = `/component/${components[0].toLowerCase().replaceAll(" ", "")}`;
+  const href = `/component/${components[0].toLowerCase().replaceAll(' ', '')}`;
 
   const [isDarkTheme, setIsDarkTheme] = createSignal(false);
   // toggle dark theme
@@ -19,49 +19,53 @@ export default function NavBar() {
 
   createEffect(() => {
     if (isDarkTheme()) {
-      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.removeAttribute("data-theme");
+      document.documentElement.removeAttribute('data-theme');
     }
   });
 
   return (
-    <div class="bg-white-200 sticky top-0 z-50 h-16 backdrop-blur-sm">
-      <div class="flex h-5/6  w-full items-center justify-between px-5 py-2 text-sm font-medium ">
-        <div class="flex items-center">
+    <div class='bg-white-200 sticky top-0 z-50 h-16 backdrop-blur-sm'>
+      <div class='flex h-5/6  w-full items-center justify-between px-5 py-2 text-sm font-medium text-slate-700'>
+        <div class='flex items-center'>
           <img
-            class="mr-6 h-8"
+            class='mr-6 h-8'
             src={solibeeLogo}
-            alt="The word SOLIBEE with a bee on top of the letter I"
+            alt='The word SOLIBEE with a bee on top of the letter I'
           />
-          <span class="mr-6 mt-1 hover:text-orange-200">
-            <a href="/introduction">Docs</a>
+          <span class='mr-6 mt-1 hover:text-orange-200'>
+            <a href='/introduction'>Docs</a>
           </span>
-          <span class="mt-1 hover:text-orange-200">
+          <span class='mt-1 hover:text-orange-200'>
             <a href={href}>Components</a>
           </span>
         </div>
-        <div class="mt-1 flex items-center">
+        <div class='mt-1 flex items-center'>
           <Search />
           <a
-            class="ml-6"
-            target="_blank"
-            href="https://github.com/oslabs-beta/solibee/"
+            class='ml-6'
+            target='_blank'
+            href='https://github.com/oslabs-beta/solibee/'
           >
-            <span class="">
-              <img class="h-6" src={gitLogo} alt="GitHub logo" />
+            <span class='cursor-pointer' id='github-logo' onClick={toggleTheme}>
+              {isDarkTheme() ? (
+                <img class='h-6' src={gitLogoWhite} alt='GitHub logo white' />
+              ) : (
+                <img class='h-6' src={gitLogo} alt='GitHub logo black' />
+              )}
             </span>
           </a>
-          <div id="mode-icon" onClick={toggleTheme} class="cursor-pointer">
+          <div id='mode-icon' onClick={toggleTheme} class='cursor-pointer'>
             {isDarkTheme() ? (
-              <img class="ml-5 h-5" src={nightIcon} alt="Night icon" />
+              <img class='ml-5 h-5 ' src={nightIcon} alt='Night icon' />
             ) : (
-              <img class="ml-6 h-6" src={sunIcon} alt="Sun icon" />
+              <img class='ml-6 h-6 ' src={sunIcon} alt='Sun icon' />
             )}
           </div>
         </div>
       </div>
-      <hr class="border-1 border-orange-100" />
+      <hr class='border-1 border-orange-100' />
     </div>
   );
 }

@@ -11,6 +11,7 @@ export default defineConfig({
     // devtools(),
     solidPlugin(),
   ],
+  base: 'https://solibee.dev',
   server: {
     port: 3000,
   },
