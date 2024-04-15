@@ -13,6 +13,7 @@ import GenerateOTP from '../lib/inputForm/GenerateOTP';
 import InputOTP from '../lib/inputForm/InputOTP';
 import ToDoList from '../lib/inputForm/ToDoList';
 import DragAndDrop from '../lib/drag-and-drop/Area';
+import Search from '../lib/searchButton/Search';
 
 export default function ContentComponent(props) {
   //initialize an install step which will dynamically change instructions based on prop comp
@@ -88,6 +89,9 @@ export default function ContentComponent(props) {
           </Show>
           <Show when={currentComp() === 'Drag And Drop'}>
             <DragAndDrop items={2} columns={4} showNewColBtn={false} />
+          </Show>
+          <Show when={currentComp() === 'Search Button'}>
+            <Search />
           </Show>
         </div>
       </div>
