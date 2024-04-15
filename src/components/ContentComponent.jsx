@@ -13,7 +13,7 @@ import InputFile from '../lib/inputForm/InputFile';
 import GenerateOTP from '../lib/inputForm/GenerateOTP';
 import InputOTP from '../lib/inputForm/InputOTP';
 import ToDoList from '../lib/inputForm/ToDoList';
-import DragAndDrop from '../lib/drag-and-drop/Area';
+import DragAndDrop from '../lib/DragAndDrop';
 
 
 export default function ContentComponent(props) {
