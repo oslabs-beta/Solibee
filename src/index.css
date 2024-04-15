@@ -14,6 +14,22 @@
   font-style: normal;
 }
 
+:root {
+  --lightyellow:#fcef46;
+  --darkyellow:#ffd231;
+  --lightorange: #faaa3d;
+  --darkorange: #f47833;
+  --black: #191818;
+}
+
+.light {
+  background-color: pink;
+}
+
+.dark {
+  background-color: grey;
+}
+
 /* styling of the button location; inside styling exists as tailwind */
 .steps p:before {
   /* content: counter(step); /* Generate the numbering */

@@ -1,25 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
-  darkMode: ['selector', '[data-mode="dark"]'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./lib/**/*.{js,jsx,ts,tsx}"],
+  darkMode: ["selector", '[data-mode="dark"]'],
   theme: {
     extend: {
       colors: {
-        'yellow': {
-          100: '#fcef46',
-          200: '#ffd231',
+        background: "var(--background)",
+        border: "var(--border)",
+        yellow: {
+          100: "var(--lightyellow)",
+          200: "var(--darkyellow)",
         },
-        'orange': {
-          100: '#faaa3d',
-          200: '#f47833'
+        orange: {
+          100: "var(--lightorange)",
+          200: "var(--darkorange)",
         },
-        'black': '#191818'
+        black: "var(--black)",
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
+        wiggle: "wiggle 1s ease-in-out infinite",
       },
       fontFamily: {
-        serif: ['Mulish', 'sans-serif']
+        serif: ["Mulish", "sans-serif"],
       },
     },
   },
