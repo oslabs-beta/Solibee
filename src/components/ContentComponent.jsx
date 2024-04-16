@@ -104,6 +104,9 @@ export default function ContentComponent(props) {
             <Show when={currentComp() === 'Accordion'}>
               <Accordion />
             </Show>
+            <Show when={currentComp() === 'Search Button'}>
+              <Search />
+            </Show>
           </div>
         </div>
 
