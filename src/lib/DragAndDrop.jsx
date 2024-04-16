@@ -175,7 +175,7 @@ const Column = (props) => {
     if (props.colID !== props.items[itemID].colID) {
       props.updateItems('delete', { itemID });
     };
-
+    
     e.dataTransfer.clearData('id');
   };
 
