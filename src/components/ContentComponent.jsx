@@ -17,6 +17,8 @@ import InputOTP from '../lib/inputForm/InputOTP';
 import ToDoList from '../lib/inputForm/ToDoList';
 import DragAndDrop from '../lib/DragAndDrop';
 import Search from '../lib/searchButton/Search';
+// import Switch from "../lib/switch/Switch";
+import SwitchDemo from '../lib/switch/SwitchDemo';
 
 export default function ContentComponent(props) {
   //initialize an install step which will dynamically change instructions based on prop comp
@@ -73,6 +75,36 @@ export default function ContentComponent(props) {
           </p>
         </header>
 
+      <div class='w-full'>
+        <p class='text-h3font'>Preview</p>
+        <hr />
+        <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
+          <Show when={currentComp() === 'Input Form'}>
+            <InputForm />
+          </Show>
+          <Show when={currentComp() === 'Input File'}>
+            <InputFile />
+          </Show>
+          <Show when={currentComp() === 'Generate OTP'}>
+            <GenerateOTP />
+          </Show>
+          <Show when={currentComp() === 'Input OTP'}>
+            <InputOTP />
+          </Show>
+          <Show when={currentComp() === 'To Do List'}>
+            <ToDoList />
+          </Show>
+          <Show when={currentComp() === 'Switch'}>
+            <SwitchDemo />
+          </Show>
+          <Show when={currentComp() === 'Drag And Drop'}>
+            <DragAndDrop items={2} columns={4} showNewColBtn={false} />
+          </Show>
+          <Show when={currentComp() === 'Accordion'}>
+            <Accordion />
+          </Show>
+        </div>
+      </div>
         <div class='w-full'>
           <p class='text-slate-500'>Preview</p>
           <hr />
@@ -107,7 +139,7 @@ export default function ContentComponent(props) {
         {/* Code and preview */}
         <div class='my-5 flex flex-col space-y-4'>
           <div class='w-full'>
-            <p class='text-slate-500'>Code</p>
+            <p class='text-h3font'>Code</p>
             <hr />
             <div class='relative my-6 w-full'>
               <CodeBoxWithCopy

@@ -34,7 +34,7 @@ export default function Menu() {
   return (
     <div class='sticky top-28 hidden h-full w-52 px-3 mr-6 backdrop-blur-sm md:block'>
       <ul>
-        <li class='mb-3 px-3 font-bold text-orange-200'>Getting Started</li>
+        <li class='mb-3 px-3 font-bold text-boldfont'>Getting Started</li>
         <li>
           <a
             class='block cursor-pointer rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
@@ -51,7 +51,7 @@ export default function Menu() {
             Installation
           </a>
         </li>
-        <li class='my-3 px-3 font-bold text-orange-200'>Components</li>
+        <li class='text-boldfont my-3 px-3 font-bold'>Components</li>
         <MenuItem items={components} />
       </ul>
     </div>
