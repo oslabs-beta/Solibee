@@ -79,11 +79,11 @@ describe('InputOTP', () => {
     const input4 = getByLabelText('OTP Input 4');
     const input5 = getByLabelText('OTP Input 5');
 
-    expect(input0.value).toBe('-');
-    expect(input1.value).toBe('-'); 
-    expect(input2.value).toBe('-'); 
-    expect(input3.value).toBe('-'); 
-    expect(input4.value).toBe('-'); 
-    expect(input5.value).toBe('-');   
+    expect(input0.value).toBe('');
+    expect(input1.value).toBe(''); 
+    expect(input2.value).toBe(''); 
+    expect(input3.value).toBe(''); 
+    expect(input4.value).toBe(''); 
+    expect(input5.value).toBe('');   
   });
 });
