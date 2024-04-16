@@ -16,7 +16,6 @@ import ToDoList from '../lib/inputForm/ToDoList';
 import DragAndDrop from '../lib/DragAndDrop';
 import Search from '../lib/searchButton/Search';
 
-
 export default function ContentComponent(props) {
   //initialize an install step which will dynamically change instructions based on prop comp
   const installStepCode = `npx solibee add ${props.component}`;
@@ -29,17 +28,18 @@ export default function ContentComponent(props) {
   const [textToCopy, setTextToCopy] = createSignal(code);
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
   const [formattedStep, setFormattedStep] = createSignal();
+  const shikiTheme = 'dark-plus';
 
   createResource(() => {
     const getHtml = async () => {
       let codeHtml = await codeToHtml(code, {
         lang: 'jsx',
-        theme: 'dark-plus',
+        theme: shikiTheme,
       });
 
       let formattedStep = await codeToHtml(installStepCode, {
         lang: 'jsx',
-        theme: 'dark-plus',
+        theme: shikiTheme,
       });
 
       setFormattedCode(codeHtml);
@@ -51,7 +51,10 @@ export default function ContentComponent(props) {
   });
 
   return (
-    <div class='prose mx-auto w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]'>
+    <div
+      id='contentComponent'
+      class='prose mx-auto w-10/12 min-w-0 max-w-[800px] overflow-auto bg-white/[0.9]'
+    >
       {/* Component name and description */}
       <div class='mb-4 flex max-h-8 items-center text-sm'>
         <div class=''>Components</div>

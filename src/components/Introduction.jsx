@@ -1,14 +1,10 @@
 import Contributors from './Contributors';
 
 export default function Introduction() {
-  //   //Introduction
-  //   //Features
-  //   //Questions/Community
-  //   //Thanks/inspired by
-  //   //Designed by
+
   return (
-    // previous article class styling : max-w-3xl mx-auto pt-10 w-10/12
-    <article class='prose mx-auto w-10/12 max-w-[800px] bg-white/[0.9]'>
+
+    <article id = 'introduction' class='prose mx-auto w-10/12 max-w-[800px] bg-white/[0.9]'>
       <header>
         <h1 class='mb-4 border-b text-4xl font-bold'>Introduction</h1>
         <p>

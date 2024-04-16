@@ -8,6 +8,7 @@ export default function CopyButton(props) {
 
   return (
     <button
+      aria-label='Copy'
       class='absolute bottom-2 right-2 flex h-0.5 w-0.5 items-center justify-center rounded px-4 py-4'
       onClick={copyToClipboard}
     >
