@@ -30,7 +30,7 @@ export default function Contributors(props) {
                 class=' avatar inline-block h-40 w-40 rounded-full ring-2 ring-white'
                 src={`https://github.com/${gitHandle}.png`}
                 style={{ display: 'block' }}
-                alt='Avatar'
+                alt= {`${gitHandle} github avatar`}
               />
             </a>
           </li>
