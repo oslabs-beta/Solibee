@@ -15,12 +15,8 @@
 }
 
 .background {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
-    url('../assets/honeycomb-background.jpeg');
-  background-size: 50rem;
+  background-image:url('../assets/honeycomb.svg');
+  background-size:5rem;
 }
 
 /* styling of the button location; inside styling exists as tailwind */
