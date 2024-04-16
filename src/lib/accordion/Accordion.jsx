@@ -3,14 +3,14 @@ import { createStore } from 'solid-js/store';
 
 export default function Accordion() {
 
- const data = [
+  const data = [
     {
       question: 'What is Solibee?',
       answer:
         'Solibee is an open-source collection of simply styled, tested and accessible SolidJS components.',
     },
     {
-      question: "Accessible? Tell me more...",
+      question: 'Accessible? Tell me more...',
       answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
     },
     {
@@ -19,7 +19,7 @@ export default function Accordion() {
         'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol',
     },
     {
-      question: "I'm excited, how do I install the components?",
+      question: 'I\'m excited, how do I install the components?',
       answer: 'You can install each component either manually or via CLI',
     },
   ];
@@ -38,11 +38,10 @@ export default function Accordion() {
       <div class='border border-orange-100 rounded-md'>
         <For each={data}>
           {(obj, i) => {
-            const isLastIndex = i() === data.length - 1; 
             return (
               <div
                 id='wrapper'
-                class={`${isLastIndex ? '' : 'border-b'}  border-orange-100`}
+                class={`${i() === data.length - 1 ? '' : 'border-b'}  border-orange-100`}
                 classList={{}}
               >
                 <h2 id={`accordion-collapse-heading-${i()}`}>
