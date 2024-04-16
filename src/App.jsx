@@ -1,13 +1,15 @@
+import { createSignal, createEffect, onCleanup } from 'solid-js';
 import NavBar from './components/NavBar';
 import MainContainer from './containers/MainContainer';
 import Footer from './components/Footer';
 
 function App() {
-  // list of the components;
-  const components = ['Drawer', 'Kanban Card', 'Input Form'];
+  onCleanup(() => {
+    document.documentElement.remove('data-theme');
+  });
 
   return (
-    <div class='background flex min-h-screen flex-col'>
+    <div class='flex min-h-screen flex-col bg-background text-font'>
       <div class='flex grow flex-col'>
         <NavBar />
         <MainContainer />

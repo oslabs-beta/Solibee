@@ -1,12 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
+  darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
     extend: {
-      transitionProperty:{
-        'max-height': 'max-height'
+      transitionProperty: {
+        'max-height': 'max-height',
       },
       colors: {
+        background: 'rgba(var(--color-background))',
+        font: 'rgba(var(--color-font))',
+        subfont: 'rgba(var(--color-subfont))',
+        h3font: 'rgba(var(--color-h3font))',
+        footerfont: 'rgba(var(--color-footerfont))',
+        boldfont: 'rgba(var(--color-boldfont))',
+        hover: 'rgba(var(--color-hover))',
+
         yellow: {
           100: '#fcef46',
           200: '#ffd231',
