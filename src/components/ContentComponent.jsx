@@ -2,6 +2,7 @@
 import { createSignal, Show, useContext, createResource } from 'solid-js';
 import { codeToHtml } from 'shiki';
 import { StringRepContext } from '../context/StrRepresentationContext';
+import { TailwindConfigContext } from '../context/TailwindConfigContext';
 
 // web components
 import Step from './Step';
@@ -21,17 +22,22 @@ import Search from '../lib/searchButton/Search';
 import SwitchDemo from '../lib/switch/SwitchDemo';
 
 export default function ContentComponent(props) {
-  //initialize an install step which will dynamically change instructions based on prop comp
-  const installStepCode = `npx solibee add ${props.component}`;
   // this takes care of the string representation of the current component's jsx format code
   const currentComponent = props.component.replaceAll(' ', ''); // converts 'Input Form' to 'InputForm'
   const { string } = useContext(StringRepContext); // this is context that wraps the whole app. This context contains the string representation of each Solibee component saved in an obj;
+  const { tailwindStrings } = useContext(TailwindConfigContext);
+
+  //initialize an install step which will dynamically change instructions based on prop comp
+  const installStepCode = `npx solibee create-${currentComponent}`;
+
+  const configCode = tailwindStrings[currentComponent];
   const code = string[currentComponent]; // selects the str representation of the component we currently selected ie: Input Form
 
   const [formattedCode, setFormattedCode] = createSignal();
   const [textToCopy, setTextToCopy] = createSignal(code);
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
   const [formattedStep, setFormattedStep] = createSignal();
+  const [formattedConfigCode, setFormattedConfigCode] = createSignal();
   const shikiTheme = 'dark-plus';
 
   createResource(() => {
@@ -46,8 +52,14 @@ export default function ContentComponent(props) {
         theme: shikiTheme,
       });
 
+      let formattedConfigCode = await codeToHtml(configCode, {
+        lang: 'jsx',
+        theme: shikiTheme,
+      });
+
       setFormattedCode(codeHtml);
       setFormattedStep(formattedStep);
+      setFormattedConfigCode(formattedConfigCode);
 
       return codeHtml;
     };
@@ -140,17 +152,27 @@ export default function ContentComponent(props) {
               <Step step='Add a component to your project via CLI' />
               <div class='flex-column gap-col-5 m-5'>
                 <div class='mb-3'>
-                  Solibee provides a CLI to help you get started quickly. To use
-                  a component, for example the Input Form, run the following
-                  command in your terminal.
+                  Run the following command in your terminal:
                 </div>
                 <CodeBoxWithCopy
                   html={formattedStep()}
                   textToCopy={installStepCode}
                 />
+                <div class='mt-3'>
+                  The component should be in your root folder. 
+                </div>
               </div>
 
-              <Step step='Configure a tailwind.config.js file' />
+              <Step step='Update/Configure your tailwind.config.js file' />
+              <div class='flex-column gap-col-5 m-5'>
+                <div class='mb-3'>
+                  Add the following to your tailwind.config.js file
+                </div>
+                <CodeBoxWithCopy
+                  html={formattedConfigCode()}
+                  textToCopy={installStepCode}
+                />
+              </div>
             </div>
           </section>
 
@@ -160,7 +182,7 @@ export default function ContentComponent(props) {
               data-orientation='horizontal'
               class='steps relative z-0 mb-12 ml-4 border-l'
             >
-              <Step step='Copy the code of the chosen component' />
+              <Step step='Copy the code above' />
               <div class='flex-column gap-col-5 m-5'>
                 <div class='mb-3'></div>
               </div>
