@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "gh-pages -d dist",
+    "deploy": "vite build && echo 'solibee.dev' > ./dist/CNAME && gh-pages -d dist",
     "test": "jest --verbose"
   },
   "jest": {
