@@ -92,10 +92,15 @@ function InputOTP() {
     } else if (e.key === 'Backspace') {
       setOtpDigits(index(), '');
       focusNextInput(e.target, prevId, nextId);
-    } else {
+      
+    } else if (e.key.length > 1) {
+      //to ignore arrowkeys & other complicated key codes
+      return;
+    }
+    else{
+      //for letters {, } ,[ ,], \, | ,etc
       setOtpDigits(index(), e.key);
       focusNextInput(e.target, prevId, nextId);
-      console.log(otpDigits);
     }
   }
 
