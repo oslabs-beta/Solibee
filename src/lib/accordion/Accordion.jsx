@@ -43,6 +43,7 @@ export default function Accordion() {
                 id='wrapper'
                 class={`${i() === data.length - 1 ? '' : 'border-b'}  border-orange-100`}
                 classList={{}}
+                data-testid='wrapper'
               >
                 <h2 id={`accordion-collapse-heading-${i()}`}>
                   <button
@@ -80,6 +81,7 @@ export default function Accordion() {
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
+                  data-testid='hidden'
                 >
                   <p class='p-2 text-sm'>{obj.answer}</p>
                 </div>
