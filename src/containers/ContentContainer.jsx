@@ -12,7 +12,7 @@ export default function ContentContainer() {
 
   return (
     // added margin bottom here
-    <div class='mx-auto mb-80 w-10/12 max-w-3xl overflow-auto pt-10 xl:max-w-none'>
+    <main class='mx-auto mb-80 w-10/12 max-w-3xl overflow-auto pt-10 xl:max-w-none'>
       <Router>
         <Route path='/' component={Homepage} />
         <Route path='/installation' component={Installation} />
@@ -26,6 +26,6 @@ export default function ContentContainer() {
           )}
         </For>
       </Router>
-    </div>
+    </main>
   );
 }

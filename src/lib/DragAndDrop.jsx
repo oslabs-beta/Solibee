@@ -16,6 +16,7 @@ const Area = (props) => {
       defaultItems[i] = {
         itemID: i,
         colID: i % (props.columns || 1),
+        // colID: 0,
         order: i,
       };
     }
@@ -123,10 +124,12 @@ const Column = (props) => {
 
   const handleDragEnter = (e) => {
     e.preventDefault();
+    e.stopPropagation();
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     const itemID = e.dataTransfer.getData('id');
 
@@ -152,11 +155,28 @@ const Column = (props) => {
 
   const handleDragLeave = (e) => {
     e.preventDefault();
+    e.stopPropagation();
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     props.setSelectedItem(null);
+    const itemID = e.dataTransfer.getData('id');
+  
+    // Update item's colID and order
+    props.updateItems('update', {
+      itemID,
+      colID: props.colID,
+      order: closestItemReorderingIndex(),
+    });
+  
+    // Remove item from the first column if it's dropped in a different column
+    if (props.colID !== props.items[itemID].colID) {
+      props.updateItems('delete', { itemID });
+    };
+    
+    e.dataTransfer.clearData('id');
   };
 
   return (
@@ -166,6 +186,7 @@ const Column = (props) => {
       onDragOver={(e) => handleDragOver(e)}
       onDragLeave={(e) => handleDragLeave(e)}
       onDrop={(e) => handleDrop(e)}
+      data-testid='column'
     >
       <button
         class='m-4 rounded-md bg-orange-100 p-2 px-4 pb-1 pt-1'
@@ -199,7 +220,7 @@ const Item = (props) => {
 
   createEffect(() => {
     const rect = ref.getBoundingClientRect();
-    console.log({ rect });
+    // console.log({ rect });
     const y = (rect.top + rect.bottom) / 2;
     props.updateItems('update', { itemID: props.itemID, y });
   });
@@ -209,13 +230,21 @@ const Item = (props) => {
     props.setSelectedItem(props.itemID);
   };
 
+  const handleDragEnd = (e) => {
+    // Remove the ghost item after the drop is complete
+    const itemID = e.dataTransfer.getData('id');
+    props.updateItems('delete', { itemID });
+  };
+
   return (
     <div
       ref={ref}
       class='m-2 flex w-4/5 cursor-move items-center justify-between rounded-md bg-white pb-2 pl-4 pr-2 pt-2 text-sm'
       draggable={true}
       onDragStart={(e) => handleDragStart(e)}
+      onDragEnd={(e) => handleDragEnd(e)}
       classList={{ shadow: props.selectedItem() == props.itemID }}
+      data-testid='item'
     >
       {`Item ${props.itemID}`}
       {/* {props.itemID} */}

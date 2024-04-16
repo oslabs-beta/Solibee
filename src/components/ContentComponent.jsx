@@ -32,17 +32,18 @@ export default function ContentComponent(props) {
   const [textToCopy, setTextToCopy] = createSignal(code);
   const [currentComp, setCurrentComp] = createSignal(props.component); // Input Form
   const [formattedStep, setFormattedStep] = createSignal();
+  const shikiTheme = 'dark-plus';
 
   createResource(() => {
     const getHtml = async () => {
       let codeHtml = await codeToHtml(code, {
         lang: 'jsx',
-        theme: 'dark-plus',
+        theme: shikiTheme,
       });
 
       let formattedStep = await codeToHtml(installStepCode, {
         lang: 'jsx',
-        theme: 'dark-plus',
+        theme: shikiTheme,
       });
 
       setFormattedCode(codeHtml);
