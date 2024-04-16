@@ -4,7 +4,7 @@ export const JsxToString = {
 
   function FileUpload() {
     const [file, setFile] = createSignal(null);
-  
+
     const handleFileChange = (event) => {
       const target = event.target;
       const selectedFile = target.files && target.files[0];
@@ -12,7 +12,7 @@ export const JsxToString = {
         setFile(selectedFile);
       }
     };
-  
+
     const handleSubmit = () => {
       if (file()) {
         console.log('Uploading file:', file().name);
@@ -20,7 +20,7 @@ export const JsxToString = {
         console.error('No file selected.');
       }
     };
-  
+
     return (
       <div>
         <input type='file' onChange={handleFileChange} />
@@ -311,7 +311,7 @@ export default function Accordion() {
     {
       question: 'Who is on the team?',
       answer:
-        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol',
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
     },
     {
       question: "I'm excited, how do I install the components?",
@@ -333,7 +333,7 @@ export default function Accordion() {
       <div class='border border-orange-100 rounded-md'>
         <For each={data}>
           {(obj, i) => {
-            const isLastIndex = i() === data.length - 1; 
+            const isLastIndex = i() === data.length - 1;
             return (
               <div
                 id='wrapper'
@@ -388,7 +388,7 @@ export default function Accordion() {
   );
 }
 `,
-SearchButton: `export default function Search() {
+  SearchButton: `export default function Search() {
   return (
     <form class='mx-auto flex max-w-sm items-center' role='search'>
       <label for='search-input' class='sr-only'>
