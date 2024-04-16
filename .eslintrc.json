@@ -1,23 +1,29 @@
 {
-    "root": true,
-    "ignorePatterns": "**/util",
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "jquery": true,
-      "node": true
-    },
-    "extends": ["eslint:recommended", "plugin:solid/recommended"],
-    "parserOptions": { "sourceType": "module" },
-    "rules": {
-      "indent": ["warn", 2],
-      "no-unused-vars": ["off", { "vars": "local" }],
-      "prefer-const": "warn",
-      "quotes": ["warn", "single"],
-      "semi": ["warn", "always"],
-      "space-infix-ops": "warn"
-    }, 
-    "plugins": ["solid"]
+  "root": true,
+  "ignorePatterns": "**/util",
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jquery": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:solid/recommended"],
+  "parserOptions": { "sourceType": "module" },
+  "rules": {
+    "indent": ["warn", 2],
+    "no-unused-vars": ["off", { "vars": "local" }],
+    "prefer-const": "warn",
+    "jsx-quotes": [2, "prefer-single"],
+    "quotes": [
+      2,
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ],
+    "semi": ["warn", "always"],
+    "space-infix-ops": "warn",
+    "arrow-functions": ["warn", 1]
+  },
+  "plugins": ["solid", "jest"]
 }
-
-  
