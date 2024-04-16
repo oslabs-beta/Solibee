@@ -4,26 +4,12 @@ import MainContainer from './containers/MainContainer';
 import Footer from './components/Footer';
 
 function App() {
-  // const [isDarkTheme, setIsDarkTheme] = createSignal(false);
-  // // toggle dark theme
-  // const toggleTheme = () => {
-  //   setIsDarkTheme(prevState => !prevState);
-  // };
-
-  // createEffect(() => {
-  //   if (isDarkTheme()) {
-  //     document.documentElement.setAttribute("data-theme", "dark");
-  //   } else {
-  //     document.documentElement.removeAttribute("data-theme");
-  //   }
-  // });
-
   onCleanup(() => {
     document.documentElement.remove('data-theme');
   });
 
   return (
-    <div class='background flex min-h-screen flex-col'>
+    <div class='flex min-h-screen flex-col bg-background text-font'>
       <div class='flex grow flex-col'>
         <NavBar />
         <MainContainer />

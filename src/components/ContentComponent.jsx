@@ -82,14 +82,14 @@ export default function ContentComponent(props) {
             {currentComp()}
           </h1>
           <hr />
-          <p class='mb-5 text-slate-500'>
+          <p class='text-subfont mb-5'>
             {/* TODO: make this description dynamic */}A vertically stacked set
             of interactive headings that each reveal a section of content.
           </p>
         </header>
 
-        <div class='w-full'>
-          <p class='text-h3font'>Preview</p>
+        <div class='w-full text-font'>
+          <p class=''>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
             <Show when={currentComp() === 'Input Form'}>
@@ -125,7 +125,7 @@ export default function ContentComponent(props) {
         {/* Code and preview */}
         <div class='my-5 flex flex-col space-y-4'>
           <div class='w-full'>
-            <p class='text-h3font'>Code</p>
+            <p class=''>Code</p>
             <hr />
             <div class='relative my-6 w-full'>
               <CodeBoxWithCopy
@@ -138,7 +138,7 @@ export default function ContentComponent(props) {
 
         {/* Guide, usage, etc. */}
         <div class='my-5 mt-12 flex flex-col'>
-          <p class='text-2xl tracking-tight text-slate-500' id='installation'>
+          <p class='text-2xl tracking-tight text-h3font' id='installation'>
             Installation Guide
           </p>
           <hr />

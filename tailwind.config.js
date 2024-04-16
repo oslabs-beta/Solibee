@@ -10,7 +10,9 @@ module.exports = {
       colors: {
         background: 'rgba(var(--color-background))',
         font: 'rgba(var(--color-font))',
+        subfont: 'rgba(var(--color-subfont))',
         h3font: 'rgba(var(--color-h3font))',
+        footerfont: 'rgba(var(--color-footerfont))',
         boldfont: 'rgba(var(--color-boldfont))',
         hover: 'rgba(var(--color-hover))',
 
