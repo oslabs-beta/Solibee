@@ -18,7 +18,9 @@ describe('Input File', () => {
 
   it('clicking the Upload button logs the file name if a file is selected', async () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleErrorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
     const { getByText, getByRole, getByTestId } = render(() => <InputFile />);
 
     const inputElement = getByTestId('upInput');

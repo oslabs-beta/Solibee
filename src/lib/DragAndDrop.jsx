@@ -163,19 +163,19 @@ const Column = (props) => {
     e.stopPropagation();
     props.setSelectedItem(null);
     const itemID = e.dataTransfer.getData('id');
-  
+
     // Update item's colID and order
     props.updateItems('update', {
       itemID,
       colID: props.colID,
       order: closestItemReorderingIndex(),
     });
-  
+
     // Remove item from the first column if it's dropped in a different column
     if (props.colID !== props.items[itemID].colID) {
       props.updateItems('delete', { itemID });
-    };
-    
+    }
+
     e.dataTransfer.clearData('id');
   };
 

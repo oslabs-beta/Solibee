@@ -69,12 +69,10 @@ export default function Installation(props) {
   return (
     <>
       <Menu />
-      <article class='prose w-10/12 max-w-[850px] backdrop-blur-sm px-3'>
+      <article class='prose w-10/12 max-w-[850px] px-3 backdrop-blur-sm'>
         <header>
           <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
-          <p class='mb-5'>
-            How to install and use solibee in your application
-          </p>
+          <p class='mb-5'>How to install and use solibee in your application</p>
         </header>
 
         {/* Automatic installation instructions */}

@@ -27,7 +27,7 @@ function InputFile() {
           Choose a file:
         </label>
         <input
-          data-testid="upInput"
+          data-testid='upInput'
           class='rounded-md border border-gray-300 bg-white p-2'
           id='fileInput'
           name='fileInput'

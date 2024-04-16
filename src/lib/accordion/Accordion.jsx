@@ -2,7 +2,6 @@ import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
 export default function Accordion() {
-
   const data = [
     {
       question: 'What is Solibee?',
@@ -11,7 +10,8 @@ export default function Accordion() {
     },
     {
       question: 'Accessible? Tell me more...',
-      answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
+      answer:
+        'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
     },
     {
       question: 'Who is on the team?',
@@ -19,7 +19,7 @@ export default function Accordion() {
         'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
     },
     {
-      question: 'I\'m excited, how do I install the components?',
+      question: "I'm excited, how do I install the components?",
       answer: 'You can install each component either manually or via CLI',
     },
   ];

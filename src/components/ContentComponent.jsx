@@ -57,7 +57,7 @@ export default function ContentComponent(props) {
   return (
     <>
       <Menu />
-      <div class='prose w-10/12 max-w-[850px] backdrop-blur-sm px-3'>
+      <div class='prose w-10/12 max-w-[850px] px-3 backdrop-blur-sm'>
         {/* Component name and description */}
         {/* <div class='mb-4 flex max-h-8 items-center text-sm'>
         <div class=''>Components</div>
@@ -76,40 +76,10 @@ export default function ContentComponent(props) {
           </p>
         </header>
 
-      <div class='w-full'>
-        <p class='text-h3font'>Preview</p>
-        <hr />
-        <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
-          <Show when={currentComp() === 'Input Form'}>
-            <InputForm />
-          </Show>
-          <Show when={currentComp() === 'Input File'}>
-            <InputFile />
-          </Show>
-          <Show when={currentComp() === 'Generate OTP'}>
-            <GenerateOTP />
-          </Show>
-          <Show when={currentComp() === 'Input OTP'}>
-            <InputOTP />
-          </Show>
-          <Show when={currentComp() === 'To Do List'}>
-            <ToDoList />
-          </Show>
-          <Show when={currentComp() === 'Switch'}>
-            <SwitchDemo />
-          </Show>
-          <Show when={currentComp() === 'Drag And Drop'}>
-            <DragAndDrop items={2} columns={4} showNewColBtn={false} />
-          </Show>
-          <Show when={currentComp() === 'Accordion'}>
-            <Accordion />
-          </Show>
-        </div>
-      </div>
         <div class='w-full'>
-          <p class='text-slate-500'>Preview</p>
+          <p class='text-h3font'>Preview</p>
           <hr />
-          <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100'>
+          <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
             <Show when={currentComp() === 'Input Form'}>
               <InputForm />
             </Show>
@@ -125,11 +95,11 @@ export default function ContentComponent(props) {
             <Show when={currentComp() === 'To Do List'}>
               <ToDoList />
             </Show>
+            <Show when={currentComp() === 'Switch'}>
+              <SwitchDemo />
+            </Show>
             <Show when={currentComp() === 'Drag And Drop'}>
               <DragAndDrop items={2} columns={4} showNewColBtn={false} />
-            </Show>
-            <Show when={currentComp() === 'Search Button'}>
-              <Search />
             </Show>
             <Show when={currentComp() === 'Accordion'}>
               <Accordion />

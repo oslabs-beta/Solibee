@@ -27,7 +27,7 @@ export default function Search() {
           aria-label='Search input'
           id='search-input'
           placeholder='Search ...'
-          class='h-10 w-full items-center rounded-md px-2 py-4 pl-8 text-sm text-gray-600 hover:bg-orange-50 focus:border-orange-100  focus:ring-1 focus:ring-orange-100 border border-orange-100'
+          class='h-10 w-full items-center rounded-md border border-orange-100 px-2 py-4 pl-8 text-sm text-gray-600  hover:bg-orange-50 focus:border-orange-100 focus:ring-1 focus:ring-orange-100'
         />
       </div>
     </form>

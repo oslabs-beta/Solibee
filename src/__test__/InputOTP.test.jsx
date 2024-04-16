@@ -1,6 +1,12 @@
 import InputOTP from '../lib/inputForm/InputOTP';
 import { createStore } from 'solid-js/store';
-import { render, cleanup, fireEvent, createEvent, screen } from '@solidjs/testing-library';
+import {
+  render,
+  cleanup,
+  fireEvent,
+  createEvent,
+  screen,
+} from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
 
 window.alert = jest.fn();
@@ -10,22 +16,21 @@ describe('InputOTP', () => {
     cleanup();
   });
 
-  it ('renders component with a submit button', () => {
-    
+  it('renders component with a submit button', () => {
     render(() => <InputOTP />);
-    
+
     const buttonSubmit = screen.getByText('Submit OTP');
 
     expect(buttonSubmit).toBeInTheDocument();
   });
 
-  it ('pasting data updates the state and displays code in each input box', async () => {
+  it('pasting data updates the state and displays code in each input box', async () => {
     const { getByLabelText } = render(() => <InputOTP />);
-    
+
     const input = getByLabelText('OTP Input 0');
     const paste = createEvent.paste(input, {
       clipboardData: {
-        getData: () => '123456'
+        getData: () => '123456',
       },
     });
     fireEvent(input, paste);
@@ -46,7 +51,7 @@ describe('InputOTP', () => {
     expect(input5.value).toBe('6');
   });
 
-  it ('handles key up events and updates the state correctly', async () => {
+  it('handles key up events and updates the state correctly', async () => {
     const { getByLabelText } = render(() => <InputOTP />);
     const input = getByLabelText('OTP Input 0');
 
@@ -57,7 +62,7 @@ describe('InputOTP', () => {
     expect(inputNew.value).toBe('1');
   });
 
-  it ('submits OTP correctly and resets the state', async () => {
+  it('submits OTP correctly and resets the state', async () => {
     const { getByText, getByLabelText } = render(() => <InputOTP />);
     const submitButton = getByText('Submit OTP');
 
@@ -80,10 +85,10 @@ describe('InputOTP', () => {
     const input5 = getByLabelText('OTP Input 5');
 
     expect(input0.value).toBe('');
-    expect(input1.value).toBe(''); 
-    expect(input2.value).toBe(''); 
-    expect(input3.value).toBe(''); 
-    expect(input4.value).toBe(''); 
-    expect(input5.value).toBe('');   
+    expect(input1.value).toBe('');
+    expect(input2.value).toBe('');
+    expect(input3.value).toBe('');
+    expect(input4.value).toBe('');
+    expect(input5.value).toBe('');
   });
 });
