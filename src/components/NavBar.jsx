@@ -12,7 +12,7 @@ export default function NavBar() {
   const href = `/component/${components[0].toLowerCase().replaceAll(' ', '')}`;
 
   return (
-    <div class='bg-white-200 sticky top-0 z-50 h-16 backdrop-blur-sm'>
+    <div role = 'navigation' aria-label = 'page-navigation' class='bg-white-200 sticky top-0 z-50 h-16 backdrop-blur-sm'>
       <div class='flex h-5/6  w-full items-center justify-between px-5 py-2 text-sm font-medium text-slate-700'>
         <div class='flex items-center'>
           <a href='/'>
