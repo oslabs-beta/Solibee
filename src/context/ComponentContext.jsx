@@ -13,6 +13,7 @@ export function CompContextProvider(props) {
     'Input OTP',
     'Search Button',
     'To Do List',
+    'Switch',
   ]);
 
   return (

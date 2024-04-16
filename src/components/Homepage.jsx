@@ -21,7 +21,7 @@ export default () => {
             Get Started
           </button>
         </a>
-        <a href='/component/draganddrop'>
+        <a href='/component/accordion'>
           <button class='ml-2 mr-2 rounded-xl border-4 border-black bg-orange-100 p-2 pl-5  pr-5 text-xl font-bold hover:border-orange-200 hover:bg-orange-200'>
             See an Example
           </button>

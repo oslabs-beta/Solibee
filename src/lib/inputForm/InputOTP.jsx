@@ -20,7 +20,7 @@ function InputOTP() {
     if (submittedOTP.length < 6) {
       e.preventDefault();
       alert('Enter 6 digits');
-    } else if (otpDigits.some(el => isNaN(Number(el)))) {
+    } else if (otpDigits.some((el) => isNaN(Number(el)))) {
       e.preventDefault();
       alert('Enter numbers only');
     } else {
@@ -109,7 +109,9 @@ function InputOTP() {
               // console.log({ digit, index, otpDigits });
               return (
                 <>
-                  <label for={`otpInput${index()}`} class='sr-only'>OTP Input {index()}</label>
+                  <label for={`otpInput${index()}`} class='sr-only'>
+                    OTP Input {index()}
+                  </label>
                   <input
                     type='text'
                     id={`otpInput${index()}`}

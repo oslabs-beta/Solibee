@@ -2,6 +2,7 @@ import CodeBoxWithCopy from './CodeBoxWithCopy';
 import Step from './Step';
 import { codeToHtml } from 'shiki';
 import { createSignal } from 'solid-js';
+import Menu from './Menu';
 
 //TO DO: Create a different file for the codeStrings;
 export default function Installation(props) {
@@ -66,54 +67,31 @@ export default function Installation(props) {
   getHtml();
 
   return (
-    // prose max-w-[800px] p-5 mx-auto w-10/12 bg-white/[0.9]
-    <article class='prose mx-auto w-10/12 max-w-3xl bg-white/[0.9]'>
-      <header>
-        <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
-        <p class='my-5 text-lg'>
-          How to install and use solibee in your application
-        </p>
-      </header>
+    <>
+      <Menu />
+      <article class='prose w-10/12 max-w-[850px] px-3 backdrop-blur-sm'>
+        <header>
+          <h1 class=' mb-4 border-b text-4xl font-bold'>Installation</h1>
+          <p class='mb-5'>How to install and use solibee in your application</p>
+        </header>
 
-      {/* Automatic installation instructions */}
-      <section class='mb-5'>
-        <h2 class='mb-2 border-b text-2xl font-bold'>Automatic Installation</h2>
-        <div
-          data-orientation='horizontal'
-          class='steps relative z-0 mb-12 ml-4 border-l'
-        >
-          <Step step='Add a component to your project via CLI' />
-          <div class='flex-column gap-col-5 m-5'>
-            <div class='mb-3'>
-              Solibee provides a CLI to help you get started quickly. To use a
-              component, for example the Input Form, run the following command
-              in your terminal.
-            </div>
-            <CodeBoxWithCopy html={formattedCode()} />
-          </div>
-
-          <Step step='Configure a tailwind.config.js file' />
-          <div class='flex-column gap-col-5 m-5'>
-            <div class='mb-3'>
-              Here's what our tailwind config file looks like!
-            </div>
-            <CodeBoxWithCopy html={formattedConfig()} />
-          </div>
-        </div>
-      </section>
-
-      {/* Manual installation instructions */}
-      <section>
-        <div>
-          <h2 class='mb-2 border-b text-2xl font-bold'>Manual Installation</h2>
+        {/* Automatic installation instructions */}
+        <section class='mb-5'>
+          <h2 class='mb-2 border-b text-2xl font-bold'>
+            Automatic Installation
+          </h2>
           <div
             data-orientation='horizontal'
             class='steps relative z-0 mb-12 ml-4 border-l'
           >
-            <Step step='Install Tailwind' />
-            <div class='m-5'>
-              Our components are styled using Tailwind CSS. You need to install
-              Tailwind CSS in your project.
+            <Step step='Add a component to your project via CLI' />
+            <div class='flex-column gap-col-5 m-5'>
+              <div class='mb-3'>
+                Solibee provides a CLI to help you get started quickly. To use a
+                component, for example the Input Form, run the following command
+                in your terminal.
+              </div>
+              <CodeBoxWithCopy html={formattedCode()} />
             </div>
 
             <Step step='Configure a tailwind.config.js file' />
@@ -123,21 +101,48 @@ export default function Installation(props) {
               </div>
               <CodeBoxWithCopy html={formattedConfig()} />
             </div>
-
-            <Step step='Configure styles' />
-            <div class='flex-column gap-col-5 m-5'>
-              <div class='mb-3'>
-                Add the following to your global css styles file.
-              </div>
-              <CodeBoxWithCopy html={formattedStyles()} />
-            </div>
-
-            <Step step='Copy the code for the component you chose' />
-
-            <Step step={`You're ready to go!`} />
           </div>
-        </div>
-      </section>
-    </article>
+        </section>
+
+        {/* Manual installation instructions */}
+        <section>
+          <div>
+            <h2 class='mb-2 border-b text-2xl font-bold'>
+              Manual Installation
+            </h2>
+            <div
+              data-orientation='horizontal'
+              class='steps relative z-0 mb-12 ml-4 border-l'
+            >
+              <Step step='Install Tailwind' />
+              <div class='m-5'>
+                Our components are styled using Tailwind CSS. You need to
+                install Tailwind CSS in your project.
+              </div>
+
+              <Step step='Configure a tailwind.config.js file' />
+              <div class='flex-column gap-col-5 m-5'>
+                <div class='mb-3'>
+                  Here's what our tailwind config file looks like!
+                </div>
+                <CodeBoxWithCopy html={formattedConfig()} />
+              </div>
+
+              <Step step='Configure styles' />
+              <div class='flex-column gap-col-5 m-5'>
+                <div class='mb-3'>
+                  Add the following to your global css styles file.
+                </div>
+                <CodeBoxWithCopy html={formattedStyles()} />
+              </div>
+
+              <Step step='Copy the code for the component you chose' />
+
+              <Step step={`You're ready to go!`} />
+            </div>
+          </div>
+        </section>
+      </article>
+    </>
   );
 }

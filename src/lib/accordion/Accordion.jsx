@@ -2,7 +2,6 @@ import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
 export default function Accordion() {
-
   const data = [
     {
       question: 'What is Solibee?',
@@ -11,15 +10,16 @@ export default function Accordion() {
     },
     {
       question: 'Accessible? Tell me more...',
-      answer: 'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
+      answer:
+        'Yes our components are accessible. They adhere to WAI_ARIA design patterns',
     },
     {
       question: 'Who is on the team?',
       answer:
-        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Romero, and Neul Seol',
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
     },
     {
-      question: 'I\'m excited, how do I install the components?',
+      question: "I'm excited, how do I install the components?",
       answer: 'You can install each component either manually or via CLI',
     },
   ];
@@ -35,7 +35,7 @@ export default function Accordion() {
       class='flex w-[500px] flex-col rounded-md  p-4'
       id='accordion-collapse'
     >
-      <div class='border border-orange-100 rounded-md'>
+      <div class='rounded-md border border-orange-100'>
         <For each={data}>
           {(obj, i) => {
             return (
@@ -76,8 +76,8 @@ export default function Accordion() {
                 <div
                   class={` overflow-hidden ${
                     activeID[i()]
-                      ? 'transition-transform transition-max-height max-h-full duration-200 ease-in-out'
-                      : 'transition-transform transition-max-height max-h-0 duration-200 ease-in-out'
+                      ? 'max-h-full transition-max-height transition-transform duration-200 ease-in-out'
+                      : 'max-h-0 transition-max-height transition-transform duration-200 ease-in-out'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
@@ -93,5 +93,3 @@ export default function Accordion() {
     </div>
   );
 }
-
-
