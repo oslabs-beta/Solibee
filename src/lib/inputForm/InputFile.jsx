@@ -11,7 +11,8 @@ function InputFile() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (file()) {
       console.log('Uploading file:', file().name);
     } else {
@@ -26,6 +27,7 @@ function InputFile() {
           Choose a file:
         </label>
         <input
+          data-testid="upInput"
           class='rounded-md border border-gray-300 bg-white p-2'
           id='fileInput'
           name='fileInput'
@@ -36,7 +38,7 @@ function InputFile() {
         <button
           aria-label = 'click button to submit chosen file'
           class='rounded-md bg-orange-100	px-2 py-1'
-          onClick={handleSubmit}
+          onClick={(e) => handleSubmit(e)}
         >
           Upload
         </button>
