@@ -1,12 +1,10 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
-import { Router } from '@solidjs/router';
-
 import './index.css';
 import App from './App';
 import { CompContextProvider } from './context/ComponentContext';
 import { StrContextProvider } from './context/StrRepresentationContext';
-import { TailwindConfigContextProvider } from './context/TailwindConfigContext';
+import { CompDescriptionContextProvider } from './context/CompDescriptions';
 
 const root = document.getElementById('root');
 
@@ -18,13 +16,13 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
   () => (
-    <TailwindConfigContextProvider>
+    <CompDescriptionContextProvider>
       <CompContextProvider>
         <StrContextProvider>
           <App />
         </StrContextProvider>
       </CompContextProvider>
-    </TailwindConfigContextProvider>
+    </CompDescriptionContextProvider>
   ),
   root,
 );
