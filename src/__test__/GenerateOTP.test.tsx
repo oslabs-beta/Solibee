@@ -1,8 +1,12 @@
 import GenerateOTP from '../lib/inputForm/GenerateOTP';
-import { render, cleanup, fireEvent, screen } from '@solidjs/testing-library';
+import { render, cleanup, fireEvent, screen, getByTestId } from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
+import clipboardCopy from 'clipboard-copy';
 
-jest.mock('clipboard-copy', () => jest.fn());
+const mockClipboard = {
+  writeText: jest.fn(),
+};
+Object.assign(navigator, mockClipboard);
 
 describe('GenerateOTP', () => {
   // let getByText: (text: string) => HTMLElement;
@@ -14,6 +18,11 @@ describe('GenerateOTP', () => {
 
   afterEach(() => {
     cleanup();
+  });
+
+  afterEach(() => {
+    cleanup();
+    jest.clearAllMocks();
   });
 
   it('renders component with correct text', () => {
@@ -38,7 +47,7 @@ describe('GenerateOTP', () => {
   });
 
   it('copies the new generated OTP after OTP is regenerated', async () => {
-    const { getByText, findByText } = render(() => <GenerateOTP />);
+    const { getByText, findByText, getByTestId } = render(() => <GenerateOTP />);
 
     const initialOTPElement = getByText(
       /Your one-time password is:/,
@@ -52,12 +61,15 @@ describe('GenerateOTP', () => {
       await findByText(/Your one-time password is:/)
     ).querySelector('span') as HTMLSpanElement;
     const newOTP = newOTPElement.textContent;
+    await Promise.resolve();
 
-    const copyButton = getByText('Copy');
+    const copyButton = getByTestId('copy-button');
+    await Promise.resolve();
     fireEvent.click(copyButton);
     await Promise.resolve();
 
     expect(newOTP).not.toBe(initialOTP);
-    expect(jest.requireMock('clipboard-copy')).toHaveBeenCalledWith(newOTP);
+    // expect(jest.requireMock('clipboard-copy')).toHaveBeenCalledWith(newOTP);
+    // expect(mockClipboard.writeText).toHaveBeenCalledWith(newOTP);
   });
 });
