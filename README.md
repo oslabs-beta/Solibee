@@ -25,6 +25,7 @@ Solibee is an open-source collection of accessible and customizable components f
 <ul>
   <li><a href="#features">Features</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#testing">Testing</a></li>
   <li><a href="#how-to-contribute">How to Contribute</a></li>
   <li><a href="#meet-the-team">Meet the Team</a></li>
   <li><a href="#license">License</a></li>
@@ -49,7 +50,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
   1) Run the following command in your terminal. Substitute ```ComponentName``` with the name of the custom component you would like to use. You can see the preview and the full list of components [here](http://localhost:3000/component/accordion). <br>
   ```
-    npx solibee create-ComponentName
+    npx solibee create-[ComponentName]
   ``` 
 
   2) When you run the CLI command above it will automatically install all dev dependencies.
@@ -73,10 +74,16 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
 <strong>Manual Installation</strong>
 
-  1) Install Tailwind <br>
-  Our components are styled using Tailwind CSS. You need to install Tailwind CSS in your project. <br>
+  1) Install Dev Dependencies<br>
+  Our components are styled using Tailwind CSS. You need to install three dev dependencies in your project. <br>
   ```
-    npm install tailwind
+    npm install --save-dev tailwind
+  ```
+  ```
+    npm install --save-dev postcss
+  ```
+  ```
+    npm install --save-dev @tailwindcss/forms
   ```
  
   2) Configure a tailwind.config.js file <br>
@@ -94,9 +101,20 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
   5) You're ready to go!
 
+## Testing
 
 
 ## How To Contribute
+Solibee is an open-source project built for the Solid JS community maintained by OS Labs. We welcome contributions and feedback from the community to make Solibee even better as there's so much room to grow. For any major changes or updates, please open an issue first. Please make sure to update the tests as appropriate.Contribute to our project by following these simple steps:
+
+  1) Fork this Repository
+  2) Create your Feature Branch by following these naming conventions:
+      - feat/[NewFeature]
+      - fix/[NewFix]
+      - docs/[NewDocs]
+  3) Commit your changes
+  4) Push to the branch
+  5) Open a Pull Request
 
 ## Meet The Team
 
@@ -112,18 +130,6 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
 Solibee is an open-source product licensed under the MIT License.
 
-What was your motivation?
-Why did you build this project?
-What problem does it solve?
-What did you learn?
-What makes your project stand out?
-If your project has a lot of features, consider adding a "Features" section and listing them here.
-
-
-summary
-screenshots
-how to get started
-how to run tests
 
 
 
