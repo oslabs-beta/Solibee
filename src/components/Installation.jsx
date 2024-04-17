@@ -1,70 +1,46 @@
 import CodeBoxWithCopy from './CodeBoxWithCopy';
 import Step from './Step';
 import { codeToHtml } from 'shiki';
-import { createSignal } from 'solid-js';
+import { createSignal, useContext, createResource } from 'solid-js';
 import Menu from './Menu';
+import { TailwindConfigContext } from '../context/TailwindConfigContext';
 
-//TO DO: Create a different file for the codeStrings;
-export default function Installation(props) {
-  const codeStep1 = 'npx solibee add componentName';
-  const codeTailwindConfig = `/** @type {import('tailwindcss').Config} */
-  module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        'yellow': {
-          100: '#fcef46',
-          200: '#ffd231',
-        },
-        'orange': {
-          100: '#faaa3d',
-          200: '#f47833'
-        },
-        'black': '#191818'
-      },
-      animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
-      }
-    },
-  },
-  plugins: [],
-};`;
-  const stylesCode = `@tailwind base;
-@tailwind components;
-@tailwind utilities;`;
+export default function Installation() {
+  const codeStep1 = 'npx solibee create-InputForm';
+  const { tailwindStrings } = useContext(TailwindConfigContext);
+  const codeTailwindConfig = tailwindStrings.EntireProject;
+  const stylesCode = tailwindStrings.Styles;
 
   const [formattedCode, setCodeHtml] = createSignal();
   const [formattedConfig, setformattedConfig] = createSignal();
   const [formattedStyles, setformattedStyles] = createSignal();
-  const [textToCopy, setTextToCopy] = createSignal();
 
-  console.log(props); // checking is this component renders for each comp in the Context
+  const shikiTheme = 'dark-plus';
 
-  const getHtml = async () => {
-    //try token code
+  createResource(() => {
+    const getHtml = async () => {
+      let codeHtml = await codeToHtml(codeStep1, {
+        lang: 'jsx',
+        theme: shikiTheme,
+      });
 
-    let codeHtml = await codeToHtml(codeStep1, {
-      lang: 'jsx',
-      theme: 'dark-plus',
-    });
+      let formattedConfig = await codeToHtml(codeTailwindConfig, {
+        lang: 'jsx',
+        theme: shikiTheme,
+      });
 
-    let formattedConfig = await codeToHtml(codeTailwindConfig, {
-      lang: 'jsx',
-      theme: 'dark-plus',
-    });
+      let formattedStyles = await codeToHtml(stylesCode, {
+        lang: 'jsx',
+        theme: shikiTheme,
+      });
 
-    let formattedStyles = await codeToHtml(stylesCode, {
-      lang: 'jsx',
-      theme: 'dark-plus',
-    });
-
-    setCodeHtml(codeHtml);
-    setformattedConfig(formattedConfig);
-    setformattedStyles(formattedStyles);
-    return codeHtml;
-  };
-  getHtml();
+      setCodeHtml(codeHtml);
+      setformattedConfig(formattedConfig);
+      setformattedStyles(formattedStyles);
+      return codeHtml;
+    };
+    getHtml();
+  });
 
   return (
     <>
@@ -87,11 +63,11 @@ export default function Installation(props) {
             <Step step='Add a component to your project via CLI' />
             <div class='flex-column gap-col-5 m-5'>
               <div class='mb-3'>
-                Solibee provides a CLI to help you get started quickly. To use a
-                component, for example the Input Form, run the following command
-                in your terminal.
+                Solibee provides a CLI to help you get started quickly. To
+                install a component into your project, for example the Input
+                Form, run the following command in your terminal.
               </div>
-              <CodeBoxWithCopy html={formattedCode()} />
+              <CodeBoxWithCopy html={formattedCode()} textToCopy={codeStep1} />
             </div>
 
             <Step step='Configure a tailwind.config.js file' />
@@ -99,7 +75,10 @@ export default function Installation(props) {
               <div class='mb-3'>
                 Here's what our tailwind config file looks like!
               </div>
-              <CodeBoxWithCopy html={formattedConfig()} />
+              <CodeBoxWithCopy
+                html={formattedConfig()}
+                textToCopy={codeTailwindConfig}
+              />
             </div>
           </div>
         </section>
@@ -125,7 +104,10 @@ export default function Installation(props) {
                 <div class='mb-3'>
                   Here's what our tailwind config file looks like!
                 </div>
-                <CodeBoxWithCopy html={formattedConfig()} />
+                <CodeBoxWithCopy
+                  html={formattedConfig()}
+                  textToCopy={codeTailwindConfig}
+                />
               </div>
 
               <Step step='Configure styles' />
@@ -133,7 +115,10 @@ export default function Installation(props) {
                 <div class='mb-3'>
                   Add the following to your global css styles file.
                 </div>
-                <CodeBoxWithCopy html={formattedStyles()} />
+                <CodeBoxWithCopy
+                  html={formattedStyles()}
+                  textToCopy={stylesCode}
+                />
               </div>
 
               <Step step='Copy the code for the component you chose' />
