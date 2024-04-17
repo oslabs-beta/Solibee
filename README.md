@@ -41,13 +41,34 @@ Solibee is an open-source collection of accessible and customizable components f
 
 
 ## Getting Started
+
+<strong>CLI Installation</strong>
+
+Solibee provides a CLI to help you get started quickly. To use a component in your project please follow the steps below:
+
+  1) Run the following command in your terminal. Substitute ```ComponentName``` with the name of the custom component you would like to use. You can see the preview and the full list of components [here](http://localhost:3000/component/accordion). <br>
+  ```
+    npx solibee create-ComponentName
+  ``` 
+
+  2) When you run the CLI command above it will automatically install all dev dependencies.
+
+  3) After successful installation you will find a new Solibee directory created in your root folder.This directory will contain a ```CustomComponent```, ```Tailwind.config```, ```PostCSS.config``` files.
+
+  4) Configure dev dependencies:
+      - If you don't have ```Tailwind.config``` and ```PostCSS.config``` files in the root directory, bring ```Tailwind.config``` and ```PostCSS.config``` files from Solibee directory to your root directory.
+      - If you have existing ```Tailwind.config``` and ```PostCSS.config``` files in your root directory, integrate Tailwind and PostCSS configurations installed with Solibee.
+
+  5) You're ready to go!
+
+
 <strong>Manual Installation</strong>
 
   1) Install Tailwind <br>
   Our components are styled using Tailwind CSS. You need to install Tailwind CSS in your project. <br>
   ```
     npm install tailwind
-  ``` 
+  ```
  
   2) Configure a tailwind.config.js file <br>
   To see the Tailwind config file follow this [link](https://solibee.dev/installation)
@@ -60,16 +81,9 @@ Solibee is an open-source collection of accessible and customizable components f
     @tailwind utilities;
   ```
 
+  4) Copy the code for the custom component you chose [here](https://solibee.dev/component/accordion). Create a file in your working directory and paste the code you copied. 
 
-
-
-<strong>CLI Installation</strong>
-
-Solibee provides a CLI to help you get started quickly. To use a component in your project please follow the steps below:
-
-  1) Run the following command in your terminal. Substitute ```ComponentName``` with the custom component name you would like to use. <br>
-  ```npx solibee create-ComponentName``` <br>
-  2) 
+  5) You're ready to go!
 
 
 
