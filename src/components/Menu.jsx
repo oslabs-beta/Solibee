@@ -11,7 +11,6 @@ function MenuItem(props) {
     <ul>
       <For each={items()}>
         {(item) => {
-          console.log(item);
           return (
             <li>
                 <a
