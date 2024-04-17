@@ -42,13 +42,13 @@ function GenerateOTP() {
         Your one-time password is: <span>{otp()}</span>
         <div>
           <button
-            class='mr-2 mt-2 rounded-md bg-orange-100/[0.3]	p-1 px-2 hover:bg-orange-100'
+            class='mr-2 mt-2 rounded-md bg-orange-100/[0.8]	p-1 px-2 hover:bg-orange-100'
             onClick={regenerateOTP}
           >
             Regenerate
           </button>
           <button
-            class='rounded-md bg-orange-100/[0.3] p-1	px-2 hover:bg-orange-100'
+            class='rounded-md bg-orange-100/[0.8] p-1	px-2 hover:bg-orange-100'
             onClick={copyOTP}
           >
             {copied() ? 'Copied!' : 'Copy'}
