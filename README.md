@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="http://www.solibee.dev">
+  <a href="http://www.solibee.dev" target="_blank">
     <img src="assets/solibee-logo-thin.png" alt="LogoAndName">
   </a>
 </div>
@@ -32,6 +32,41 @@ Solibee is an open-source collection of accessible and customizable components f
 
 ## Features
 
+- **Easy to use:** To get [started](https://solibee.dev/installation) with Solibee please visit our [documentations](https://solibee.dev/installation) for user-friendly customizable component previews and installation guides.
+- **Customizable:** All Solibee components are built using Solid JS and style with Tailwind CSS which ensures that each component is easily customizable to fit the design and needs of your project.
+- **Accessible:** Solibee component library is designed with accessibility in mind to ensure that all our users can interact with the components. Our components follow WAI-ARIA design patterns.
+- **Documented:** Comprehensive documentation provided for each component to facilitate easy usage and understanding.
+- **Reliable:** Solibee custom components are written in JavaScript or TypeScript and tested with Jest and Solid JS Testing library.
+- **Opportunities to contribute:** Solibee is an open-source project built for the Solid JS community. If you have any questions, feedback, or suggestions, please scroll down for [instructions](#how-to-contribute) on how to contribute to this project.
+
+
+## Getting Started
+<strong>Manual Installation<strong>
+
+
+<strong>CLI Installation</strong>
+
+Solibee provides a CLI to help you get started quickly. To use a component in your project please follow the steps below:
+
+  1) Run the following command in your terminal. Substitute ```ComponentName``` with the custom component name you would like to use. <br>
+  ```npx solibee create-ComponentName``` <br>
+  2) 
+
+
+
+## How To Contribute
+
+## Meet The Team
+
+- Bongi Sibanda - [Git Hub](https://github.com/trialnerr)
+- Congke Zhao - [Git Hub](https://github.com/CK-Zhao)
+- Lillian Tenn - [Git Hub](https://github.com/tenn501)
+- Marselina Sequoia - [Git Hub](https://github.com/marsbird)
+- Neul Seo - [Git Hub](https://github.com/neulseo2)
+
+
+
+
 What was your motivation?
 Why did you build this project?
 What problem does it solve?
@@ -47,16 +82,3 @@ how to run tests
 
 
 
-
-
-## Getting Started
-
-## How To Contribute
-
-## Meet The Team
-
-- Bongi Sibanda - [Git Hub](https://github.com/trialnerr)
-- Congke Zhao - [Git Hub](https://github.com/CK-Zhao)
-- Lillian Tenn - [Git Hub](https://github.com/tenn501)
-- Marselina Sequoia - [Git Hub](https://github.com/marsbird)
-- Neul Seo - [Git Hub](https://github.com/neulseo2)
