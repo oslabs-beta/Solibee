@@ -25,11 +25,13 @@ export default function NavBar() {
 
     if (isDarkMode()) {
       document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark')
       modeIcon.src = nightIcon;
       modeIcon.alt = 'Night icon';
       githubIcon.src = gitLogoWhite;
     } else {
       document.documentElement.removeAttribute('data-theme');
+      document.documentElement.classList.remove('dark')
       modeIcon.src = sunIcon;
       modeIcon.alt = 'Sun icon';
       githubIcon.src = gitLogo;
