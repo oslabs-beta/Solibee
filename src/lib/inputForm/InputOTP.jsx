@@ -92,6 +92,7 @@ function InputOTP() {
     } else if (e.key === 'Backspace') {
       setOtpDigits(index(), '');
       focusNextInput(e.target, prevId, nextId);
+<<<<<<< HEAD
       
     } else if (e.key.length > 1) {
       //to ignore arrowkeys & other complicated key codes
@@ -101,6 +102,12 @@ function InputOTP() {
       //for letters {, } ,[ ,], \, | ,etc
       setOtpDigits(index(), e.key);
       focusNextInput(e.target, prevId, nextId);
+=======
+    } else {
+      setOtpDigits(index(), e.key);
+      focusNextInput(e.target, prevId, nextId);
+      console.log(otpDigits);
+>>>>>>> dev
     }
   }
 

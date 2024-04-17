@@ -23,7 +23,11 @@ function InputFile() {
   return (
     <form>
       <div class='flex items-baseline gap-2'>
+<<<<<<< HEAD
         <label id='fileInputLabel' for='fileInput' class='mb-2 block p-2'>
+=======
+        <label for='fileInput' class='mb-2 block p-2'>
+>>>>>>> dev
           Choose a file:
         </label>
         <input
@@ -33,10 +37,15 @@ function InputFile() {
           name='fileInput'
           type='file'
           onChange={handleFileChange}
+<<<<<<< HEAD
           aria-labelledby='fileInputLabel'
         />
         <button
           aria-label = 'click button to submit chosen file'
+=======
+        />
+        <button
+>>>>>>> dev
           class='rounded-md bg-orange-100	px-2 py-1'
           onClick={(e) => handleSubmit(e)}
         >
