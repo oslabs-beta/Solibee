@@ -20,7 +20,7 @@ export default function ToDoList() {
     <div class='flex flex-col bg-gray-100 p-4'>
       <div class='mb-4'>
         <input
-          class='mt-2 rounded-md border-2 border-orange-100 shadow shadow focus:border-orange-100 focus:outline-none focus:ring-1 focus:ring-orange-100'
+          class='mt-2 rounded-md border-2 border-orange-100 shadow focus:border-orange-100 focus:outline-none focus:ring-1 focus:ring-orange-100'
           placeholder='new todo here'
           ref={input}
         />
@@ -43,7 +43,7 @@ export default function ToDoList() {
               <div class='w-full rounded-t-lg border-b border-orange-100'>
                 <div class='flex items-center ps-3'>
                   <input
-                    class='y-700 h-4 w-4 rounded-full border border-0 bg-orange-100 shadow checked:bg-orange-100 hover:bg-orange-200 checked:hover:bg-orange-200 focus:ring-2 focus:ring-orange-200'
+                    class='y-700 h-4 w-4 rounded-full border bg-orange-100 shadow checked:bg-orange-100 hover:bg-orange-200 checked:hover:bg-orange-200 focus:ring-2 focus:ring-orange-200'
                     type='checkbox'
                     checked={todo.completed}
                     onchange={[toggleTodo, id]}
