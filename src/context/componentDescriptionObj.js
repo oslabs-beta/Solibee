@@ -3,10 +3,10 @@ export const compDescriptionsObj = {
     desc: 'A component that allows users to expand and collapse sections of content.',
     feats: [
       'Content hides when collapsed.',
-      'Height animation for every item content.',
+      'Height animation for content.',
       'Keyboard navigation.',
     ],
-    inBeta: false,
+    inBeta: true,
     accessibility: 'Follows WAI/ARIA accordion pattern'
   },
   DragAndDrop: {
@@ -15,75 +15,72 @@ export const compDescriptionsObj = {
       'Ability to add items per column.',
       'Items draggable from one column to another.',
       'Ability to set default items, default columns.',
+      'Allows users to delete items from columns.', 
+      'Optionally displays a button to add new columns when showNewColBtn prop is set to true.'
     ],
     inBeta: true, 
-    accessibility: 'Not yet keyboard accessible'
+    accessibility: 'Accessibility features and descriptions in beta. Not yet keyboard accessible.'
   },
   GenerateOTP: {
     desc: 'A component for generating random one-time passwords(OTPs).',
     feats: [
       'Generates and regenerates random OTP.',
-      'Ability to copy and paste generated OTP.',
+      'Ability to copy OTP.',
     ],
     inBeta: false, 
-    accessibility: ''
+    accessibility: 'Keyboard accessible.'
   },
   InputFile: {
     desc: "A component for uploading files selected from users' devices.",
     feats: [
-      'Ability to add items per column.',
-      'Items draggable from one column to another.',
-      'Ability to set default items, default columns.',
+      'Can upload one file from the device storage of the user.'
     ],
-    inBeta: true, 
-    accessibility: ''
+    inBeta: false, 
+    accessibility: 'Keyboard accessible. Appropriate labels for inputs used.'
   },
   InputForm: {
     desc: 'A form input component that accepts user name and email.',
     feats: [
-      'Ability to add items per column.',
-      'Items draggable from one column to another.',
-      'Ability to set default items, default columns.',
+      'Accepts user data, username & email, which are both required.',
+      'Validates email input'
     ],
     inBeta: false, 
-    accessibility:''
+    accessibility:'Includes appropriate ARIA attributes and semantic HTML.'
   },
   InputOTP: {
     desc: 'A component designed for users to input one-time passwords (OTPs).',
     feats: [
-      'Ability to add items per column.',
-      'Items draggable from one column to another.',
-      'Ability to set default items, default columns.',
+      'Supports pasting from clipboard.',
+      'Focused input changes based on input/deletion.',
+      'Includes input validation.'
     ],
     inBeta: true, 
-    accessibility: ''
+    accessibility: 'Includes appropriate ARIA attributes and semantic. Not fully keyboard accessible.'
   },
   SearchButton: {
     desc: 'A component that allow users to enter search queries and receive relevant page results.',
     feats: [
-      'Ability to upload one or more files from the device storage of the user.'
+      'Search component input.', 
+      'Responds to user interaction with styled hover and focus states.'
     ],
-    inBeta: true, 
-    accessibility: ''
+    inBeta: false, 
+    accessibility: 'Includes appropriate ARIA attributes and semantic HTML.'
   },
   ToDoList: {
     desc: 'A component that allows user to update a list of tasks or items that need to be completed.',
     feats: [
-      'Ability to add items per column',
-      'Items draggable from one column to another',
-      'Ability to set default items, default columns',
+      'Users can add new todos by typing into the input field and clicking the "Add Todo" button.',
+      'Users can mark todo completion using checkmark.', 
     ],
     inBeta: true, 
-    accessibility: ''
+    accessibility: 'Includes focus states and contrast considerations. Not fully keyboard accessible.'
   },
   Switch: {
     desc: 'A component that toggles between light and dark mode.', 
     feats: [
-      'Ability to add items per column',
-      'Items draggable from one column to another',
-      'Ability to set default items, default columns',
+      'Toggle switch that toggles left and right'
     ],
     inBeta: true, 
-    accessibility: ''
+    accessibility: 'The component uses a cursor pointer and has an accessible label. Not fully keyboard accessible.'
   },
 };
