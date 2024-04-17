@@ -146,7 +146,15 @@ export default function ContentComponent(props) {
               )}
             </For>
             <div class='mt-3'>
-              {currentDescription.inBeta && <span> Component in Beta </span>}
+              {currentDescription.inBeta && (
+                <div class='flex gap-2'>
+                  <span aria-label='seedling icon'> 🌱 </span> Component in beta.
+                </div>
+              )}
+            </div>
+            <div class='mt-3 '>
+              <span class='font-bold'>Accessibility : </span>
+              {currentDescription.accessibility}
             </div>
           </ul>
         </div>
