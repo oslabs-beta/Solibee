@@ -74,10 +74,10 @@ export default function Accordion() {
                 </h2>
 
                 <div
-                  class={` overflow-hidden ${
+                  class={` overflow-hidden  transition-all duration-1000 ease-in-out ${
                     activeID[i()]
-                      ? 'max-h-full transition-max-height transition-transform duration-200 ease-in-out'
-                      : 'max-h-0 transition-max-height transition-transform duration-200 ease-in-out'
+                      ? 'max-h-auto'
+                      : 'max-h-0'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
