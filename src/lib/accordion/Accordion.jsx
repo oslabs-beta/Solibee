@@ -16,7 +16,7 @@ export default function Accordion() {
     {
       question: 'Who is on the team?',
       answer:
-        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seo',
     },
     {
       question: "I'm excited, how do I install the components?",
@@ -75,9 +75,7 @@ export default function Accordion() {
 
                 <div
                   class={` overflow-hidden  transition-all duration-1000 ease-in-out ${
-                    activeID[i()]
-                      ? 'max-h-auto'
-                      : 'max-h-0'
+                    activeID[i()] ? 'max-h-auto' : 'max-h-0'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
