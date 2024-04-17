@@ -64,7 +64,7 @@ export default function NavBar() {
   // modeIcon.addEventListener('click', handleClick);
 
   return (
-    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
+    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-orange-100 dark:border-orange-300 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
       <div class='flex items-center text-font'>
         <a
           href='/'
