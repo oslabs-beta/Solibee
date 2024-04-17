@@ -8,7 +8,7 @@
 
 <div align='center'>
 
-[![Solid JS](https://img.shields.io/badge/Solid_JS-335c81?style=flat-square&logo=Solid&logoColor=65afff)](https://www.solidjs.com/) [![JavaScript](https://img.shields.io/badge/JavaScript-172121?style=flat-square&logo=javascript)](https://www.javascript.com/) [![Typescript](https://img.shields.io/badge/Typescript-6290c3?style=flat-square&logo=Typescript&logoColor=1d3354)](https://www.typescriptlang.org/) [![Tailwind](https://img.shields.io/badge/Tailwind_CSS-797a9e?style=flat-square&logo=Tailwind%20CSS&logoColor=84d2f6)](https://tailwindcss.com/) [![Jest](https://img.shields.io/badge/Jest-571f4e?style=flat-square&logo=Jest&logoColor=e7e5df)](https://jestjs.io/) [![HTML5](https://img.shields.io/badge/HTML-fb8f67?style=flat-square&logo=HTML5&logoColor=fdfffc)](https://html.com/) [![Vite](https://img.shields.io/badge/Vite-f7ee7f?style=flat-square&logo=Vite&logoColor=7f2ccb)](https://vitejs.dev/) [![NPM](https://img.shields.io/badge/NPM-883955?style=flat-square&logo=NPM&logoColor=d1becf)](https://www.npmjs.com/) [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-373f51?style=flat-square&logo=GitHub%20Pages&logoColor=a9bcd0)]()
+[![Solid JS](https://img.shields.io/badge/Solid_JS-335c81?style=flat-square&logo=Solid&logoColor=65afff)](https://www.solidjs.com/) [![JavaScript](https://img.shields.io/badge/JavaScript-172121?style=flat-square&logo=javascript)](https://www.javascript.com/) [![Typescript](https://img.shields.io/badge/Typescript-6290c3?style=flat-square&logo=Typescript&logoColor=1d3354)](https://www.typescriptlang.org/) [![Tailwind](https://img.shields.io/badge/Tailwind_CSS-797a9e?style=flat-square&logo=Tailwind%20CSS&logoColor=84d2f6)](https://tailwindcss.com/) [![Jest](https://img.shields.io/badge/Jest-571f4e?style=flat-square&logo=Jest&logoColor=e7e5df)](https://jestjs.io/) [![HTML5](https://img.shields.io/badge/HTML-fb8f67?style=flat-square&logo=HTML5&logoColor=fdfffc)](https://html.com/) [![Vite](https://img.shields.io/badge/Vite-f7ee7f?style=flat-square&logo=Vite&logoColor=7f2ccb)](https://vitejs.dev/) [![NPM](https://img.shields.io/badge/NPM-883955?style=flat-square&logo=NPM&logoColor=d1becf)](https://www.npmjs.com/) [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-373f51?style=flat-square&logo=GitHub%20Pages&logoColor=a9bcd0)](https://pages.github.com/) [![PostCSS](https://img.shields.io/badge/PostCSS-a4243b?style=flat-square&logo=PostCSS&logoColor=ffd791)](https://postcss.org/)
 
 </div>
 
@@ -27,6 +27,7 @@ Solibee is an open-source collection of accessible and customizable components f
   <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#how-to-contribute">How to Contribute</a></li>
   <li><a href="#meet-the-team">Meet the Team</a></li>
+  <li><a href="#license">License</a></li>
 </ul>
 
 
@@ -59,7 +60,15 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
       - If you don't have ```Tailwind.config``` and ```PostCSS.config``` files in the root directory, bring ```Tailwind.config``` and ```PostCSS.config``` files from Solibee directory to your root directory.
       - If you have existing ```Tailwind.config``` and ```PostCSS.config``` files in your root directory, integrate Tailwind and PostCSS configurations installed with Solibee.
 
-  5) You're ready to go!
+  5) Configure Tailwind styles <br>
+  Add the following to your global css styles file. <br>
+  ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+  ```
+
+  6) You're ready to go!
 
 
 <strong>Manual Installation</strong>
@@ -91,14 +100,17 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
 ## Meet The Team
 
-- Bongi Sibanda - [GitHub](https://github.com/trialnerr)
-- Congke Zhao - [GitHub](https://github.com/CK-Zhao)
-- Lillian Tenn - [GitHub](https://github.com/tenn501)
-- Marselena Sequoia - [GitHub](https://github.com/marsbird)
-- Neul Seo - [GitHub](https://github.com/neulseo2)
+- ### Bongi Sibanda      [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/trialnerr)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+
+- ### Congke Zhao        [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/CK-Zhao)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+- ### Lillian Tenn       [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/tenn501)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+- ### Marselena Sequoia  [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/marsbird)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+- ### Neul Seo           [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/neulseo2)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
 
 
+## License
 
+Solibee is an open-source product licensed under the MIT License.
 
 What was your motivation?
 Why did you build this project?
