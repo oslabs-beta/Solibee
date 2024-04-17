@@ -72,7 +72,7 @@ export const compDescriptionsObj = {
       'Users can add new todos by typing into the input field and clicking the "Add Todo" button.',
       'Users can mark todo completion using checkmark.', 
     ],
-    inBeta: true, 
+    inBeta: false, 
     accessibility: 'Includes focus states and contrast considerations. Not fully keyboard accessible.'
   },
   Switch: {
@@ -80,7 +80,7 @@ export const compDescriptionsObj = {
     feats: [
       'Toggle switch that toggles left and right'
     ],
-    inBeta: true, 
+    inBeta: false, 
     accessibility: 'The component uses a cursor pointer and has an accessible label. Not fully keyboard accessible.'
   },
 };
