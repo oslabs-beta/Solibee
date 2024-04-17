@@ -1,5 +1,3 @@
-const greeting = () => {
-  console.log('Welcome to Solibee!');
-};
+import InputForm from './InputForm.jsx';
 
-module.exports = greeting;
+export default InputForm;

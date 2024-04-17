@@ -1,16 +1,19 @@
-import { createContext } from "solid-js";
-import { createStore } from "solid-js/store";
+import { createContext } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
 export const ComponentContext = createContext();
 
 export function CompContextProvider(props) {
   const [components, setComponents] = createStore([
-    "Drag And Drop",
-    "Generate OTP",
-    "Input File",
-    "Input Form",
-    "Input OTP",
-    "To Do List",
+    'Accordion',
+    'Drag And Drop',
+    'Generate OTP',
+    'Input File',
+    'Input Form',
+    'Input OTP',
+    'Search Button',
+    'To Do List',
+    'Switch',
   ]);
 
   return (

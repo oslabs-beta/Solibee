@@ -15,9 +15,30 @@
 }
 
 .background {
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-             url('../assets/honeycomb-background.jpeg');
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url('../assets/honeycomb-background.jpeg');
   background-size: 50rem;
+}
+
+@layer base {
+  :root {
+    --color-background: 255, 255, 255; /* white */
+    --color-font: 0, 0, 0; /* black */
+    --color-h3font: 124 45 18; /* dark orange brown*/
+    --color-boldfont: 244, 120, 51; /* orange-200 */
+    --color-hover: 244, 120, 51; /* orange-200 */
+  }
+
+  :root[data-theme='dark'] {
+    --color-background: 0, 0, 0; /* black */
+    --color-font: 255, 255, 255; /* white */
+    --color-h3font: 250, 170, 61; /* orange-100 */
+    --color-boldfont: 153, 153, 153; /* grey */
+    --color-hover: 244, 120, 51; /* orange-200 */
+  }
 }
 
 /* styling of the button location; inside styling exists as tailwind */
