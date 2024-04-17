@@ -88,7 +88,7 @@ export default function ContentComponent(props) {
           </p>
         </header>
 
-        <div class='w-full text-font'>
+        <div class='text-font w-full'>
           <p class=''>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
@@ -138,10 +138,32 @@ export default function ContentComponent(props) {
 
         {/* Guide, usage, etc. */}
         <div class='my-5 mt-12 flex flex-col'>
-          <p class='text-2xl tracking-tight text-h3font' id='installation'>
+          <p class='text-h3font text-2xl tracking-tight' id='installation'>
             Installation Guide
           </p>
           <hr />
+          <section class='mb-5'>
+            <h2 class='m-2 text-2xl font-bold'>Manual Installation</h2>
+            <div
+              data-orientation='horizontal'
+              class='steps relative z-0 mb-12 ml-4 border-l'
+            >
+              <Step step='Copy the code from the code section above' />
+              <div class='flex-column gap-col-5 m-5'>
+                <div class='mb-3'></div>
+              </div>
+
+              <Step step='Refer to our Installation page for more information on how to set up the necessary dependencies.' />
+              <div class='flex-column gap-col-5 m-5'>
+                <div class='mb-3'>
+                  <a target='_blank' href='/installation' class='solibee-link'>
+                    Click here
+                  </a>{' '}
+                  to navigate to the Installation Page
+                </div>
+              </div>
+            </div>
+          </section>
           {/* Automatic installation instructions */}
           <section class='mb-5'>
             <h2 class='m-2 text-2xl font-bold'>Automatic Installation</h2>
@@ -159,7 +181,7 @@ export default function ContentComponent(props) {
                   textToCopy={installStepCode}
                 />
                 <div class='mt-3'>
-                  The component should be in your root folder. 
+                  The component should be in your root folder.
                 </div>
               </div>
 
@@ -172,29 +194,6 @@ export default function ContentComponent(props) {
                   html={formattedConfigCode()}
                   textToCopy={installStepCode}
                 />
-              </div>
-            </div>
-          </section>
-
-          <section class='mb-5'>
-            <h2 class='m-2 text-2xl font-bold'>Manual Installation</h2>
-            <div
-              data-orientation='horizontal'
-              class='steps relative z-0 mb-12 ml-4 border-l'
-            >
-              <Step step='Copy the code above' />
-              <div class='flex-column gap-col-5 m-5'>
-                <div class='mb-3'></div>
-              </div>
-
-              <Step step='Refer to our Installation page for more information on how to set the necessary dependencies.' />
-              <div class='flex-column gap-col-5 m-5'>
-                <div class='mb-3'>
-                  <a target='_blank' href='/installation' class='solibee-link'>
-                    Click here
-                  </a>{' '}
-                  to navigate to the Installation Page
-                </div>
               </div>
             </div>
           </section>
