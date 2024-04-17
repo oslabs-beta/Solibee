@@ -76,19 +76,19 @@ export default function ContentComponent(props) {
       <Menu />
       <div class='prose w-10/12 max-w-[850px] px-3 backdrop-blur-sm'>
         {/* Component name and description */}
-        <header class='mb-4'>
-          <h1 class='mb-4 inline-block text-4xl font-bold tracking-tight'>
+        <header class='mb-5'>
+          <h1 class='inline-block text-4xl font-bold tracking-tight'>
             {currentComp()}
           </h1>
           <hr />
-          <p class='mb-5 text-subfont'>
+          <p class='mt-4 text-subfont'>
             {/* Dynamic Description */}
             {currentDescription.desc}
           </p>
         </header>
 
         <div class='w-full text-font'>
-          <p class=''>Preview</p>
+          <p class='text-2xl font-semibold'>Preview</p>
           <hr />
           <div class='my-6 flex min-h-[350px] w-full items-center justify-center rounded-md bg-slate-100 text-black'>
             <Show when={currentComp() === 'Input Form'}>
@@ -122,9 +122,9 @@ export default function ContentComponent(props) {
         </div>
 
         <div>
-          <p class='mt-3 '>Features</p>
+          <p class='mt-3 text-2xl font-semibold'>Features</p>
           <hr />
-          <ul class='mt-3 text-subfont'>
+          <ul class='mt-3'>
             <For each={currentDescription.feats}>
               {(feat) => (
                 <li class='py-1 '>
@@ -148,7 +148,8 @@ export default function ContentComponent(props) {
             <div class='mt-3'>
               {currentDescription.inBeta && (
                 <div class='flex gap-2'>
-                  <span aria-label='seedling icon'> 🌱 </span> Component in beta.
+                  <span aria-label='seedling icon'> 🌱 </span> Component in
+                  beta.
                 </div>
               )}
             </div>
@@ -162,7 +163,7 @@ export default function ContentComponent(props) {
         {/* Code and preview */}
         <div class='my-5 flex flex-col space-y-4'>
           <div class='w-full'>
-            <p class=''>Code</p>
+            <p class='text-2xl font-semibold'>Code</p>
             <hr />
             <div class='relative my-6 w-full'>
               <CodeBoxWithCopy
@@ -174,13 +175,13 @@ export default function ContentComponent(props) {
         </div>
 
         {/* Guide, usage, etc. */}
-        <div class='my-5 mt-12 flex flex-col'>
-          <p class='text-2xl tracking-tight text-h3font' id='installation'>
+        <div class='my-5 mt-12'>
+          <h3 class='text-2xl font-semibold tracking-tight' id='installation'>
             Installation Guide
-          </p>
+          </h3>
           <hr />
           <section class='mb-5'>
-            <h2 class='m-2 text-2xl font-bold'>Manual Installation</h2>
+            <h3 class='m-2 text-xl font-semibold'>Manual Installation</h3>
             <div
               data-orientation='horizontal'
               class='steps relative z-0 mb-12 ml-4 border-l'
@@ -192,18 +193,19 @@ export default function ContentComponent(props) {
 
               <Step step='Refer to our Installation page for more information on how to set up the necessary dependencies.' />
               <div class='flex-column gap-col-5 m-5'>
-                <div class='mb-3'>
+                <div class=''>
+                  Navigate to the manual installation section of our
+                  installation page
                   <a target='_blank' href='/installation' class='solibee-link'>
-                    Click here
+                    here.
                   </a>{' '}
-                  to navigate to the Installation Page
                 </div>
               </div>
             </div>
           </section>
           {/* Automatic installation instructions */}
           <section class='mb-5'>
-            <h2 class='m-2 text-2xl font-bold'>Automatic Installation</h2>
+            <h2 class='m-2 text-xl font-semibold'>Automatic Installation</h2>
             <div
               data-orientation='horizontal'
               class='steps relative z-0 mb-12 ml-4 border-l'
