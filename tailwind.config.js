@@ -4,6 +4,10 @@ module.exports = {
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
     extend: {
+      backgroundImage: {
+        'light': "url('./assets/honeycomb.svg')",
+        'dark': "url('./assets/honeycomb-dark.svg')"
+      },
       transitionProperty: {
         'max-height': 'max-height',
       },
