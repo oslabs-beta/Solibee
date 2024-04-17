@@ -14,11 +14,6 @@
   font-style: normal;
 }
 
-.background {
-  background-image:url('../assets/honeycomb.svg');
-  background-size:5rem;
-}
-
 @layer base {
   :root {
     --color-background: 255, 255, 255; /* white */
