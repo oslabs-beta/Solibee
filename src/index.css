@@ -27,8 +27,8 @@
 
   :root[data-theme='dark'] {
     --color-background: 0, 0, 0; /* black */
-    --color-font: 255, 255, 255; /* white */
-    --color-subfont: 255, 255, 255; /* white */
+    --color-font: 238, 232, 224; /* white */
+    --color-subfont: 238, 232, 224; /* white */
     --color-h3font: 250, 170, 61; /* orange-100 */
     --color-footerfont: 153, 153, 153; /* grey */
     --color-boldfont: 250, 170, 61; /* orange-100 */
