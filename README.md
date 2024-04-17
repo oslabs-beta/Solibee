@@ -118,12 +118,12 @@ Solibee is an open-source project built for the Solid JS community maintained by
 
 ## Meet The Team
 
-- ### Bongi Sibanda      [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/trialnerr)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+- ### Bongi Sibanda      [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/trialnerr)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)]()
 
-- ### Congke Zhao        [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/CK-Zhao)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
-- ### Lillian Tenn       [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/tenn501)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
-- ### Marselena Sequoia  [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/marsbird)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
-- ### Neul Seo           [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=for-the-badge&logo=GitHub&logoColor=fffffa)](https://github.com/neulseo2)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=for-the-badge&logo=LinkedIn&logoColor=fffffa)]()
+- ### Congke Zhao        [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/CK-Zhao)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)]()
+- ### Lillian Tenn       [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/tenn501)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)]()
+- ### Marselena Sequoia  [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/marsbird)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)]()
+- ### Neul Seo           [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/neulseo2)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)]()
 
 
 ## License
