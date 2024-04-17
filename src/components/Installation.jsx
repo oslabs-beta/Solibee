@@ -3,13 +3,14 @@ import Step from './Step';
 import { codeToHtml } from 'shiki';
 import { createSignal, useContext, createResource } from 'solid-js';
 import Menu from './Menu';
-import { TailwindConfigContext } from '../context/TailwindConfigContext';
+import { StringRepContext } from '../context/StrRepresentationContext';
 
 export default function Installation() {
   const codeStep1 = 'npx solibee create-InputForm';
-  const { tailwindStrings } = useContext(TailwindConfigContext);
-  const codeTailwindConfig = tailwindStrings.EntireProject;
-  const stylesCode = tailwindStrings.Styles;
+  const { string } = useContext(StringRepContext);
+
+  const codeTailwindConfig = string.tailwindConfigStringsObj.EntireProject;
+  const stylesCode = string.tailwindConfigStringsObj.Styles;
 
   const [formattedCode, setCodeHtml] = createSignal();
   const [formattedConfig, setformattedConfig] = createSignal();
