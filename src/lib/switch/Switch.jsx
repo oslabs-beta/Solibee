@@ -1,6 +1,5 @@
 import { createSignal } from 'solid-js';
 
-// eslint-disable-next-line solid/no-destructure
 function Switch(props) {
   return (
     <div class='justify-center'>
