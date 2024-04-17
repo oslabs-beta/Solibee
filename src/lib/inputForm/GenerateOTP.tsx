@@ -1,8 +1,9 @@
-import { createSignal } from 'solid-js';
+import { createSignal, createEffect, onCleanup } from 'solid-js';
 import clipboardCopy from 'clipboard-copy';
 
 function GenerateOTP() {
   const [otp, setOTP] = createSignal(generateOTP());
+  const [copied , setCopied] = createSignal(false);
 
   function generateOTP() {
     return Math.floor(Math.random() * 1000000).toString();
@@ -12,9 +13,28 @@ function GenerateOTP() {
     setOTP(generateOTP());
   }
 
-  function copyOTP() {
-    clipboardCopy(otp());
-  }
+  const copyOTP = async () => {
+    try {
+      await navigator.clipboard.writeText(otp());
+      setCopied(true);
+    } catch (error) {
+      console.error('Error copying text: ', error);
+    }
+  };
+
+  //if there is a change in copied, set a timeout & cleanup on refresh
+  createEffect(() => {
+    // Reset copied state after 2 seconds
+    let resetCopyTimer: ReturnType<typeof setTimeout> | undefined;
+
+    if (copied()) {
+      resetCopyTimer = setTimeout(() => setCopied(false), 2000);
+    }
+
+    onCleanup(() => {
+      clearTimeout(resetCopyTimer);
+    });
+  });
 
   return (
     <div>
@@ -22,20 +42,19 @@ function GenerateOTP() {
         Your one-time password is: <span>{otp()}</span>
         <div>
           <button
-            class='mr-2 rounded-md bg-slate-200	p-1 px-2 hover:bg-orange-100'
+            class='mr-2 mt-2 rounded-md bg-orange-100/[0.8]	p-1 px-2 hover:bg-orange-100'
             onClick={regenerateOTP}
           >
             Regenerate
           </button>
           <button
-            class='rounded-md bg-slate-200 p-1	px-2 hover:bg-orange-100'
+            class='rounded-md bg-orange-100/[0.8] p-1	px-2 hover:bg-orange-100'
             onClick={copyOTP}
           >
-            Copy
+            {copied() ? 'Copied!' : 'Copy'}
           </button>
         </div>
       </div>
-      <span id='copied-msg'></span>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
+import { createEffect } from 'solid-js';
 
 export default function Accordion() {
   const data = [
@@ -20,7 +21,8 @@ export default function Accordion() {
     },
     {
       question: "I'm excited, how do I install the components?",
-      answer: 'You can install each component either manually or via CLI',
+      answer:
+        'You can install each component either manually or via CLI. Visit our installation page for more details.',
     },
   ];
 
@@ -42,18 +44,14 @@ export default function Accordion() {
               <div
                 id='wrapper'
                 class={`${i() === data.length - 1 ? '' : 'border-b'}  border-orange-100`}
-                classList={{}}
-<<<<<<< HEAD
                 data-testid='wrapper'
-=======
->>>>>>> dev
               >
                 <h2 id={`accordion-collapse-heading-${i()}`}>
                   <button
                     type='button'
                     class='flex w-full items-center justify-between gap-10 px-2 py-3 text-sm font-bold hover:bg-orange-200/[0.1]'
                     data-accordion-target={`#accordion-collapse-body-${i()}`}
-                    aria-expanded={activeID[i()] ? true : false}
+                    aria-expanded={activeID[i()]}
                     aria-controls={`accordion-collapse-body-${i()}`}
                     onClick={() => toggleAccordion(i())}
                   >
@@ -77,17 +75,14 @@ export default function Accordion() {
                 </h2>
 
                 <div
-                  class={` overflow-hidden ${
+                  class={` overflow-hidden  ${
                     activeID[i()]
-                      ? 'max-h-full transition-max-height transition-transform duration-200 ease-in-out'
-                      : 'max-h-0 transition-max-height transition-transform duration-200 ease-in-out'
+                      ? 'animate-accordion-down  h-full opacity-100'
+                      : 'animate-accordion-up  h-0 opacity-0'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}
-<<<<<<< HEAD
                   data-testid='hidden'
-=======
->>>>>>> dev
                 >
                   <p class='p-2 text-sm'>{obj.answer}</p>
                 </div>

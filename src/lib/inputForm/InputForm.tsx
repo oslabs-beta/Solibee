@@ -30,19 +30,11 @@ function InputForm() {
           <input
             id='name'
             type='text'
-<<<<<<< HEAD
             placeholder='solibee'
             value={name()}
             onInput={(e) => setName(e.target.value)}
             required
             class='mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5] focus:border-orange-100 focus:shadow focus:ring-2 focus:ring-orange-100'
-=======
-            placeholder='solidbee'
-            value={name()}
-            onInput={(e) => setName(e.target.value)}
-            required
-            class='mt-2 rounded-md border-0 shadow outline outline-1 outline-orange-100/[0.5] focus:border-orange-100 focus:shadow focus:outline-none focus:ring-2 focus:ring-orange-100'
->>>>>>> dev
           />
         </div>
         <div class='my-2.5'>
@@ -58,11 +50,7 @@ function InputForm() {
           <input
             id='email'
             type='email'
-<<<<<<< HEAD
             placeholder='solibee@gmail.com'
-=======
-            placeholder='solidbee@gmail.com'
->>>>>>> dev
             value={email()}
             onInput={(e) => setEmail(e.target.value)}
             required
