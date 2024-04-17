@@ -14,15 +14,6 @@
   font-style: normal;
 }
 
-.background {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
-    url('../assets/honeycomb-background.jpeg');
-  background-size: 50rem;
-}
-
 @layer base {
   :root {
     --color-background: 255, 255, 255; /* white */
@@ -36,8 +27,8 @@
 
   :root[data-theme='dark'] {
     --color-background: 0, 0, 0; /* black */
-    --color-font: 255, 255, 255; /* white */
-    --color-subfont: 255, 255, 255; /* white */
+    --color-font: 238, 232, 224; /* white */
+    --color-subfont: 238, 232, 224; /* white */
     --color-h3font: 250, 170, 61; /* orange-100 */
     --color-footerfont: 153, 153, 153; /* grey */
     --color-boldfont: 250, 170, 61; /* orange-100 */

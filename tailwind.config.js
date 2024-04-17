@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
-  darkMode: ['selector', '[data-mode="dark"]'],
+  darkMode: 'selector',
   theme: {
     extend: {
+      backgroundImage: {
+        'light': "url('./assets/honeycomb.svg')",
+        'dark': "url('./assets/honeycomb-dark.svg')"
+      },
       colors: {
         background: 'rgba(var(--color-background))',
         font: 'rgba(var(--color-font))',

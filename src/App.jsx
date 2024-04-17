@@ -9,7 +9,7 @@ function App() {
   });
 
   return (
-    <div class='flex min-h-screen flex-col bg-background text-font'>
+    <div class='flex min-h-screen flex-col bg-light bg-[length:5rem] text-font dark:bg-dark'>
       <div class='flex grow flex-col'>
         <NavBar />
         <MainContainer />
