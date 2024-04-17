@@ -12,9 +12,9 @@ describe('Input Form', () => {
     const { getByPlaceholderText } = render(() => <InputForm />);
 
     const buttonSubmit = screen.getByText('Submit');
-    const nameInput = getByPlaceholderText('solidbee') as HTMLInputElement;
+    const nameInput = getByPlaceholderText('solibee') as HTMLInputElement;
     const emailInput = getByPlaceholderText(
-      'solidbee@gmail.com',
+      'solibee@gmail.com',
     ) as HTMLInputElement;
 
     expect(buttonSubmit).toBeInTheDocument();
@@ -25,9 +25,9 @@ describe('Input Form', () => {
   it('name input and email input update their corresponding signals', () => {
     const { getByPlaceholderText } = render(() => <InputForm />);
 
-    const nameInput = getByPlaceholderText('solidbee') as HTMLInputElement;
+    const nameInput = getByPlaceholderText('solibee') as HTMLInputElement;
     const emailInput = getByPlaceholderText(
-      'solidbee@gmail.com',
+      'solibee@gmail.com',
     ) as HTMLInputElement;
 
     fireEvent.input(nameInput, { target: { value: 'John' } });
@@ -44,9 +44,9 @@ describe('Input Form', () => {
       <InputForm />
     ));
 
-    const nameInput = getByPlaceholderText('solidbee') as HTMLInputElement;
+    const nameInput = getByPlaceholderText('solibee') as HTMLInputElement;
     const emailInput = getByPlaceholderText(
-      'solidbee@gmail.com',
+      'solibee@gmail.com',
     ) as HTMLInputElement;
 
     fireEvent.input(nameInput, { target: { value: 'John' } });
