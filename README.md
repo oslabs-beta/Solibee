@@ -8,7 +8,7 @@
 
 <div align='center'>
 
-[![Static Badge](https://img.shields.io/badge/Solid_JS-335c81?style=flat-square&logo=Solid&logoColor=65afff)](https://www.solidjs.com/) [![JavaScript](https://img.shields.io/badge/JavaScript-172121?style=flat-square&logo=javascript)](https://www.javascript.com/) [![Static Badge](https://img.shields.io/badge/Typescript-6290c3?style=flat-square&logo=Typescript&logoColor=1d3354)](https://www.typescriptlang.org/) [![Static Badge](https://img.shields.io/badge/Tailwind_CSS-797a9e?style=flat-square&logo=Tailwind%20CSS&logoColor=84d2f6)](https://tailwindcss.com/) [![Jest](https://img.shields.io/badge/Jest-571f4e?style=flat-square&logo=Jest&logoColor=e7e5df)](https://jestjs.io/) [![Static Badge](https://img.shields.io/badge/HTML-fb8f67?style=flat-square&logo=HTML5&logoColor=fdfffc)](https://html.com/) [![Static Badge](https://img.shields.io/badge/Vite-f7ee7f?style=flat-square&logo=Vite&logoColor=7f2ccb)](https://vitejs.dev/) [![Static Badge](https://img.shields.io/badge/NPM-883955?style=flat-square&logo=NPM&logoColor=d1becf)](https://www.npmjs.com/)
+[![Solid JS](https://img.shields.io/badge/Solid_JS-335c81?style=flat-square&logo=Solid&logoColor=65afff)](https://www.solidjs.com/) [![JavaScript](https://img.shields.io/badge/JavaScript-172121?style=flat-square&logo=javascript)](https://www.javascript.com/) [![Typescript](https://img.shields.io/badge/Typescript-6290c3?style=flat-square&logo=Typescript&logoColor=1d3354)](https://www.typescriptlang.org/) [![Tailwind](https://img.shields.io/badge/Tailwind_CSS-797a9e?style=flat-square&logo=Tailwind%20CSS&logoColor=84d2f6)](https://tailwindcss.com/) [![Jest](https://img.shields.io/badge/Jest-571f4e?style=flat-square&logo=Jest&logoColor=e7e5df)](https://jestjs.io/) [![HTML5](https://img.shields.io/badge/HTML-fb8f67?style=flat-square&logo=HTML5&logoColor=fdfffc)](https://html.com/) [![Vite](https://img.shields.io/badge/Vite-f7ee7f?style=flat-square&logo=Vite&logoColor=7f2ccb)](https://vitejs.dev/) [![NPM](https://img.shields.io/badge/NPM-883955?style=flat-square&logo=NPM&logoColor=d1becf)](https://www.npmjs.com/) [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-373f51?style=flat-square&logo=GitHub%20Pages&logoColor=a9bcd0)]()
 
 </div>
 
@@ -18,17 +18,17 @@
 Solibee is an open-source collection of accessible and customizable components for Solid JS. <br/>Check out our website <a href="http://www.solibee.dev/">here</a>!
 </p>
 
-# About
+## About
 
-<details>
-  <summary><strong>Table of Contents</strong></summary>
-  <ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#how-to-contribute">How to Contribute</a></li>
-    <li><a href="#meet-the-team">Meet the Team</a></li>
-  </ul>
-</details>
+
+<summary><strong>Table of Contents</strong></summary>
+<ul>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#how-to-contribute">How to Contribute</a></li>
+  <li><a href="#meet-the-team">Meet the Team</a></li>
+</ul>
+
 
 ## Features
 
@@ -41,7 +41,26 @@ Solibee is an open-source collection of accessible and customizable components f
 
 
 ## Getting Started
-<strong>Manual Installation<strong>
+<strong>Manual Installation</strong>
+
+  1) Install Tailwind <br>
+  Our components are styled using Tailwind CSS. You need to install Tailwind CSS in your project. <br>
+  ```
+    npm install tailwind
+  ``` 
+ 
+  2) Configure a tailwind.config.js file <br>
+  To see the Tailwind config file follow this [link](https://solibee.dev/installation)
+
+  3) Configure Tailwind styles <br>
+  Add the following to your global css styles file. <br>
+  ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+  ```
+
+
 
 
 <strong>CLI Installation</strong>
@@ -58,11 +77,11 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
 ## Meet The Team
 
-- Bongi Sibanda - [Git Hub](https://github.com/trialnerr)
-- Congke Zhao - [Git Hub](https://github.com/CK-Zhao)
-- Lillian Tenn - [Git Hub](https://github.com/tenn501)
-- Marselina Sequoia - [Git Hub](https://github.com/marsbird)
-- Neul Seo - [Git Hub](https://github.com/neulseo2)
+- Bongi Sibanda - [GitHub](https://github.com/trialnerr)
+- Congke Zhao - [GitHub](https://github.com/CK-Zhao)
+- Lillian Tenn - [GitHub](https://github.com/tenn501)
+- Marselena Sequoia - [GitHub](https://github.com/marsbird)
+- Neul Seo - [GitHub](https://github.com/neulseo2)
 
 
 
