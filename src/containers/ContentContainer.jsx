@@ -4,6 +4,7 @@ import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import Homepage from '../components/Homepage';
 import ContentComponent from '../components/ContentComponent';
+import Error404 from '../error404';
 import { useContext } from 'solid-js';
 import { ComponentContext } from '../context/ComponentContext';
 
@@ -25,6 +26,7 @@ export default function ContentContainer() {
             />
           )}
         </For>
+        {/* <Route path='*' component={Error404} /> */}
       </Router>
     </main>
   );
