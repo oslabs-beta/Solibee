@@ -2,7 +2,6 @@ import { createSignal, createEffect, onCleanup } from 'solid-js';
 import NavBar from './components/NavBar';
 import MainContainer from './containers/MainContainer';
 import Footer from './components/Footer';
-import Error404 from './Error404';
 
 function App() {
   onCleanup(() => {
