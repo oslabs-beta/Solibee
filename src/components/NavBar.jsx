@@ -64,49 +64,50 @@ export default function NavBar() {
   // modeIcon.addEventListener('click', handleClick);
 
   return (
-    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm dark:border-orange-300'>
-      <div class='flex items-center text-font'>
-        <a
-          href='/'
-          class='mr-10 flex items-center justify-center font-pacifico text-2xl'
-        >
-          <img
-            class='mr-2 h-8'
-            src={isDarkMode() ? solibeeLogoDark : solibeeLogoLight}
-            alt='the solibee logo: a bee in a honeycomb'
-          />
-          Solibee
-        </a>
-        <span class='mr-6 mt-1 hover:text-orange-200'>
-          <a href='/introduction'>Docs</a>
-        </span>
-        <span class='mt-1 hover:text-orange-200'>
-          <a href={href}>Components</a>
-        </span>
-      </div>
-      <div id='icons' class='mt-1 flex items-center'>
-        <a
-          class='ml-6'
-          target='_blank'
-          href='https://github.com/oslabs-beta/solibee/'
-        >
-          <span class=''>
+    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full justify-center border-b border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm dark:border-orange-300'>
+      <div class='flex w-full max-w-5xl items-center justify-between'>
+        <div class='flex items-center text-font'>
+          <a
+            href='/'
+            class='mr-10 flex items-center justify-center font-pacifico text-2xl'
+          >
             <img
-              id='github-icon'
-              class='h-6'
-              src={isDarkMode() ? gitLogo : gitLogoWhite}
-              alt='GitHub logo'
+              class='mr-2 h-8'
+              src={isDarkMode() ? solibeeLogoDark : solibeeLogoLight}
+              alt='the solibee logo: a bee in a honeycomb'
             />
+            Solibee
+          </a>
+          <span class='mr-6 mt-1 hover:text-orange-200'>
+            <a href='/introduction'>Docs</a>
           </span>
-        </a>
-
-        <img
-          id='mode-icon'
-          class='ml-6 h-6 '
-          src={isDarkMode() ? nightIcon : sunIcon}
-          alt='Sun icon'
-          onClick={handleClick}
-        />
+          <span class='mt-1 hover:text-orange-200'>
+            <a href={href}>Components</a>
+          </span>
+        </div>
+        <div id='icons' class='mt-1 flex items-center'>
+          <a
+            class='ml-6'
+            target='_blank'
+            href='https://github.com/oslabs-beta/solibee/'
+          >
+            <span class=''>
+              <img
+                id='github-icon'
+                class='h-6'
+                src={isDarkMode() ? gitLogo : gitLogoWhite}
+                alt='GitHub logo'
+              />
+            </span>
+          </a>
+          <img
+            id='mode-icon'
+            class='ml-6 h-6 '
+            src={isDarkMode() ? nightIcon : sunIcon}
+            alt='Sun icon'
+            onClick={handleClick}
+          />
+        </div>
       </div>
     </header>
   );
