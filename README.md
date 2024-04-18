@@ -130,7 +130,7 @@ Solibee is an open-source project built for the Solid JS community maintained by
 - MORE COMPONENTS! 
 - Some Solibee components are still in _Beta_
 - We would love to see CLI installation for testing files in the future
-- Continuing TypeScript Conversion: Currently, components in Solibee library are written either in JavaScript or TypeScript. We would like to see Solibee library to support both TypeScrip and JavaScript for each custom component.
+- Continuing TypeScript Conversion: Currently, components in Solibee library are written either in JavaScript or TypeScript. We would like to see Solibee library to support both TypeScript and JavaScript for each custom component.
 
 
 ## Meet The Team
