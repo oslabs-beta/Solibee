@@ -14,7 +14,7 @@ function App() {
       <div class='flex grow flex-col'>
         <NavBar />
         <Error404 />
-        {/* <MainContainer /> */}
+        <MainContainer />
       </div>
       <Footer />
     </div>
