@@ -11,15 +11,14 @@ function MenuItem(props) {
     <ul>
       <For each={items()}>
         {(item) => {
-          console.log(item);
           return (
             <li>
-              <a
-                class='block cursor-pointer rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
-                href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
-              >
-                {item}
-              </a>
+                <a
+                  class='flex justify-between cursor-pointer rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
+                  href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
+                >
+                  <span>{item}</span> <Show when={item == 'Accordion' || item == 'Drag And Drop' || item == 'Input OTP'}><span class='italic opacity-50'>Beta</span></Show>
+                </a>
             </li>
           );
         }}

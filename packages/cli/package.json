@@ -1,0 +1,33 @@
+{
+  "name": "solibee",
+  "version": "1.0.11",
+  "description": "A customizable collection of UI components written for Solid.js",
+  "main": "index.js",
+  "author": "solibee",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oslabs-beta/solibee.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "solid-js",
+    "tailwind",
+    "solibee",
+    "Library",
+    "Drag and drop",
+    "Search Button",
+    "Accordion",
+    "InputForm"
+  ],
+  "dependencies": {
+    "solid-js": "^1.8.16"
+  },
+  "bin": {
+    "mypackage": "./main.js"
+  },
+  "preferGlobal": true
+}

@@ -12,8 +12,16 @@ export const tailwindConfigStringsObj = {
   InputOTP: tailwindConfigStrings.formsTailwind, 
   ToDoList: tailwindConfigStrings.formsTailwind, 
   Switch: tailwindConfigStrings.generalTailwind,
+  EntireProject: tailwindConfigStrings.entireTailwind,
+  Styles: tailwindConfigStrings.stylesCode,
 
 };
+
+
+
+
+
+
 
 
 

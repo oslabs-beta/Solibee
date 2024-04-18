@@ -6,9 +6,9 @@ export default function Contributors(props) {
 
   // Update contributors when props.githubHandles changes
   createEffect(() => {
-    console.log(props);
+  
     setContributors(props.githubHandles);
-    console.log(contributors());
+   
   });
 
   //TO DO: add a fallback for when an image doesn't load.
@@ -16,7 +16,7 @@ export default function Contributors(props) {
 
   //using solid For method
   return (
-    <ul class='m-5 flex flex-wrap justify-center -space-x-2 overflow-hidden'>
+    <ul class='m-5 flex flex-wrap justify-center -space-x-2 overflow-hidden p-2'>
       <For each={contributors()}>
         {(gitHandle) => (
           <li class='ml-3'>
@@ -27,7 +27,7 @@ export default function Contributors(props) {
               rel='noopener noreferrer'
             >
               <img
-                class=' avatar inline-block h-40 w-40 rounded-full ring-2 ring-white'
+                class=' avatar inline-block size-36 rounded-full ring-2 ring-orange-100/[0.3] hover:ring-4 hover:ring-orange-100'
                 src={`https://github.com/${gitHandle}.png`}
                 style={{ display: 'block' }}
                 alt={`${gitHandle} github avatar`}

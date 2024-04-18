@@ -3,7 +3,8 @@ import { useContext, createEffect, createSignal } from 'solid-js';
 import { ComponentContext } from '../context/ComponentContext';
 
 // assets
-import solibeeLogo from '../../assets/solibee-logo2.png';
+import solibeeLogoLight from '../../assets/solibee-logo2.png';
+import solibeeLogoDark from '../../assets/solibee-logo-light-v2.png'
 import gitLogo from '../../assets/github-mark.png';
 import gitLogoWhite from '../../assets/github-mark-white.png';
 import sunIcon from '../../assets/sun-svgrepo-com.svg';
@@ -25,11 +26,13 @@ export default function NavBar() {
 
     if (isDarkMode()) {
       document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark')
       modeIcon.src = nightIcon;
       modeIcon.alt = 'Night icon';
       githubIcon.src = gitLogoWhite;
     } else {
       document.documentElement.removeAttribute('data-theme');
+      document.documentElement.classList.remove('dark')
       modeIcon.src = sunIcon;
       modeIcon.alt = 'Sun icon';
       githubIcon.src = gitLogo;
@@ -61,7 +64,7 @@ export default function NavBar() {
   // modeIcon.addEventListener('click', handleClick);
 
   return (
-    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
+    <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-orange-100 dark:border-orange-300 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm'>
       <div class='flex items-center text-font'>
         <a
           href='/'
@@ -69,7 +72,7 @@ export default function NavBar() {
         >
           <img
             class='mr-2 h-8'
-            src={solibeeLogo}
+            src={isDarkMode() ? solibeeLogoDark : solibeeLogoLight}
             alt='the solibee logo: a bee in a honeycomb'
           />
           Solibee
