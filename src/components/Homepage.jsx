@@ -12,7 +12,7 @@ export default () => {
     <div class='fixed inset-0 top-40 flex h-full w-full flex-col items-center'>
       <div class='mb-8 flex items-center justify-center'>
         <img
-          class='mr-4 block h-36 dark:hidden'
+          class='mr-4 block h-44 dark:hidden'
           src={solibeeLogo}
           alt='the solibee logo: a bee in a honeycomb'
         />
