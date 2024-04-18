@@ -9,7 +9,7 @@ function Error404() {
       setMoveImage(true);
     }, 100);
     return () => clearTimeout(timeout);
-  }, []);
+  });
 
   return (
     <div
@@ -22,7 +22,6 @@ function Error404() {
         {/* img credit to: https://www.pinterest.com/pin/cute-animated-honey-bee-gifs-at-best-animations--572731277609446312/ */}
         <img
           id='bee-img'
-          // class='h-auto w-44'
           class={`h-auto w-44 ${moveImage() ? 'translate-x-full transition-transform' : ''}`}
           src={beeGif}
           alt='Bee GIF'

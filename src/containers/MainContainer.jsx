@@ -8,6 +8,7 @@ import Installation from '../components/Installation';
 import Introduction from '../components/Introduction';
 import Homepage from '../components/Homepage';
 import ContentComponent from '../components/ContentComponent';
+import Error404 from '../Error404';
 
 export default function MainContainer() {
   const { components } = useContext(ComponentContext);
@@ -17,6 +18,7 @@ export default function MainContainer() {
     <div class='m-10 flex justify-center'>
       <Router>
         <Route path='/' component={Homepage} />
+        <Route path='*' component={Error404} />
         <Route path='/introduction' component={Introduction} />
         <Route path='/installation' component={Installation} />
         <For each={components}>
