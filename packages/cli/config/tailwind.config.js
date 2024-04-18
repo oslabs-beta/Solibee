@@ -1,13 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './lib/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'selector',
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './solibee/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        light: "url('/assets/honeycomb.svg')",
-        dark: "url('/assets/honeycomb-dark.svg')",
-      },
       colors: {
         background: 'rgba(var(--color-background))',
         font: 'rgba(var(--color-font))',
@@ -41,10 +36,6 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-in-out',
         'accordion-up': 'accordion-up 0.2s ease-in-out',
-      },
-      fontFamily: {
-        serif: ['Mulish', 'sans-serif'],
-        pacifico: ['Pacifico', 'serif'],
       },
     },
   },
