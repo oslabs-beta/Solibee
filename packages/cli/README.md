@@ -1,12 +1,7 @@
 # SoliBee
 
-<p align="center">
-<a href="https://solibee.dev" target="_blank">
+[![Solibee](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/solibee-logo-and-name-v2.png)](https://solibee.dev/)
 
-![SoliBee](https://github.com/oslabs-beta/Solibee/blob/dev/assets/solibee-logo2.png?size=400)
-
-</a>
-</p>
 <p align="center">Customizable Solid.js component collection</p>
 
 ## Description
@@ -22,7 +17,7 @@ Preview all components available on this [website](https://solibee.dev).
 You can obtain the code files for the required component by entering the following command in the terminal:
 
 ```sh
-npx solibee create-SearchButton
+npx solibee create-Search
 ```
 
 ```sh
@@ -51,6 +46,10 @@ npx solibee create-InputOTP
 
 ```sh
 npx solibee create-ToDoList
+```
+
+```sh
+npx solibee create-Switch
 ```
 
 ## Contributors

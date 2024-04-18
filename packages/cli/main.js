@@ -8,7 +8,10 @@ import { execSync } from 'child_process';
 // check and install dependencies
 function installDependencies() {
   console.log('Checking for PostCSS and Tailwind CSS...');
-  execSync('npm install postcss tailwindcss', { stdio: 'inherit' });
+  execSync(
+    'npm install --save-dev postcss tailwindcss autoprefixer @tailwindcss/forms',
+    { stdio: 'inherit' },
+  );
 }
 
 installDependencies();
@@ -35,11 +38,11 @@ const postcssPath = path.join(__dirname, './config/postcss.config.js');
 // const destinationDirectory = process.cwd();
 const tailwindDestinationFilePath = path.join(
   solidbeeDirectory,
-  'tailwind.config.js'
+  'tailwind.config.js',
 );
 const PostcssDestinationFilePath = path.join(
   solidbeeDirectory,
-  'postcss.config.js'
+  'postcss.config.js',
 );
 
 fs.copyFile(tailwindPath, tailwindDestinationFilePath, (err) => {
@@ -62,10 +65,10 @@ const command = process.argv[2];
 switch (command) {
   case 'create-InputForm':
     // Define the source file (file to copy)
-    const sourceFilePath = path.join(__dirname, './components/InputForm.jsx');
+    const sourceFilePath = path.join(__dirname, './components/InputForm.tsx');
 
     // Define the destination file path (new destination inside solidbee folder)
-    const destinationFilePath = path.join(solidbeeDirectory, 'InputForm.jsx');
+    const destinationFilePath = path.join(solidbeeDirectory, 'InputForm.tsx');
 
     // Copy the file
     fs.copyFile(sourceFilePath, destinationFilePath, (err) => {
@@ -82,7 +85,7 @@ switch (command) {
     const todoPath = path.join(__dirname, './components/ToDoList.tsx');
     const destinationToDoFilePath = path.join(
       solidbeeDirectory,
-      'ToDoList.tsx'
+      'ToDoList.tsx',
     );
     fs.copyFile(todoPath, destinationToDoFilePath, (err) => {
       if (err) {
@@ -97,7 +100,7 @@ switch (command) {
     const GOTPPath = path.join(__dirname, './components/GenerateOTP.tsx');
     const destinationGOTPFilePath = path.join(
       solidbeeDirectory,
-      'GenerateOTP.tsx'
+      'GenerateOTP.tsx',
     );
     fs.copyFile(GOTPPath, destinationGOTPFilePath, (err) => {
       if (err) {
@@ -112,7 +115,7 @@ switch (command) {
     const InputFilePath = path.join(__dirname, './components/InputFile.jsx');
     const destinationInputFileFilePath = path.join(
       solidbeeDirectory,
-      'InputFile.jsx'
+      'InputFile.jsx',
     );
     fs.copyFile(InputFilePath, destinationInputFileFilePath, (err) => {
       if (err) {
@@ -120,7 +123,7 @@ switch (command) {
       } else {
         console.log(
           'File copied successfully to %s.',
-          destinationInputFileFilePath
+          destinationInputFileFilePath,
         );
       }
     });
@@ -130,7 +133,7 @@ switch (command) {
     const InputOTPPath = path.join(__dirname, './components/InputOTP.jsx');
     const destinationInputOTPFilePath = path.join(
       solidbeeDirectory,
-      'InputOTP.jsx'
+      'InputOTP.jsx',
     );
     fs.copyFile(InputOTPPath, destinationInputOTPFilePath, (err) => {
       if (err) {
@@ -138,7 +141,82 @@ switch (command) {
       } else {
         console.log(
           'File copied successfully to %s.',
-          destinationInputOTPFilePath
+          destinationInputOTPFilePath,
+        );
+      }
+    });
+    break;
+
+  case 'create-Accordion':
+    const AccordionPath = path.join(__dirname, './components/Accordion.jsx');
+    const destinationAccordionFilePath = path.join(
+      solidbeeDirectory,
+      'Accordion.jsx',
+    );
+    fs.copyFile(AccordionPath, destinationAccordionFilePath, (err) => {
+      if (err) {
+        console.error('Error copying file:', err);
+      } else {
+        console.log(
+          'File copied successfully to %s.',
+          destinationAccordionFilePath,
+        );
+      }
+    });
+    break;
+
+  case 'create-DragAndDrop':
+    const DragAndDropPath = path.join(
+      __dirname,
+      './components/DragAndDrop.jsx',
+    );
+    const destinationDragAndDropFilePath = path.join(
+      solidbeeDirectory,
+      'DragAndDrop.jsx',
+    );
+    fs.copyFile(DragAndDropPath, destinationDragAndDropFilePath, (err) => {
+      if (err) {
+        console.error('Error copying file:', err);
+      } else {
+        console.log(
+          'File copied successfully to %s.',
+          destinationDragAndDropFilePath,
+        );
+      }
+    });
+    break;
+
+  case 'create-Search':
+    const SearchPath = path.join(__dirname, './components/Search.jsx');
+    const destinationSearchFilePath = path.join(
+      solidbeeDirectory,
+      'Search.jsx',
+    );
+    fs.copyFile(SearchPath, destinationSearchFilePath, (err) => {
+      if (err) {
+        console.error('Error copying file:', err);
+      } else {
+        console.log(
+          'File copied successfully to %s.',
+          destinationSearchFilePath,
+        );
+      }
+    });
+    break;
+
+  case 'create-Switch':
+    const SwitchPath = path.join(__dirname, './components/Switch.jsx');
+    const destinationSwitchFilePath = path.join(
+      solidbeeDirectory,
+      'Switch.jsx',
+    );
+    fs.copyFile(SwitchPath, destinationSwitchFilePath, (err) => {
+      if (err) {
+        console.error('Error copying file:', err);
+      } else {
+        console.log(
+          'File copied successfully to %s.',
+          destinationSwitchFilePath,
         );
       }
     });
