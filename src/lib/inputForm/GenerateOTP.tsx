@@ -1,5 +1,5 @@
 import { createSignal, createEffect, onCleanup } from 'solid-js';
-import clipboardCopy from 'clipboard-copy';
+// import clipboardCopy from 'clipboard-copy';
 
 function GenerateOTP() {
   const [otp, setOTP] = createSignal(generateOTP());
