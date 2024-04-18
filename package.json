@@ -2,7 +2,7 @@
   "name": "solibee",
   "version": "1.0.22",
   "description": "Open-source collection of accessible and customizable components for SolidJS",
-  "homepage":"https://solibee.dev",
+  "homepage": "https://solibee.dev",
   "scripts": {
     "start": "vite",
     "dev": "vite",

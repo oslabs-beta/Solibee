@@ -3,6 +3,7 @@
 Customizable solid.js component collection
 
 ## Scratch Project Team:
+
 - Bongi Sibanda - [trialnerr](https://github.com/trialnerr)
 - Congke Zhao - [CK-Zhao](https://github.com/CK-Zhao)
 - Lillian Tenn - [tenn501](https://github.com/tenn501)

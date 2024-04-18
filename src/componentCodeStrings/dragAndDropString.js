@@ -269,4 +269,4 @@ const Item = (props) => {
 };
 
 export default Area;`;
-export default dragAndDropString; 
+export default dragAndDropString;

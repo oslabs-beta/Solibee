@@ -6,8 +6,11 @@ import { tailwindConfigStringsObj } from '../docsTailwindConfigStrings/tailwind-
 export const StringRepContext = createContext();
 
 export function StrContextProvider(props) {
-  const [string, setString] = createStore({JsxToString, tailwindConfigStringsObj});
-  
+  const [string, setString] = createStore({
+    JsxToString,
+    tailwindConfigStringsObj,
+  });
+
   return (
     <StringRepContext.Provider value={{ string, setString }}>
       {props.children}

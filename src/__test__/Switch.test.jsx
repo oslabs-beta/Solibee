@@ -1,22 +1,26 @@
 import SwitchDemo from '../lib/switch/SwitchDemo';
-import { render, cleanup, screen, fireEvent, waitFor } from '@solidjs/testing-library';
+import {
+  render,
+  cleanup,
+  screen,
+  fireEvent,
+  waitFor,
+} from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
-
-
 
 describe('Accordion Component', () => {
   afterEach(() => {
     cleanup();
   });
 
-  it ('renders the component', () => {
+  it('renders the component', () => {
     const { getByText } = render(() => <SwitchDemo />);
     const text = getByText('Light Mode');
 
     expect(text).toBeInTheDocument();
   });
 
-  it ('changes the state by toggling the switch', () => {
+  it('changes the state by toggling the switch', () => {
     const { getByText, getByTestId } = render(() => <SwitchDemo />);
     const textLight = getByText('Light Mode');
 
@@ -28,5 +32,4 @@ describe('Accordion Component', () => {
     expect(textLight).not.toBeInTheDocument();
     expect(textDark).toBeInTheDocument();
   });
-
 });
