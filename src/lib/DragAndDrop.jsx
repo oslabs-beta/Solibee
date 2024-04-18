@@ -247,15 +247,7 @@ const Item = (props) => {
       data-testid='item'
     >
       {`Item ${props.itemID}`}
-      {/* {props.itemID} */}
-      {/* {props.items[props.itemID].y} */}
 
-      {/* <button
-        class='bg-orange-100 text-xs size-4 rounded-md text-white'
-        onClick={() => props.updateItems('delete', { itemID: props.itemID })}
-      >
-        X
-      </button> */}
       <button
         aria-label='delete item'
         aria-roledescription='click to delete the item from current column'
