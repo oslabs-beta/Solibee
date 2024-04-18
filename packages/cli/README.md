@@ -2,55 +2,56 @@
 
 [![Solibee](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/solibee-logo-and-name-v2.png)](https://solibee.dev/)
 
-<p align="center">Customizable Solid.js component collection</p>
+<p align="center">Solibee is an open-source collection of accessible and customizable components for Solid JS.</p>
 
 ## Description
 
 Speed up your SolidJS development with open-source, fully tested & customizable UI components.
 
-## Preview
+## Features
 
-Preview all components available on this [website](https://solibee.dev).
+- Easy to use: To get started with Solibee please visit our [documentation](https://solibee.dev/installation) for user-friendly customizable component previews and installation guides.
+- Customizable: All Solibee components are built using Solid JS and styled with Tailwind CSS which ensures that each component is easily customizable to fit the design and needs of your project.
+- Accessible: Solibee component library is designed with accessibility in mind to ensure that all our users can interact with the components. Our components follow WAI-ARIA design patterns.
+- Documented: Comprehensive documentation provided for each component to facilitate easy usage and understanding.
+- Reliable: Solibee custom components are written in JavaScript or TypeScript and tested with Jest and Solid JS Testing library.
+- Opportunities to contribute: Solibee is an open-source project built for the Solid JS community. If you have any questions, feedback, or suggestions, please visit our [github](https://github.com/oslabs-beta/Solibee) .
 
 ## Usage
 
-You can obtain the code files for the required component by entering the following command in the terminal:
+Solibee CLI to help you get started quickly. To use a component in your project please follow the steps below:
+
+- Run the following command in your terminal. Substitute `ComponentName` with the name of the custom component you would like to use. You can see the preview and the full list of components [here](https://solibee.dev/component/accordion).
 
 ```sh
-npx solibee create-Search
+npx solibee create-[ComponentName]
 ```
 
-```sh
-npx solibee create-Accordion
-```
+- When you run the CLI command above it will automatically install all dev dependencies.
+
+- After successful installation you will find a new Solibee directory created in your root folder. This directory will contain a `CustomComponent`, `Tailwind.config`, `PostCSS.config` files.
+
+- Configure dev dependencies:
+
+  - If you don't have `Tailwind.config` and `PostCSS.config` files in the root directory, bring `Tailwind.config` and `PostCSS.config` files from Solibee directory to your root directory.
+  - If you have existing `Tailwind.config` and `PostCSS.config` files in your root directory, integrate Tailwind and PostCSS configurations installed with Solibee.
+
+- Configure Tailwind styles
+  - Add the following to your global CSS styles file.
 
 ```sh
-npx solibee create-DragAndDrop
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
 ```
 
-```sh
-npx solibee create-InputForm
-```
+- You're ready to go!
 
-```sh
-npx solibee create-InputFile
-```
+## Testing
 
-```sh
-npx solibee create-GenerateOTP
-```
+Solibee component library was built with testing in mind. Testing is done with Jest and Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in our [github](https://github.com/oslabs-beta/Solibee).
 
-```sh
-npx solibee create-InputOTP
-```
-
-```sh
-npx solibee create-ToDoList
-```
-
-```sh
-npx solibee create-Switch
-```
+[![Testing](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/Test-coverage.png)](https://solibee.dev/)
 
 ## Contributors
 
@@ -86,6 +87,6 @@ npx solibee create-Switch
 
 ## License
 
-MIT
+Solibee is an open-source product licensed under the MIT License.
 
-[![Solibee](https://github.com/oslabs-beta/Solibee/blob/main/assets/Solibee-name.png)](https://solibee.dev/)
+[![Solibee](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/solibee-logo-thin.png)](https://solibee.dev/)
