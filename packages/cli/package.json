@@ -1,6 +1,6 @@
 {
   "name": "solibee",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "A customizable collection of UI components written for Solid.js",
   "main": "index.js",
   "author": "solibee",
