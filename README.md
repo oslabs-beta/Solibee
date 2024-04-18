@@ -34,7 +34,7 @@ Solibee is an open-source collection of accessible and customizable components f
 
 ## Features
 
-- **Easy to use:** To get started with Solibee please visit our <a href="https://solibee.dev/installation">documentation</a> for user-friendly customizable component previews and installation guides.
+- **Easy to use:** To get started with Solibee please visit our <a href="https://solibee.dev/installation">documentation</a> for user-friendly customizable component previews and installation guides. Installation guides also available [here](#getting-started).
 - **Customizable:** All Solibee components are built using Solid JS and styled with Tailwind CSS which ensures that each component is easily customizable to fit the design and needs of your project.
 - **Accessible:** Solibee component library is designed with accessibility in mind to ensure that all our users can interact with the components. Our components follow WAI-ARIA design patterns.
 - **Documented:** Comprehensive documentation provided for each component to facilitate easy usage and understanding.
@@ -109,7 +109,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 Solibee component library was built with testing in mind. Testing is done with Jest, Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in this repository. You can find them in the ```src/__test__``` directory. We would love to see CLI installation for testing files in the future. 
 
 <div align="center">
-    <img src="assets/Test-coverage.png" alt="LogoAndName">
+    <img src="assets/Test-coverage.png" alt="test-coverage" width="75%">
 </div>
 
 
@@ -125,6 +125,14 @@ Solibee is an open-source project built for the Solid JS community maintained by
   4) Push to the branch
   5) Open a Pull Request
 
+### Known Issues 
+
+- MORE COMPONENTS! 
+- Some Solibee components are still in _Beta_
+- We would love to see CLI installation for testing files in the future
+- Continuing TypeScript Conversion: Currently, components in Solibee library are written either in JavaScript or TypeScript. We would like to see Solibee library to support both TypeScrip and JavaScript for each custom component.
+
+
 ## Meet The Team
 
 - #### Bongi Sibanda  [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/trialnerr)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)](https://www.linkedin.com/in/bongi-sibanda/)
@@ -136,6 +144,7 @@ Solibee is an open-source project built for the Solid JS community maintained by
 - #### Marselena Sequoia  [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/marsbird)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)](https://www.linkedin.com/in/marselena-romero/)
 
 - #### Neul Seo   [![GitHub](https://img.shields.io/badge/GitHub-2a2d34?style=flat-square&logo=GitHub&logoColor=fffffa)](https://github.com/neulseo2)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a81d1?style=flat-square&logo=LinkedIn&logoColor=fffffa)](https://www.linkedin.com/in/neul-seo/)
+
 
 
 ## License
