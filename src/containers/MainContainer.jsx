@@ -1,6 +1,6 @@
 // solidJS
 import { Router, Route } from '@solidjs/router';
-import { useContext } from 'solid-js';
+import { useContext, For } from 'solid-js';
 import { ComponentContext } from '../context/ComponentContext';
 
 // components
