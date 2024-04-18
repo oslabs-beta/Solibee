@@ -1,4 +1,3 @@
-//need to find an alternative to innerHTML
 export default function Code(props) {
   return (
     <div
