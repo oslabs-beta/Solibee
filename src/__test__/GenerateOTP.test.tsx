@@ -1,5 +1,11 @@
 import GenerateOTP from '../lib/inputForm/GenerateOTP';
-import { render, cleanup, fireEvent, screen, getByTestId } from '@solidjs/testing-library';
+import {
+  render,
+  cleanup,
+  fireEvent,
+  screen,
+  getByTestId,
+} from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
 import clipboardCopy from 'clipboard-copy';
 
@@ -10,9 +16,7 @@ Object.defineProperty(navigator, 'clipboard', {
   },
 });
 
-
 describe('GenerateOTP', () => {
-
   afterEach(() => {
     cleanup();
   });
@@ -23,7 +27,6 @@ describe('GenerateOTP', () => {
   });
 
   it('renders component with correct text', () => {
-    
     render(() => <GenerateOTP />);
     const buttonRegenerate = screen.getByText('Regenerate');
     const buttonCopy = screen.getByText('Copy');
@@ -44,7 +47,9 @@ describe('GenerateOTP', () => {
   });
 
   it('copies the new generated OTP after OTP is regenerated', async () => {
-    const { getByText, findByText, getByTestId } = render(() => <GenerateOTP />);
+    const { getByText, findByText, getByTestId } = render(() => (
+      <GenerateOTP />
+    ));
 
     const initialOTPElement = getByText(
       /Your one-time password is:/,
@@ -65,9 +70,8 @@ describe('GenerateOTP', () => {
     const copyButton = screen.getByTestId('copy-button');
     await Promise.resolve();
     fireEvent.click(copyButton);
-    
+
     expect(mockWriteText).toHaveBeenCalledWith(newOTP);
     expect(newOTP).not.toBe(initialOTP);
-    
   });
 });
