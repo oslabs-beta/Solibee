@@ -1,6 +1,6 @@
 # SoliBee
 
-[![Solibee](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/solibee-logo-and-name-v2.png)](https://solibee.dev/)
+[![Solibee](https://github.com/oslabs-beta/Solibee/blob/dev/assets/solibee-logo-and-name-v2.png)](https://solibee.dev/)
 
 <p align="center">Solibee is an open-source collection of accessible and customizable components for Solid JS.</p>
 
@@ -51,7 +51,7 @@ npx solibee create-[ComponentName]
 
 Solibee component library was built with testing in mind. Testing is done with Jest and Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in our [github](https://github.com/oslabs-beta/Solibee).
 
-[![Testing](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/Test-coverage.png)](https://solibee.dev/)
+[![Testing](https://github.com/oslabs-beta/Solibee/blob/dev/assets/test-coverage-new.png)](https://solibee.dev/)
 
 ## Contributors
 
@@ -89,4 +89,4 @@ Solibee component library was built with testing in mind. Testing is done with J
 
 Solibee is an open-source product licensed under the MIT License.
 
-[![Solibee](https://github.com/oslabs-beta/Solibee/blob/docs/README/assets/solibee-logo-thin.png)](https://solibee.dev/)
+[![Solibee](https://github.com/oslabs-beta/Solibee/blob/dev/assets/solibee-logo-thin.png)](https://solibee.dev/)
