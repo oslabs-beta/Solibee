@@ -1,5 +1,5 @@
 // solidJS
-import { createSignal, For, createEffect } from 'solid-js';
+import { createSignal, For, createEffect, Show } from 'solid-js';
 import { useContext } from 'solid-js';
 import { ComponentContext } from '../context/ComponentContext';
 
@@ -14,7 +14,7 @@ function MenuItem(props) {
           return (
             <li>
               <a
-                class='flex cursor-pointer justify-between rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
+                class='flex cursor-pointer justify-between gap-1 rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
                 href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
               >
                 <span>{item}</span>{' '}
