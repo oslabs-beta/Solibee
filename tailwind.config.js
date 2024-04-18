@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'light': "url('./assets/honeycomb.svg')",
-        'dark': "url('./assets/honeycomb-dark.svg')"
+        'light': "url('/assets/honeycomb.svg')",
+        'dark': "url('/assets/honeycomb-dark.svg')"
       },
       colors: {
         background: 'rgba(var(--color-background))',
