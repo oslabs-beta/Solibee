@@ -115,7 +115,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 Solibee component library was built with testing in mind. Testing is done with Jest and Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in this repository. You can find them in the ```src/__test__``` directory. We would love to see CLI installation for testing files in the future. 
 
 <div align="center">
-    <img src="assets/Test-coverage.png" alt="test-coverage" width="75%">
+    <img src="assets/test-coverage-new.png" alt="test-coverage" width="75%">
 </div>
 
 
