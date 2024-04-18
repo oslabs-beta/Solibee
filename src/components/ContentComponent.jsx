@@ -81,7 +81,7 @@ export default function ContentComponent(props) {
             {currentComp()}
           </h1>
           <hr />
-          <p class='mb-5 text-subfont'>
+          <p class='text-subfont mb-5'>
             {/* Dynamic Description */}
             {currentDescription.desc}
           </p>
@@ -124,7 +124,7 @@ export default function ContentComponent(props) {
         <div>
           <p class='mt-3 '>Features</p>
           <hr />
-          <ul class='mt-3 text-subfont'>
+          <ul class='text-subfont mt-3'>
             <For each={currentDescription.feats}>
               {(feat) => (
                 <li class='py-1 '>
