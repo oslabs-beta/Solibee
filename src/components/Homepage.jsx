@@ -23,7 +23,7 @@ export default () => {
         />
         <h1 class='font-pacifico text-9xl'>Solibee</h1>
       </div>
-      <p class='mb-4 max-w-4xl text-center text-3xl font-bold'>
+      <p class='mb-8 max-w-5xl text-center text-5xl font-bold'>
         Speed up your SolidJS development with open-source, fully tested &
         customizable UI components
       </p>
@@ -39,7 +39,7 @@ export default () => {
           </button>
         </a>
       </div>
-      <p class='mt-24 text-lg font-bold'>
+      <p class='mt-14 text-xl font-bold'>
         {' '}
         open source, now and forever, & built with incredible tools
       </p>
