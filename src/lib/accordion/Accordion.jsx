@@ -17,7 +17,7 @@ export default function Accordion() {
     {
       question: 'Who is on the team?',
       answer:
-        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seo',
     },
     {
       question: "I'm excited, how do I install the components?",
