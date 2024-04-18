@@ -1,12 +1,18 @@
 import solibeeLogo from '../../assets/solibee-logo2.png';
+import solibeeLogoDark from '../../assets/solibee-logo-light-v2.png';
 
 export default () => {
   return (
     <div class='fixed inset-0 top-40 flex h-full w-full flex-col items-center'>
       <div class='mb-8 flex items-center justify-center'>
         <img
-          class='mr-4 h-36'
+          class='mr-4 h-36 block dark:hidden'
           src={solibeeLogo}
+          alt='the solibee logo: a bee in a honeycomb'
+        />
+        <img
+          class='mr-4 h-36 dark:block hidden' 
+          src={solibeeLogoDark}
           alt='the solibee logo: a bee in a honeycomb'
         />
         <h1 class='font-pacifico text-9xl'>Solibee</h1>
