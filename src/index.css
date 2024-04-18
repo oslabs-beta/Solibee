@@ -36,6 +36,10 @@
   }
 }
 
+.translate-x-full {
+  transform: translateX(100vw);
+}
+
 /* styling of the button location; inside styling exists as tailwind */
 .steps p:before {
   /* content: counter(step); /* Generate the numbering */
