@@ -65,7 +65,7 @@ export default function NavBar() {
 
   return (
     <header class='bg-white-200 sticky top-0 z-50 flex h-16 w-screen justify-center border-b border-orange-100 px-5 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm dark:border-orange-300'>
-      <div class='flex w-full max-w-5xl items-center justify-between'>
+      <div class='flex w-full max-w-6xl items-center justify-between'>
         <div class='flex items-center text-font'>
           <a
             href='/'
