@@ -39,25 +39,25 @@ export default () => {
           </button>
         </a>
       </div>
-      <p class='mt-32 text-lg font-bold'>
+      <p class='mt-24 text-lg font-bold'>
         {' '}
-        built open source, with open source tools
+        open source, now and forever, & built with incredible tools
       </p>
-      <a href=''>
-        <img src={solidjsLogoName} class='mt-3 h-16 relative left-2' alt='' />
+      <a href='https://www.solidjs.com/'>
+        <img src={solidjsLogoName} class='relative left-2 mt-4 h-16' alt='the SolidJS logo, with a link to the website' />
       </a>
-      <div class='flex items-center mt-3 justify-center relative right-1'>
-        <a href=''>
-          <img src={tailwindLogo} class='mx-4 h-8' alt='' />
+      <div class='relative right-1 mt-3 flex items-center justify-center'>
+        <a href='https://vitejs.dev/'>
+          <img src={viteLogo} class='mx-4 h-8' alt='the Vite logo, with a link to the website' />
         </a>
-        <a href=''>
-          <img src={npmLogo} class='mx-4 h-5' alt='' />
+        <a href='https://tailwindcss.com/'>
+          <img src={tailwindLogo} class='mx-4 h-8' alt='the TailwindCSS logo, with a link to the website' />
         </a>
-        <a href=''>
-          <img src={viteLogo} class='mx-4 h-8' alt='' />
+        <a href='https://jestjs.io/'>
+          <img src={jestLogo} class='mx-4 h-8' alt='the Jest logo, with a link to the website' />
         </a>
-        <a href=''>
-          <img src={jestLogo} class='mx-4 h-8' alt='' />
+        <a href='https://www.npmjs.com/'>
+          <img src={npmLogo} class='mx-4 h-5' alt='the NPM logo, with a link to the website' />
         </a>
       </div>
     </div>
