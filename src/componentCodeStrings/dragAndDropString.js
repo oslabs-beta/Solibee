@@ -1,3 +1,4 @@
+const dragAndDropString = `
 import { createEffect, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
@@ -80,9 +81,6 @@ const Area = (props) => {
         });
         colIndex++;
         break;
-      // case "delete":
-      //   setColumns((c) => c.filter((col) => col.colID != colID));
-      //   break;
     }
   };
 
@@ -244,7 +242,7 @@ const Item = (props) => {
       classList={{ shadow: props.selectedItem() == props.itemID }}
       data-testid='item'
     >
-      {`Item ${props.itemID}`}
+      {\`Item \${ props.itemID }\`}
 
       <button
         aria-label='delete item'
@@ -270,4 +268,5 @@ const Item = (props) => {
   );
 };
 
-export default Area;
+export default Area;`;
+export default dragAndDropString;

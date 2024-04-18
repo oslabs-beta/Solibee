@@ -1,3 +1,4 @@
+const inputOTPString = `
 import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
@@ -24,7 +25,7 @@ function InputOTP() {
       e.preventDefault();
       alert('Enter numbers only');
     } else {
-      alert(`Submitted OPT ${submittedOTP}`);
+      alert(\`Submitted OPT \${ submittedOTP }\`);
     }
 
     otpDigits.map((el, index) => {
@@ -82,9 +83,9 @@ function InputOTP() {
 
   function handleKeyUp(e, index) {
     const prevId =
-      index() > 0 ? `otpInput${index() - 1}` : `otpInput${index()}`;
+      index() > 0 ? \`otpInput\${ index() - 1 } \` : \`otpInput\${ index() } \`;
     const nextId =
-      index() < 5 ? `otpInput${index() + 1}` : `otpInput${index()}`;
+      index() < 5 ? \`otpInput\${ index() + 1 } \` : \`otpInput\${ index() } \`;
 
     if (e.key >= 0 && e.key <= 9) {
       setOtpDigits(index(), parseInt(e.key));
@@ -96,7 +97,6 @@ function InputOTP() {
       //to ignore arrowkeys & other complicated key codes
       return;
     } else {
-      //for letters {, } ,[ ,], \, | ,etc
       setOtpDigits(index(), e.key);
       focusNextInput(e.target, prevId, nextId);
     }
@@ -111,12 +111,12 @@ function InputOTP() {
             {(digit, index) => {
               return (
                 <>
-                  <label for={`otpInput${index()}`} class='sr-only'>
+                  <label for={\`otpInput\${ index() } \`} class='sr-only'>
                     OTP Input {index()}
                   </label>
                   <input
                     type='text'
-                    id={`otpInput${index()}`}
+                    id={\`otpInput\${ index() }\`}
                     placeholder='-'
                     value={digit}
                     maxLength='1'
@@ -140,4 +140,6 @@ function InputOTP() {
   );
 }
 
-export default InputOTP;
+export default InputOTP`;
+
+export default inputOTPString;

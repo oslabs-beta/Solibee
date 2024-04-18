@@ -2,8 +2,6 @@ import Search from '../lib/searchButton/Search';
 import { render, cleanup, screen } from '@solidjs/testing-library';
 import '@testing-library/jest-dom';
 
-
-
 describe('Search Component', () => {
   afterEach(() => {
     cleanup();

@@ -23,7 +23,7 @@ export default function CopyButton(props) {
     }
 
     onCleanup(() => {
-      clearTimeout(resetCopyTimer)
+      clearTimeout(resetCopyTimer);
     });
   });
 

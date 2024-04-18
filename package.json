@@ -1,14 +1,13 @@
 {
   "name": "solibee",
-  "version": "0.0.0",
-  "description": "",
-  "homepage":"https://solibee.dev",
+  "version": "1.0.22",
+  "description": "Open-source collection of accessible and customizable components for SolidJS",
+  "homepage": "https://solibee.dev",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "vite build && echo 'solibee.dev' > ./dist/CNAME && gh-pages -d dist",
     "test": "jest --verbose"
   },
   "jest": {
@@ -38,7 +37,6 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^24.0.0",
-    "gh-pages": "^6.1.1",
     "postcss": "^8.4.33",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
@@ -54,7 +52,6 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.13.1",
-    "clipboard-copy": "^4.0.1",
     "monaco-editor": "^0.47.0",
     "solid-js": "^1.8.11"
   }

@@ -1,9 +1,10 @@
+const generateOTPString = `
 import { createSignal, createEffect, onCleanup } from 'solid-js';
 import clipboardCopy from 'clipboard-copy';
 
 function GenerateOTP() {
   const [otp, setOTP] = createSignal(generateOTP());
-  const [copied, setCopied] = createSignal(false);
+  const [copied , setCopied] = createSignal(false);
 
   function generateOTP() {
     return Math.floor(Math.random() * 1000000).toString();
@@ -59,4 +60,6 @@ function GenerateOTP() {
   );
 }
 
-export default GenerateOTP;
+export default GenerateOTP;`;
+
+export default generateOTPString;

@@ -1,3 +1,4 @@
+const accordionString = `
 import { For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { createEffect } from 'solid-js';
@@ -17,7 +18,7 @@ export default function Accordion() {
     {
       question: 'Who is on the team?',
       answer:
-        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seol',
+        'Our team is made up of 5 engineers: Bongi Sibanda, Congke Zhao, Lillian Tenn, Marselena Sequoia, and Neul Seo',
     },
     {
       question: "I'm excited, how do I install the components?",
@@ -43,21 +44,21 @@ export default function Accordion() {
             return (
               <div
                 id='wrapper'
-                class={`${i() === data.length - 1 ? '' : 'border-b'}  border-orange-100`}
+                class={\`\${ i() === data.length - 1 ? '' : 'border-b'}  border - orange - 100\`}
                 data-testid='wrapper'
               >
-                <h2 id={`accordion-collapse-heading-${i()}`}>
+                <h2 id={\`accordion - collapse - heading - \${ i() } \`}>
                   <button
                     type='button'
                     class='flex w-full items-center justify-between gap-10 px-2 py-3 text-sm font-bold hover:bg-orange-200/[0.1]'
-                    data-accordion-target={`#accordion-collapse-body-${i()}`}
+                    data-accordion-target={\`#accordion - collapse - body - \${ i() } \`}
                     aria-expanded={activeID[i()]}
-                    aria-controls={`accordion-collapse-body-${i()}`}
+                    aria-controls={\`accordion - collapse - body - \${ i() } \`}
                     onClick={() => toggleAccordion(i())}
                   >
                     <span>{obj.question}</span>
                     <svg
-                      class={`size-2 shrink-0 ${activeID[i()] ? 'rotate-180' : ''} transition-transform`}
+                      class={\`size - 2 shrink - 0 \${ activeID[i()] ? 'rotate-180' : '' } transition - transform\`}
                       aria-hidden='true'
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
@@ -75,13 +76,13 @@ export default function Accordion() {
                 </h2>
 
                 <div
-                  class={` overflow-hidden  ${
-                    activeID[i()]
-                      ? 'h-full  animate-accordion-down opacity-100'
-                      : 'h-0  animate-accordion-up opacity-0'
-                  }`}
-                  id={`accordion-collapse-body-${i()}`}
-                  aria-labelledby={`accordion-collapse-heading-${i()}`}
+                  class={\` overflow - hidden  \${
+  activeID[i()]
+    ? 'animate-accordion-down  h-full opacity-100'
+    : 'animate-accordion-up  h-0 opacity-0'
+} \`}
+                  id={\`accordion - collapse - body - \${ i() } \`}
+                  aria-labelledby={\`accordion - collapse - heading - \${ i() }\`}
                   data-testid='hidden'
                 >
                   <p class='p-2 text-sm'>{obj.answer}</p>
@@ -93,4 +94,6 @@ export default function Accordion() {
       </div>
     </div>
   );
-}
+}`;
+
+export default accordionString;
