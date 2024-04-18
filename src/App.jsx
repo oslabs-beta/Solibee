@@ -13,7 +13,6 @@ function App() {
     <div class='flex min-h-screen flex-col bg-light bg-[length:5rem] text-font dark:bg-dark'>
       <div class='flex grow flex-col'>
         <NavBar />
-        <Error404 />
         <MainContainer />
       </div>
       <Footer />
