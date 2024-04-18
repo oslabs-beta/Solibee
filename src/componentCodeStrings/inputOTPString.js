@@ -109,7 +109,6 @@ function InputOTP() {
         <div class='mb-2 flex gap-2'>
           <For each={otpDigits} fallback={<div>Loading...</div>}>
             {(digit, index) => {
-              // console.log({ digit, index, otpDigits });
               return (
                 <>
                   <label for={\`otpInput\${ index() } \`} class='sr-only'>
