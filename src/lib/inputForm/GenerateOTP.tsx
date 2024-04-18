@@ -1,5 +1,5 @@
 import { createSignal, createEffect, onCleanup } from 'solid-js';
-import clipboardCopy from 'clipboard-copy';
+// import clipboardCopy from 'clipboard-copy';
 
 function GenerateOTP() {
   const [otp, setOTP] = createSignal(generateOTP());
@@ -50,6 +50,7 @@ function GenerateOTP() {
           <button
             class='rounded-md bg-orange-100/[0.8] p-1	px-2 hover:bg-orange-100'
             onClick={copyOTP}
+            data-testid='copy-button'
           >
             {copied() ? 'Copied!' : 'Copy'}
           </button>
