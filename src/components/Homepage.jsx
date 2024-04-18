@@ -17,7 +17,7 @@ export default () => {
           alt='the solibee logo: a bee in a honeycomb'
         />
         <img
-          class='mr-4 hidden h-36 dark:block'
+          class='mr-4 hidden h-44 dark:block'
           src={solibeeLogoDark}
           alt='the solibee logo: a bee in a honeycomb'
         />
@@ -41,7 +41,7 @@ export default () => {
       </div>
       <p class='mt-24 text-xl font-bold'>
         {' '}
-        open source, now and forever, & built with incredible tools
+        Open source, now and forever, and built with incredible tools
       </p>
       <a href='https://www.solidjs.com/'>
         <img
