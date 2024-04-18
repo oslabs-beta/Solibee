@@ -55,14 +55,14 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
   2) When you run the CLI command above it will automatically install all dev dependencies.
 
-  3) After successful installation you will find a new Solibee directory created in your root folder.This directory will contain a ```CustomComponent```, ```Tailwind.config```, ```PostCSS.config``` files.
+  3) After successful installation you will find a new Solibee directory created in your root folder. This directory will contain a ```CustomComponent```, ```Tailwind.config```, ```PostCSS.config``` files.
 
   4) Configure dev dependencies:
       - If you don't have ```Tailwind.config``` and ```PostCSS.config``` files in the root directory, bring ```Tailwind.config``` and ```PostCSS.config``` files from Solibee directory to your root directory.
       - If you have existing ```Tailwind.config``` and ```PostCSS.config``` files in your root directory, integrate Tailwind and PostCSS configurations installed with Solibee.
 
   5) Configure Tailwind styles <br>
-  Add the following to your global css styles file. <br>
+  Add the following to your global CSS styles file. <br>
   ```
     @tailwind base;
     @tailwind components;
@@ -75,7 +75,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 <strong>Manual Installation</strong>
 
   1) Install Dev Dependencies<br>
-  Our components are styled using Tailwind CSS. You need to install three dev dependencies in your project. <br>
+  Our components are styled using Tailwind CSS. You need to install four dev dependencies in your project. <br>
   ```
     npm install --save-dev tailwind
   ```
@@ -93,7 +93,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
   To see the Tailwind config file follow this <a href="https://solibee.dev/installation">link</a>
 
   3) Configure Tailwind styles <br>
-  Add the following to your global css styles file. <br>
+  Add the following to your global CSS styles file. <br>
   ```
     @tailwind base;
     @tailwind components;
@@ -106,7 +106,7 @@ Solibee provides a CLI to help you get started quickly. To use a component in yo
 
 ## Testing
 
-Solibee component library was built with testing in mind. Testing is done with Jest, Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in this repository. You can find them in the ```src/__test__``` directory. We would love to see CLI installation for testing files in the future. 
+Solibee component library was built with testing in mind. Testing is done with Jest and Solid JS Testing Library. Testing has been implemented on 100% of custom components. Currently, all tests for the custom components exist in this repository. You can find them in the ```src/__test__``` directory. We would love to see CLI installation for testing files in the future. 
 
 <div align="center">
     <img src="assets/Test-coverage.png" alt="test-coverage" width="75%">
@@ -114,7 +114,7 @@ Solibee component library was built with testing in mind. Testing is done with J
 
 
 ## How To Contribute
-Solibee is an open-source project built for the Solid JS community maintained by OS Labs. We welcome contributions and feedback from the community to make Solibee even better as there's so much room to grow. For any major changes or updates, please open an issue first. Please make sure to update the tests as appropriate.Contribute to our project by following these simple steps:
+Solibee is an open-source project built for the Solid JS community maintained by OS Labs. We welcome contributions and feedback from the community to make Solibee even better as there's so much room to grow. For any major changes or updates, please open an issue first. Please make sure to update the tests as appropriate. Contribute to our project by following these simple steps:
 
   1) Fork this Repository
   2) Create your Feature Branch by following these naming conventions:
@@ -122,8 +122,8 @@ Solibee is an open-source project built for the Solid JS community maintained by
       - fix/[NewFix]
       - docs/[NewDocs]
   3) Commit your changes
-  4) Push to the branch
-  5) Open a Pull Request
+  4) Publish your branch
+  5) Open a Pull Request to the _DEV_ branch of this Repository
 
 ### Known Issues 
 
