@@ -77,8 +77,8 @@ export default function Accordion() {
                 <div
                   class={` overflow-hidden  ${
                     activeID[i()]
-                      ? 'animate-accordion-down  h-full opacity-100'
-                      : 'animate-accordion-up  h-0 opacity-0'
+                      ? 'h-full  animate-accordion-down opacity-100'
+                      : 'h-0  animate-accordion-up opacity-0'
                   }`}
                   id={`accordion-collapse-body-${i()}`}
                   aria-labelledby={`accordion-collapse-heading-${i()}`}

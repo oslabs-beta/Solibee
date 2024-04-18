@@ -46,7 +46,6 @@ const Area = (props) => {
    */
 
   const updateItems = (method, payload) => {
-    // console.log({ method, payload });
     const { itemID } = payload;
     switch (method) {
       case 'create':
@@ -218,7 +217,6 @@ const Item = (props) => {
 
   createEffect(() => {
     const rect = ref.getBoundingClientRect();
-    // console.log({ rect });
     const y = (rect.top + rect.bottom) / 2;
     props.updateItems('update', { itemID: props.itemID, y });
   });
@@ -271,4 +269,4 @@ const Item = (props) => {
 };
 
 export default Area;`;
-export default dragAndDropString; 
+export default dragAndDropString;

@@ -3,7 +3,7 @@ import { createSignal, createEffect, onCleanup } from 'solid-js';
 
 function GenerateOTP() {
   const [otp, setOTP] = createSignal(generateOTP());
-  const [copied , setCopied] = createSignal(false);
+  const [copied, setCopied] = createSignal(false);
 
   function generateOTP() {
     return Math.floor(Math.random() * 1000000).toString();

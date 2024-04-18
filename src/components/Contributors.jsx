@@ -6,9 +6,7 @@ export default function Contributors(props) {
 
   // Update contributors when props.githubHandles changes
   createEffect(() => {
-  
     setContributors(props.githubHandles);
-   
   });
 
   //TO DO: add a fallback for when an image doesn't load.

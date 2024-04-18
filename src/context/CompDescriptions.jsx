@@ -7,8 +7,8 @@ export const CompDescriptionsContext = createContext();
 
 //create context provider
 export const CompDescriptionContextProvider = (props) => {
-
-  const [compDescriptions, setCompDescriptions] = createStore(compDescriptionsObj); 
+  const [compDescriptions, setCompDescriptions] =
+    createStore(compDescriptionsObj);
 
   return (
     <CompDescriptionsContext.Provider

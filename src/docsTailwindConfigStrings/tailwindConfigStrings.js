@@ -1,5 +1,4 @@
-export const accordionTailwind =
-`/** @type {import('tailwindcss').Config} */
+export const accordionTailwind = `/** @type {import('tailwindcss').Config} */
   module.exports = {
     theme: {
       extend: {

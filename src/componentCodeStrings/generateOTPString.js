@@ -60,6 +60,6 @@ function GenerateOTP() {
   );
 }
 
-export default GenerateOTP;`
+export default GenerateOTP;`;
 
 export default generateOTPString;

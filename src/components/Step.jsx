@@ -9,8 +9,8 @@ export default function Step(props) {
   return (
     <p
       aria-label='Instruction step'
-      class='step-counter relative mt-8 pl-10 text-lg
-             font-xl tracking-tight before:absolute before:left-0 before:z-20 before:flex before:h-[calc(1.375rem+1px)] before:w-[calc(1.375rem+1px)] before:items-center before:justify-center before:rounded-md
+      class='step-counter font-xl relative mt-8 pl-10
+             text-lg tracking-tight before:absolute before:left-0 before:z-20 before:flex before:h-[calc(1.375rem+1px)] before:w-[calc(1.375rem+1px)] before:items-center before:justify-center before:rounded-md
              before:text-[0.9rem] before:font-bold before:text-slate-700 before:shadow-md before:ring-2 before:ring-slate-900/5 before:content-[counter(step)]'
     >
       {props.step}

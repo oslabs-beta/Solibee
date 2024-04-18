@@ -13,12 +13,21 @@ function MenuItem(props) {
         {(item) => {
           return (
             <li>
-                <a
-                  class='flex justify-between cursor-pointer rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
-                  href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
+              <a
+                class='flex cursor-pointer justify-between rounded-lg p-2 px-3 transition-colors duration-75 hover:bg-orange-200'
+                href={'/component/' + item.toLowerCase().replaceAll(' ', '')}
+              >
+                <span>{item}</span>{' '}
+                <Show
+                  when={
+                    item == 'Accordion' ||
+                    item == 'Drag And Drop' ||
+                    item == 'Input OTP'
+                  }
                 >
-                  <span>{item}</span> <Show when={item == 'Accordion' || item == 'Drag And Drop' || item == 'Input OTP'}><span class='italic opacity-50'>Beta</span></Show>
-                </a>
+                  <span class='italic opacity-50'>Beta</span>
+                </Show>
+              </a>
             </li>
           );
         }}
